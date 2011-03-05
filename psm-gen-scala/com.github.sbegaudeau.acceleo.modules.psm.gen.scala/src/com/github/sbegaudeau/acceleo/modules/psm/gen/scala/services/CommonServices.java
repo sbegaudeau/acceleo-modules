@@ -14,6 +14,10 @@ import java.text.DateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+/**
+ * Utility class.
+ * @author sbegaudeau
+ */
 public final class CommonServices {
 
 	/**
@@ -22,6 +26,7 @@ public final class CommonServices {
 	private CommonServices() {
 		// prevent instantiation.
 	}
+	
 	/**
 	 * Surround value with double quote if is not done (abcd to "abcd")<br/>
 	 * Replace double quote with \" (ab"cd to "ab\"cd")<br/> Remove simple quote
@@ -65,6 +70,7 @@ public final class CommonServices {
 		DateFormat dateFormatShort = DateFormat.getDateInstance(DateFormat.SHORT, locale);
 		return dateFormatShort.format(date);
 	}
+	
 	/**
 	 * Returns the current time.
 	 * 

@@ -13,8 +13,12 @@ Other contributors :
 /]
 [module requests('http://github.com/sbegaudeau/acceleo/scalametamodel/2011/01')/]
 
-[query public eAllPackages(aModel : Model) : Sequence(Package) = aModel.packages.eAllPackages()->flatten() /]
+[comment 
+	* Returns all the packages in the model.
+/]
+[query public eAllPackages(aModel : Model) : Sequence(Package) = aModel.eAllContentsCached()->filter(Package)->flatten() /]
 
-[query protected eAllPackages(aPackage : Package) : Sequence(Package) = Sequence{aPackage}->union(aPackage.subPackages.eAllPackages()) /]
-
+[comment 
+	* Returns all the content of the model.
+/]
 [query public eAllContentsCached(aModel : Model) : Sequence(OclAny) = aModel.eAllContents() /]

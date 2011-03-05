@@ -13,8 +13,15 @@ Other contributors :
 /]
 [module commonServices('http://github.com/sbegaudeau/acceleo/scalametamodel/2011/01')/]
 
+[comment 
+	* Adds quotes to the given string.
+	* @param aString The given string.
+/]
 [template public addQuotes(aString : String)][invoke('com.github.sbegaudeau.acceleo.modules.psm.gen.scala.services.CommonServices', 'addQuotes(java.lang.String)', Sequence{aString})/][/template]
 
+[comment 
+	* Returns the current date. Use the 'gen.long.date' property to change the format of the data generated.
+/]
 [template public genDate()]
 [if ('true'.equalsIgnoreCase(getProperty('gen.long.date')))]
 [genLongDate()/]
@@ -23,7 +30,17 @@ Other contributors :
 [/if]
 [/template]
 
+[comment 
+	* Returns the current date with a long formatting.
+/]
 [template protected genLongDate()][invoke('com.github.sbegaudeau.acceleo.modules.psm.gen.scala.services.CommonServices', 'genLongDate()', Sequence{})/][/template]
+
+[comment 
+	* Returns the current date with a short formatting.
+/]
 [template protected genShortDate()][invoke('com.github.sbegaudeau.acceleo.modules.psm.gen.scala.services.CommonServices', 'genShortDate()', Sequence{})/][/template]
 
+[comment 
+	* Returns the current time.
+/]
 [template public genTime()][invoke('com.github.sbegaudeau.acceleo.modules.psm.gen.scala.services.CommonServices', 'genTime()', Sequence{})/][/template]

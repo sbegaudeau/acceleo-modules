@@ -11,7 +11,7 @@ Original contributor :
 Other contributors : 
  	*
 /]
-[module classBody('http://github.com/sbegaudeau/acceleo/scalametamodel/2011/01')/]
+[module classBody('http://github.com/sbegaudeau/acceleo/scalametamodel/2011/01') extends com::github::sbegaudeau::acceleo::modules::psm::gen::scala::common::filebody::fileBody/]
 
 [template public classBody(aClass : Class)]
 	[aClass.name/]

@@ -16,7 +16,10 @@ Other contributors :
 [import com::github::sbegaudeau::acceleo::modules::psm::gen::scala::files::scalaFile /]
 [import com::github::sbegaudeau::acceleo::modules::psm::gen::scala::requests::requests /]
 
-
+[comment 
+	* The starting point of the generation.
+	* @param aModel The Scala model.
+/]
 [template public workflow(aModel : Model)]
 [comment @main /]
 [for (aFile : File | aModel.eAllPackages().files)]
