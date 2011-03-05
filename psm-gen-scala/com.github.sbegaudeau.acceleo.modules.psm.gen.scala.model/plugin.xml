@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://github.com/sbegaudeau/acceleo/scalametamodel/2011/01"
+            class="com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.ScalaPackage"
+            genModel="model/Scala.genmodel"/>
+   </extension>
+
+</plugin>
