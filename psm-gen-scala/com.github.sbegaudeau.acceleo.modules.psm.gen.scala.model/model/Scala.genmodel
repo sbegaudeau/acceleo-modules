@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model/src-gen"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Copyright (c) 2011 Stephane Begaudeau.&#xA; All rights reserved. This program and the accompanying materials&#xA; are made available under the terms of the Eclipse Public License v1.0&#xA; which accompanies this distribution, and is available at&#xA; http://www.eclipse.org/legal/epl-v10.html&#xA; &#xA; Contributors:&#xA;    Stephane Begaudeau - initial API and implementation"
+    modelDirectory="/com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model/src-gen"
     editDirectory="/com.github.sbegaudeau.acceleo.modules.psm.gen.scala.edit/src-gen"
     editorDirectory="/com.github.sbegaudeau.acceleo.modules.psm.gen.scala.editor/src-gen"
     modelPluginID="com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model" modelName="Scala"
@@ -12,7 +13,7 @@
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
     providerRootExtendsClass="" editPluginID="com.github.sbegaudeau.acceleo.modules.psm.gen.scala.edit"
     editorPluginID="com.github.sbegaudeau.acceleo.modules.psm.gen.scala.editor" testsPluginID="com.github.sbegaudeau.acceleo.modules.psm.gen.scala.tests"
-    colorProviders="true" runtimeVersion="2.4">
+    colorProviders="true" runtimeVersion="2.4" language="">
   <foreignModel>Scala.ecore</foreignModel>
   <genPackages prefix="Scala" basePackage="com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model"
       disposableProviderFactory="true" dataTypeConverters="true" contentTypeIdentifier=""
