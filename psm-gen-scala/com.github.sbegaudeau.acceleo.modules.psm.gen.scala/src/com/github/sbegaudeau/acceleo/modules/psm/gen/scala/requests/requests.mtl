@@ -1,0 +1,20 @@
+[comment encoding = UTF-8 
+
+Copyright (c) 2011 Stephane Begaudeau
+All rights reserved.  This program and the accompanying materials
+are made available under the terms of the Eclipse Public License 1.0
+
+You can apply any license to the files generated with this module and Acceleo.
+
+Original contributor :
+	* Stephane Begaudeau
+Other contributors : 
+ 	*
+/]
+[module requests('http://github.com/sbegaudeau/acceleo/scalametamodel/2011/01')/]
+
+[query public eAllPackages(aModel : Model) : Sequence(Package) = aModel.packages.eAllPackages()->flatten() /]
+
+[query protected eAllPackages(aPackage : Package) : Sequence(Package) = Sequence{aPackage}->union(aPackage.subPackages.eAllPackages()) /]
+
+[query public eAllContentsCached(aModel : Model) : Sequence(OclAny) = aModel.eAllContents() /]

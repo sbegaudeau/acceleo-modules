@@ -13,7 +13,13 @@ Other contributors :
 /]
 [module workflow('http://github.com/sbegaudeau/acceleo/scalametamodel/2011/01')/]
 
+[import com::github::sbegaudeau::acceleo::modules::psm::gen::scala::files::scalaFile /]
+[import com::github::sbegaudeau::acceleo::modules::psm::gen::scala::requests::requests /]
+
+
 [template public workflow(aModel : Model)]
 [comment @main /]
-[aModel.name/]
+[for (aFile : File | aModel.eAllPackages().files)]
+[aFile.genScalaFile()/]
+[/for]
 [/template]
