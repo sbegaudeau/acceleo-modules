@@ -13,6 +13,17 @@ Other contributors :
 /]
 [module commonServices('http://github.com/sbegaudeau/acceleo/scalametamodel/2011/01')/]
 
-[template public commonServices(aClass : Class)]
-	[aClass.name/]
+[template public addQuotes(aString : String)][invoke('com.github.sbegaudeau.acceleo.modules.psm.gen.scala.services.CommonServices', 'addQuotes(java.lang.String)', Sequence{aString})/][/template]
+
+[template public genDate()]
+[if ('true'.equalsIgnoreCase(getProperty('gen.long.date')))]
+[genLongDate()/]
+[else]
+[genShortDate()/]
+[/if]
 [/template]
+
+[template protected genLongDate()][invoke('com.github.sbegaudeau.acceleo.modules.psm.gen.scala.services.CommonServices', 'genLongDate()', Sequence{})/][/template]
+[template protected genShortDate()][invoke('com.github.sbegaudeau.acceleo.modules.psm.gen.scala.services.CommonServices', 'genShortDate()', Sequence{})/][/template]
+
+[template public genTime()][invoke('com.github.sbegaudeau.acceleo.modules.psm.gen.scala.services.CommonServices', 'genTime()', Sequence{})/][/template]

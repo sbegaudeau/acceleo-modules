@@ -13,6 +13,9 @@ Other contributors :
 /]
 [module logger('http://github.com/sbegaudeau/acceleo/scalametamodel/2011/01')/]
 
-[template public logger(aClass : Class)]
-	[aClass.name/]
-[/template]
+[template public logError(aString : String)][invoke('com.github.sbegaudeau.acceleo.modules.psm.gen.scala.services.Logger', 'logError(java.lang.String)', Sequence{aString})/][/template]
+
+[template public logWarning(aString : String)][invoke('com.github.sbegaudeau.acceleo.modules.psm.gen.scala.services.Logger', 'logWarning(java.lang.String)', Sequence{aString})/][/template]
+
+[template public logInformation(aString : String)][invoke('com.github.sbegaudeau.acceleo.modules.psm.gen.scala.services.Logger', 'logInformation(java.lang.String)', Sequence{aString})/][/template]
+
