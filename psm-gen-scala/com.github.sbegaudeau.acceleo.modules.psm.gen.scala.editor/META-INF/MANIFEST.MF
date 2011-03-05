@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Editor
+Bundle-SymbolicName: com.github.sbegaudeau.acceleo.modules.psm.gen.scala.editor
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: GITHUB
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
