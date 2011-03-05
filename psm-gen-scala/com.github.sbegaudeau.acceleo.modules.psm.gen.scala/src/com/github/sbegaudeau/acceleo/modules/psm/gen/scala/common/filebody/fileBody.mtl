@@ -13,6 +13,18 @@ Other contributors :
 /]
 [module fileBody('http://github.com/sbegaudeau/acceleo/scalametamodel/2011/01')/]
 
-[template public fileBody(aClassifier : Classifier)]
-	[aClassifier.name/]
+[comment 
+	* Generates the package path of a given file.
+	* @param aFile The given file.
+/]
+[template public genPackagePath(aFile : File)]
+[aFile.ancestors()->filter(Package).name->reverse()->sep('.')/]
+[/template]
+
+[comment 
+	* Generates the body of a given classifier.
+	* @param aClassifier The given classifier.
+/]
+[template public genBody(aClassifier : Classifier)]
+// TODO: Should handle the generation for [aClassifier.eClass().name/].
 [/template]

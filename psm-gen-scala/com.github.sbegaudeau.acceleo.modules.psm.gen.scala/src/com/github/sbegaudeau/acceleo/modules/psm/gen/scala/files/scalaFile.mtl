@@ -13,8 +13,18 @@ Other contributors :
 /]
 [module scalaFile('http://github.com/sbegaudeau/acceleo/scalametamodel/2011/01')/]
 
+[import com::github::sbegaudeau::acceleo::modules::psm::gen::scala::common::classbody::classBody /]
+[import com::github::sbegaudeau::acceleo::modules::psm::gen::scala::common::filebody::fileBody /]
+[import com::github::sbegaudeau::acceleo::modules::psm::gen::scala::common::objectbody::objectBody /]
+[import com::github::sbegaudeau::acceleo::modules::psm::gen::scala::common::traitbody::traitBody /]
+
+
+[comment 
+	* Generates a '.scala' file.
+	* @param aFile The file to generate.
+/]
 [template public genScalaFile(aFile : File)]
-[file (aFile.name, false, 'UTF-8')]
-[aFile.name/]
+[file (aFile.genPackagePath() + '.' + aFile.name.toUpperFirst() + '.scala', false, 'UTF-8')]
+[aFile.classifiers.genBody()/]
 [/file]
 [/template]
