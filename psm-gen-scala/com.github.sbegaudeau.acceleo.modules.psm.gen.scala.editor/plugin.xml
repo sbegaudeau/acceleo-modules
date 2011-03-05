@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ Copyright (c) 2011 Stephane Begaudeau.
+  All rights reserved. This program and the accompanying materials
+  are made available under the terms of the Eclipse Public License v1.0
+  which accompanies this distribution, and is available at
+  http://www.eclipse.org/legal/epl-v10.html
+  
+  Contributors:
+     Stephane Begaudeau - initial API and implementation
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.presentation.ScalaModelWizardID"
+            name="%_UI_ScalaModelWizard_label"
+            class="com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.presentation.ScalaModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/ScalaModelFile.gif">
+         <description>%_UI_ScalaModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.presentation.ScalaEditorID"
+            name="%_UI_ScalaEditor_label"
+            icon="icons/full/obj16/ScalaModelFile.gif"
+            extensions="scala"
+            class="com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.presentation.ScalaEditor"
+            contributorClass="com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.presentation.ScalaActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>
