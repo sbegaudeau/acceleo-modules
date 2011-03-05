@@ -17,7 +17,7 @@
   <foreignModel>Scala.ecore</foreignModel>
   <genPackages prefix="Scala" basePackage="com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model"
       disposableProviderFactory="true" dataTypeConverters="true" contentTypeIdentifier=""
-      ecorePackage="Scala.ecore#/">
+      fileExtensions="scalamodel" ecorePackage="Scala.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="Scala.ecore#//VisibilityKind">
       <genEnumLiterals ecoreEnumLiteral="Scala.ecore#//VisibilityKind/public"/>
       <genEnumLiterals ecoreEnumLiteral="Scala.ecore#//VisibilityKind/private"/>

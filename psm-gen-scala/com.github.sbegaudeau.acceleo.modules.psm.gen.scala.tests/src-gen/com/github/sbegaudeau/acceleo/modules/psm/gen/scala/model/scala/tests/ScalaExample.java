@@ -70,7 +70,7 @@ public class ScalaExample {
 					.println("Enter a list of file paths or URIs that have content like this:"); //$NON-NLS-1$
 			try {
 				Resource resource = resourceSet.createResource(URI
-						.createURI("http:///My.scala")); //$NON-NLS-1$
+						.createURI("http:///My.scalamodel")); //$NON-NLS-1$
 				Comment root = ScalaFactory.eINSTANCE.createComment();
 				resource.getContents().add(root);
 				resource.save(System.out, null);
