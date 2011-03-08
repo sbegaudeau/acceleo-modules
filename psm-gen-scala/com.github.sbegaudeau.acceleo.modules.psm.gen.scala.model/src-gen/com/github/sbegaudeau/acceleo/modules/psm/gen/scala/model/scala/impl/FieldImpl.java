@@ -11,18 +11,14 @@
 package com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl;
 
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Comment;
-import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.ExtendableClassifier;
-import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Method;
+import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Field;
+import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.GenericType;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.ScalaPackage;
-import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Trait;
-import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Type;
-
-import java.util.Collection;
+import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.TypedElement;
+import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Visibility;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -30,29 +26,25 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-import org.eclipse.emf.ecore.util.InternalEList;
-
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Trait</b></em>'.
+ * An implementation of the model object '<em><b>Field</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.TraitImpl#getComment <em>Comment</em>}</li>
- *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.TraitImpl#getName <em>Name</em>}</li>
- *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.TraitImpl#getMethods <em>Methods</em>}</li>
- *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.TraitImpl#getSuperType <em>Super Type</em>}</li>
- *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.TraitImpl#getTraits <em>Traits</em>}</li>
- *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.TraitImpl#isIsSealed <em>Is Sealed</em>}</li>
+ *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.FieldImpl#getComment <em>Comment</em>}</li>
+ *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.FieldImpl#getName <em>Name</em>}</li>
+ *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.FieldImpl#getGenericType <em>Generic Type</em>}</li>
+ *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.FieldImpl#isIsFinal <em>Is Final</em>}</li>
+ *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.FieldImpl#isIsOverriding <em>Is Overriding</em>}</li>
+ *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.FieldImpl#getVisibility <em>Visibility</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class TraitImpl extends EObjectImpl implements Trait {
+public class FieldImpl extends EObjectImpl implements Field {
 	/**
 	 * The cached value of the '{@link #getComment() <em>Comment</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -84,61 +76,71 @@ public class TraitImpl extends EObjectImpl implements Trait {
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getMethods() <em>Methods</em>}' containment reference list.
+	 * The cached value of the '{@link #getGenericType() <em>Generic Type</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getMethods()
+	 * @see #getGenericType()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Method> methods;
+	protected GenericType genericType;
 
 	/**
-	 * The cached value of the '{@link #getSuperType() <em>Super Type</em>}' reference.
+	 * The default value of the '{@link #isIsFinal() <em>Is Final</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSuperType()
+	 * @see #isIsFinal()
 	 * @generated
 	 * @ordered
 	 */
-	protected ExtendableClassifier superType;
+	protected static final boolean IS_FINAL_EDEFAULT = false;
 
 	/**
-	 * The cached value of the '{@link #getTraits() <em>Traits</em>}' reference list.
+	 * The cached value of the '{@link #isIsFinal() <em>Is Final</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTraits()
+	 * @see #isIsFinal()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Trait> traits;
+	protected boolean isFinal = IS_FINAL_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #isIsSealed() <em>Is Sealed</em>}' attribute.
+	 * The default value of the '{@link #isIsOverriding() <em>Is Overriding</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isIsSealed()
+	 * @see #isIsOverriding()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean IS_SEALED_EDEFAULT = false;
+	protected static final boolean IS_OVERRIDING_EDEFAULT = false;
 
 	/**
-	 * The cached value of the '{@link #isIsSealed() <em>Is Sealed</em>}' attribute.
+	 * The cached value of the '{@link #isIsOverriding() <em>Is Overriding</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isIsSealed()
+	 * @see #isIsOverriding()
 	 * @generated
 	 * @ordered
 	 */
-	protected boolean isSealed = IS_SEALED_EDEFAULT;
+	protected boolean isOverriding = IS_OVERRIDING_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getVisibility() <em>Visibility</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getVisibility()
+	 * @generated
+	 * @ordered
+	 */
+	protected Visibility visibility;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected TraitImpl() {
+	protected FieldImpl() {
 		super();
 	}
 
@@ -149,7 +151,7 @@ public class TraitImpl extends EObjectImpl implements Trait {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ScalaPackage.Literals.TRAIT;
+		return ScalaPackage.Literals.FIELD;
 	}
 
 	/**
@@ -164,7 +166,7 @@ public class TraitImpl extends EObjectImpl implements Trait {
 			if (comment != oldComment) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							ScalaPackage.TRAIT__COMMENT, oldComment, comment));
+							ScalaPackage.FIELD__COMMENT, oldComment, comment));
 			}
 		}
 		return comment;
@@ -190,7 +192,7 @@ public class TraitImpl extends EObjectImpl implements Trait {
 		comment = newComment;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this,
-					Notification.SET, ScalaPackage.TRAIT__COMMENT, oldComment,
+					Notification.SET, ScalaPackage.FIELD__COMMENT, oldComment,
 					newComment);
 			if (msgs == null)
 				msgs = notification;
@@ -221,7 +223,7 @@ public class TraitImpl extends EObjectImpl implements Trait {
 				msgs.dispatch();
 		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET,
-					ScalaPackage.TRAIT__COMMENT, newComment, newComment));
+					ScalaPackage.FIELD__COMMENT, newComment, newComment));
 	}
 
 	/**
@@ -243,7 +245,7 @@ public class TraitImpl extends EObjectImpl implements Trait {
 		name = newName;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET,
-					ScalaPackage.TRAIT__NAME, oldName, name));
+					ScalaPackage.FIELD__NAME, oldName, name));
 	}
 
 	/**
@@ -251,12 +253,29 @@ public class TraitImpl extends EObjectImpl implements Trait {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Method> getMethods() {
-		if (methods == null) {
-			methods = new EObjectContainmentEList<Method>(Method.class, this,
-					ScalaPackage.TRAIT__METHODS);
+	public GenericType getGenericType() {
+		return genericType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetGenericType(GenericType newGenericType,
+			NotificationChain msgs) {
+		GenericType oldGenericType = genericType;
+		genericType = newGenericType;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this,
+					Notification.SET, ScalaPackage.FIELD__GENERIC_TYPE,
+					oldGenericType, newGenericType);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
-		return methods;
+		return msgs;
 	}
 
 	/**
@@ -264,18 +283,24 @@ public class TraitImpl extends EObjectImpl implements Trait {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ExtendableClassifier getSuperType() {
-		if (superType != null && superType.eIsProxy()) {
-			InternalEObject oldSuperType = (InternalEObject) superType;
-			superType = (ExtendableClassifier) eResolveProxy(oldSuperType);
-			if (superType != oldSuperType) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							ScalaPackage.TRAIT__SUPER_TYPE, oldSuperType,
-							superType));
-			}
-		}
-		return superType;
+	public void setGenericType(GenericType newGenericType) {
+		if (newGenericType != genericType) {
+			NotificationChain msgs = null;
+			if (genericType != null)
+				msgs = ((InternalEObject) genericType).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE
+								- ScalaPackage.FIELD__GENERIC_TYPE, null, msgs);
+			if (newGenericType != null)
+				msgs = ((InternalEObject) newGenericType).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE
+								- ScalaPackage.FIELD__GENERIC_TYPE, null, msgs);
+			msgs = basicSetGenericType(newGenericType, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					ScalaPackage.FIELD__GENERIC_TYPE, newGenericType,
+					newGenericType));
 	}
 
 	/**
@@ -283,8 +308,8 @@ public class TraitImpl extends EObjectImpl implements Trait {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ExtendableClassifier basicGetSuperType() {
-		return superType;
+	public boolean isIsFinal() {
+		return isFinal;
 	}
 
 	/**
@@ -292,12 +317,12 @@ public class TraitImpl extends EObjectImpl implements Trait {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSuperType(ExtendableClassifier newSuperType) {
-		ExtendableClassifier oldSuperType = superType;
-		superType = newSuperType;
+	public void setIsFinal(boolean newIsFinal) {
+		boolean oldIsFinal = isFinal;
+		isFinal = newIsFinal;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET,
-					ScalaPackage.TRAIT__SUPER_TYPE, oldSuperType, superType));
+					ScalaPackage.FIELD__IS_FINAL, oldIsFinal, isFinal));
 	}
 
 	/**
@@ -305,12 +330,8 @@ public class TraitImpl extends EObjectImpl implements Trait {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Trait> getTraits() {
-		if (traits == null) {
-			traits = new EObjectResolvingEList<Trait>(Trait.class, this,
-					ScalaPackage.TRAIT__TRAITS);
-		}
-		return traits;
+	public boolean isIsOverriding() {
+		return isOverriding;
 	}
 
 	/**
@@ -318,21 +339,68 @@ public class TraitImpl extends EObjectImpl implements Trait {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isIsSealed() {
-		return isSealed;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setIsSealed(boolean newIsSealed) {
-		boolean oldIsSealed = isSealed;
-		isSealed = newIsSealed;
+	public void setIsOverriding(boolean newIsOverriding) {
+		boolean oldIsOverriding = isOverriding;
+		isOverriding = newIsOverriding;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET,
-					ScalaPackage.TRAIT__IS_SEALED, oldIsSealed, isSealed));
+					ScalaPackage.FIELD__IS_OVERRIDING, oldIsOverriding,
+					isOverriding));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Visibility getVisibility() {
+		return visibility;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetVisibility(Visibility newVisibility,
+			NotificationChain msgs) {
+		Visibility oldVisibility = visibility;
+		visibility = newVisibility;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this,
+					Notification.SET, ScalaPackage.FIELD__VISIBILITY,
+					oldVisibility, newVisibility);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setVisibility(Visibility newVisibility) {
+		if (newVisibility != visibility) {
+			NotificationChain msgs = null;
+			if (visibility != null)
+				msgs = ((InternalEObject) visibility)
+						.eInverseRemove(this, EOPPOSITE_FEATURE_BASE
+								- ScalaPackage.FIELD__VISIBILITY, null, msgs);
+			if (newVisibility != null)
+				msgs = ((InternalEObject) newVisibility)
+						.eInverseAdd(this, EOPPOSITE_FEATURE_BASE
+								- ScalaPackage.FIELD__VISIBILITY, null, msgs);
+			msgs = basicSetVisibility(newVisibility, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					ScalaPackage.FIELD__VISIBILITY, newVisibility,
+					newVisibility));
 	}
 
 	/**
@@ -344,7 +412,7 @@ public class TraitImpl extends EObjectImpl implements Trait {
 	public NotificationChain eInverseAdd(InternalEObject otherEnd,
 			int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case ScalaPackage.TRAIT__COMMENT:
+		case ScalaPackage.FIELD__COMMENT:
 			if (comment != null)
 				msgs = ((InternalEObject) comment).eInverseRemove(this,
 						ScalaPackage.COMMENT__COMMENTED_ELEMENT, Comment.class,
@@ -363,11 +431,12 @@ public class TraitImpl extends EObjectImpl implements Trait {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd,
 			int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case ScalaPackage.TRAIT__COMMENT:
+		case ScalaPackage.FIELD__COMMENT:
 			return basicSetComment(null, msgs);
-		case ScalaPackage.TRAIT__METHODS:
-			return ((InternalEList<?>) getMethods())
-					.basicRemove(otherEnd, msgs);
+		case ScalaPackage.FIELD__GENERIC_TYPE:
+			return basicSetGenericType(null, msgs);
+		case ScalaPackage.FIELD__VISIBILITY:
+			return basicSetVisibility(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -380,22 +449,20 @@ public class TraitImpl extends EObjectImpl implements Trait {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case ScalaPackage.TRAIT__COMMENT:
+		case ScalaPackage.FIELD__COMMENT:
 			if (resolve)
 				return getComment();
 			return basicGetComment();
-		case ScalaPackage.TRAIT__NAME:
+		case ScalaPackage.FIELD__NAME:
 			return getName();
-		case ScalaPackage.TRAIT__METHODS:
-			return getMethods();
-		case ScalaPackage.TRAIT__SUPER_TYPE:
-			if (resolve)
-				return getSuperType();
-			return basicGetSuperType();
-		case ScalaPackage.TRAIT__TRAITS:
-			return getTraits();
-		case ScalaPackage.TRAIT__IS_SEALED:
-			return isIsSealed();
+		case ScalaPackage.FIELD__GENERIC_TYPE:
+			return getGenericType();
+		case ScalaPackage.FIELD__IS_FINAL:
+			return isIsFinal();
+		case ScalaPackage.FIELD__IS_OVERRIDING:
+			return isIsOverriding();
+		case ScalaPackage.FIELD__VISIBILITY:
+			return getVisibility();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -405,29 +472,26 @@ public class TraitImpl extends EObjectImpl implements Trait {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case ScalaPackage.TRAIT__COMMENT:
+		case ScalaPackage.FIELD__COMMENT:
 			setComment((Comment) newValue);
 			return;
-		case ScalaPackage.TRAIT__NAME:
+		case ScalaPackage.FIELD__NAME:
 			setName((String) newValue);
 			return;
-		case ScalaPackage.TRAIT__METHODS:
-			getMethods().clear();
-			getMethods().addAll((Collection<? extends Method>) newValue);
+		case ScalaPackage.FIELD__GENERIC_TYPE:
+			setGenericType((GenericType) newValue);
 			return;
-		case ScalaPackage.TRAIT__SUPER_TYPE:
-			setSuperType((ExtendableClassifier) newValue);
+		case ScalaPackage.FIELD__IS_FINAL:
+			setIsFinal((Boolean) newValue);
 			return;
-		case ScalaPackage.TRAIT__TRAITS:
-			getTraits().clear();
-			getTraits().addAll((Collection<? extends Trait>) newValue);
+		case ScalaPackage.FIELD__IS_OVERRIDING:
+			setIsOverriding((Boolean) newValue);
 			return;
-		case ScalaPackage.TRAIT__IS_SEALED:
-			setIsSealed((Boolean) newValue);
+		case ScalaPackage.FIELD__VISIBILITY:
+			setVisibility((Visibility) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -441,23 +505,23 @@ public class TraitImpl extends EObjectImpl implements Trait {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case ScalaPackage.TRAIT__COMMENT:
+		case ScalaPackage.FIELD__COMMENT:
 			setComment((Comment) null);
 			return;
-		case ScalaPackage.TRAIT__NAME:
+		case ScalaPackage.FIELD__NAME:
 			setName(NAME_EDEFAULT);
 			return;
-		case ScalaPackage.TRAIT__METHODS:
-			getMethods().clear();
+		case ScalaPackage.FIELD__GENERIC_TYPE:
+			setGenericType((GenericType) null);
 			return;
-		case ScalaPackage.TRAIT__SUPER_TYPE:
-			setSuperType((ExtendableClassifier) null);
+		case ScalaPackage.FIELD__IS_FINAL:
+			setIsFinal(IS_FINAL_EDEFAULT);
 			return;
-		case ScalaPackage.TRAIT__TRAITS:
-			getTraits().clear();
+		case ScalaPackage.FIELD__IS_OVERRIDING:
+			setIsOverriding(IS_OVERRIDING_EDEFAULT);
 			return;
-		case ScalaPackage.TRAIT__IS_SEALED:
-			setIsSealed(IS_SEALED_EDEFAULT);
+		case ScalaPackage.FIELD__VISIBILITY:
+			setVisibility((Visibility) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -471,19 +535,19 @@ public class TraitImpl extends EObjectImpl implements Trait {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case ScalaPackage.TRAIT__COMMENT:
+		case ScalaPackage.FIELD__COMMENT:
 			return comment != null;
-		case ScalaPackage.TRAIT__NAME:
+		case ScalaPackage.FIELD__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT
 					.equals(name);
-		case ScalaPackage.TRAIT__METHODS:
-			return methods != null && !methods.isEmpty();
-		case ScalaPackage.TRAIT__SUPER_TYPE:
-			return superType != null;
-		case ScalaPackage.TRAIT__TRAITS:
-			return traits != null && !traits.isEmpty();
-		case ScalaPackage.TRAIT__IS_SEALED:
-			return isSealed != IS_SEALED_EDEFAULT;
+		case ScalaPackage.FIELD__GENERIC_TYPE:
+			return genericType != null;
+		case ScalaPackage.FIELD__IS_FINAL:
+			return isFinal != IS_FINAL_EDEFAULT;
+		case ScalaPackage.FIELD__IS_OVERRIDING:
+			return isOverriding != IS_OVERRIDING_EDEFAULT;
+		case ScalaPackage.FIELD__VISIBILITY:
+			return visibility != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -495,16 +559,10 @@ public class TraitImpl extends EObjectImpl implements Trait {
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == Type.class) {
+		if (baseClass == TypedElement.class) {
 			switch (derivedFeatureID) {
-			default:
-				return -1;
-			}
-		}
-		if (baseClass == ExtendableClassifier.class) {
-			switch (derivedFeatureID) {
-			case ScalaPackage.TRAIT__IS_SEALED:
-				return ScalaPackage.EXTENDABLE_CLASSIFIER__IS_SEALED;
+			case ScalaPackage.FIELD__GENERIC_TYPE:
+				return ScalaPackage.TYPED_ELEMENT__GENERIC_TYPE;
 			default:
 				return -1;
 			}
@@ -519,16 +577,10 @@ public class TraitImpl extends EObjectImpl implements Trait {
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == Type.class) {
+		if (baseClass == TypedElement.class) {
 			switch (baseFeatureID) {
-			default:
-				return -1;
-			}
-		}
-		if (baseClass == ExtendableClassifier.class) {
-			switch (baseFeatureID) {
-			case ScalaPackage.EXTENDABLE_CLASSIFIER__IS_SEALED:
-				return ScalaPackage.TRAIT__IS_SEALED;
+			case ScalaPackage.TYPED_ELEMENT__GENERIC_TYPE:
+				return ScalaPackage.FIELD__GENERIC_TYPE;
 			default:
 				return -1;
 			}
@@ -549,10 +601,12 @@ public class TraitImpl extends EObjectImpl implements Trait {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: "); //$NON-NLS-1$
 		result.append(name);
-		result.append(", isSealed: "); //$NON-NLS-1$
-		result.append(isSealed);
+		result.append(", isFinal: "); //$NON-NLS-1$
+		result.append(isFinal);
+		result.append(", isOverriding: "); //$NON-NLS-1$
+		result.append(isOverriding);
 		result.append(')');
 		return result.toString();
 	}
 
-} //TraitImpl
+} //FieldImpl

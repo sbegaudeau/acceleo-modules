@@ -12,6 +12,7 @@ package com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.provider
 
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.edit.ScalaEditPlugin;
 
+import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Field;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.ScalaFactory;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.ScalaPackage;
 
@@ -38,12 +39,12 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Object} object.
+ * This is the item provider adapter for a {@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Field} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ObjectItemProvider extends ItemProviderAdapter implements
+public class FieldItemProvider extends ItemProviderAdapter implements
 		IEditingDomainItemProvider, IStructuredItemContentProvider,
 		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource,
 		IItemColorProvider {
@@ -53,7 +54,7 @@ public class ObjectItemProvider extends ItemProviderAdapter implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ObjectItemProvider(AdapterFactory adapterFactory) {
+	public FieldItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -70,10 +71,8 @@ public class ObjectItemProvider extends ItemProviderAdapter implements
 
 			addCommentPropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
-			addSuperTypePropertyDescriptor(object);
-			addTraitsPropertyDescriptor(object);
-			addIsCasePropertyDescriptor(object);
-			addCompanionClassPropertyDescriptor(object);
+			addIsFinalPropertyDescriptor(object);
+			addIsOverridingPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -118,80 +117,43 @@ public class ObjectItemProvider extends ItemProviderAdapter implements
 	}
 
 	/**
-	 * This adds a property descriptor for the Super Type feature.
+	 * This adds a property descriptor for the Is Final feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addSuperTypePropertyDescriptor(Object object) {
+	protected void addIsFinalPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(
 						((ComposeableAdapterFactory) adapterFactory)
 								.getRootAdapterFactory(),
 						getResourceLocator(),
-						getString("_UI_Classifier_superType_feature"), //$NON-NLS-1$
+						getString("_UI_Field_isFinal_feature"), //$NON-NLS-1$
 						getString(
-								"_UI_PropertyDescriptor_description", "_UI_Classifier_superType_feature", "_UI_Classifier_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-						ScalaPackage.Literals.CLASSIFIER__SUPER_TYPE, true,
-						false, true, null, null, null));
+								"_UI_PropertyDescriptor_description", "_UI_Field_isFinal_feature", "_UI_Field_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						ScalaPackage.Literals.FIELD__IS_FINAL, true, false,
+						false, ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+						null, null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Traits feature.
+	 * This adds a property descriptor for the Is Overriding feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addTraitsPropertyDescriptor(Object object) {
+	protected void addIsOverridingPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(
 						((ComposeableAdapterFactory) adapterFactory)
 								.getRootAdapterFactory(),
 						getResourceLocator(),
-						getString("_UI_Classifier_traits_feature"), //$NON-NLS-1$
+						getString("_UI_Field_isOverriding_feature"), //$NON-NLS-1$
 						getString(
-								"_UI_PropertyDescriptor_description", "_UI_Classifier_traits_feature", "_UI_Classifier_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-						ScalaPackage.Literals.CLASSIFIER__TRAITS, true, false,
-						true, null, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Is Case feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIsCasePropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(
-						((ComposeableAdapterFactory) adapterFactory)
-								.getRootAdapterFactory(),
-						getResourceLocator(),
-						getString("_UI_CaseClassifier_isCase_feature"), //$NON-NLS-1$
-						getString(
-								"_UI_PropertyDescriptor_description", "_UI_CaseClassifier_isCase_feature", "_UI_CaseClassifier_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-						ScalaPackage.Literals.CASE_CLASSIFIER__IS_CASE, true,
+								"_UI_PropertyDescriptor_description", "_UI_Field_isOverriding_feature", "_UI_Field_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						ScalaPackage.Literals.FIELD__IS_OVERRIDING, true,
 						false, false,
 						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Companion Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCompanionClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(
-						((ComposeableAdapterFactory) adapterFactory)
-								.getRootAdapterFactory(),
-						getResourceLocator(),
-						getString("_UI_Object_companionClass_feature"), //$NON-NLS-1$
-						getString(
-								"_UI_PropertyDescriptor_description", "_UI_Object_companionClass_feature", "_UI_Object_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-						ScalaPackage.Literals.OBJECT__COMPANION_CLASS, true,
-						false, true, null, null, null));
 	}
 
 	/**
@@ -207,7 +169,9 @@ public class ObjectItemProvider extends ItemProviderAdapter implements
 			Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ScalaPackage.Literals.CLASSIFIER__METHODS);
+			childrenFeatures
+					.add(ScalaPackage.Literals.TYPED_ELEMENT__GENERIC_TYPE);
+			childrenFeatures.add(ScalaPackage.Literals.FIELD__VISIBILITY);
 		}
 		return childrenFeatures;
 	}
@@ -226,7 +190,7 @@ public class ObjectItemProvider extends ItemProviderAdapter implements
 	}
 
 	/**
-	 * This returns Object.gif.
+	 * This returns Field.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -234,7 +198,7 @@ public class ObjectItemProvider extends ItemProviderAdapter implements
 	@Override
 	public Object getImage(Object object) {
 		return overlayImage(object,
-				getResourceLocator().getImage("full/obj16/Object")); //$NON-NLS-1$
+				getResourceLocator().getImage("full/obj16/Field")); //$NON-NLS-1$
 	}
 
 	/**
@@ -245,10 +209,9 @@ public class ObjectItemProvider extends ItemProviderAdapter implements
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Object) object)
-				.getName();
-		return label == null || label.length() == 0 ? getString("_UI_Object_type") : //$NON-NLS-1$
-				getString("_UI_Object_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+		String label = ((Field) object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_Field_type") : //$NON-NLS-1$
+				getString("_UI_Field_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**
@@ -262,14 +225,15 @@ public class ObjectItemProvider extends ItemProviderAdapter implements
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification
-				.getFeatureID(com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Object.class)) {
-		case ScalaPackage.OBJECT__NAME:
-		case ScalaPackage.OBJECT__IS_CASE:
+		switch (notification.getFeatureID(Field.class)) {
+		case ScalaPackage.FIELD__NAME:
+		case ScalaPackage.FIELD__IS_FINAL:
+		case ScalaPackage.FIELD__IS_OVERRIDING:
 			fireNotifyChanged(new ViewerNotification(notification,
 					notification.getNotifier(), false, true));
 			return;
-		case ScalaPackage.OBJECT__METHODS:
+		case ScalaPackage.FIELD__GENERIC_TYPE:
+		case ScalaPackage.FIELD__VISIBILITY:
 			fireNotifyChanged(new ViewerNotification(notification,
 					notification.getNotifier(), true, false));
 			return;
@@ -290,8 +254,12 @@ public class ObjectItemProvider extends ItemProviderAdapter implements
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add(createChildParameter(
-				ScalaPackage.Literals.CLASSIFIER__METHODS,
-				ScalaFactory.eINSTANCE.createMethod()));
+				ScalaPackage.Literals.TYPED_ELEMENT__GENERIC_TYPE,
+				ScalaFactory.eINSTANCE.createGenericType()));
+
+		newChildDescriptors.add(createChildParameter(
+				ScalaPackage.Literals.FIELD__VISIBILITY,
+				ScalaFactory.eINSTANCE.createVisibility()));
 	}
 
 	/**

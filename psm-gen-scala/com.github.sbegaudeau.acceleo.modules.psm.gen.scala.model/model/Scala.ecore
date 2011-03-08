@@ -24,8 +24,6 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Classifier" abstract="true" interface="true"
       eSuperTypes="#//NamedElement #//Type">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
-        eType="#//Attribute" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="methods" upperBound="-1"
         eType="#//Method" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="superType" eType="#//ExtendableClassifier"/>
@@ -42,6 +40,10 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Class" eSuperTypes="#//CaseClassifier #//ExtendableClassifier">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fields" upperBound="-1"
+        eType="#//Field" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="constructors" upperBound="-1"
+        eType="#//Constructor" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="companionObject" eType="#//Object"
         eOpposite="#//Object/companionClass"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isFinal" lowerBound="1"
@@ -54,11 +56,15 @@
         eOpposite="#//Class/companionObject"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Trait" eSuperTypes="#//Classifier #//ExtendableClassifier"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Attribute" eSuperTypes="#//NamedElement #//TypedElement">
+  <eClassifiers xsi:type="ecore:EClass" name="Field" eSuperTypes="#//NamedElement #//TypedElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isFinal" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isOverriding" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="visibility" lowerBound="1"
         eType="#//Visibility" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Constructor">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
+        eType="#//Parameter" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Method" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="signature" eType="#//MethodSignature"

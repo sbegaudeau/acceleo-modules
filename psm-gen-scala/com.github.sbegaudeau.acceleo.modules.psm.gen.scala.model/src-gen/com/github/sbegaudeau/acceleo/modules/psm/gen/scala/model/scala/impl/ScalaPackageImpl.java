@@ -10,12 +10,13 @@
  */
 package com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl;
 
-import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Attribute;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.CaseClassifier;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Classifier;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Comment;
+import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Constructor;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Element;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.ExtendableClassifier;
+import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Field;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.File;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.GenericType;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Method;
@@ -122,7 +123,14 @@ public class ScalaPackageImpl extends EPackageImpl implements ScalaPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass attributeEClass = null;
+	private EClass fieldEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass constructorEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -360,7 +368,7 @@ public class ScalaPackageImpl extends EPackageImpl implements ScalaPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getClassifier_Attributes() {
+	public EReference getClassifier_Methods() {
 		return (EReference) classifierEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -369,7 +377,7 @@ public class ScalaPackageImpl extends EPackageImpl implements ScalaPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getClassifier_Methods() {
+	public EReference getClassifier_SuperType() {
 		return (EReference) classifierEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -378,17 +386,8 @@ public class ScalaPackageImpl extends EPackageImpl implements ScalaPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getClassifier_SuperType() {
-		return (EReference) classifierEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getClassifier_Traits() {
-		return (EReference) classifierEClass.getEStructuralFeatures().get(3);
+		return (EReference) classifierEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -443,7 +442,7 @@ public class ScalaPackageImpl extends EPackageImpl implements ScalaPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getClass_CompanionObject() {
+	public EReference getClass_Fields() {
 		return (EReference) classEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -452,8 +451,17 @@ public class ScalaPackageImpl extends EPackageImpl implements ScalaPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getClass_IsAbstract() {
-		return (EAttribute) classEClass.getEStructuralFeatures().get(2);
+	public EReference getClass_Constructors() {
+		return (EReference) classEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getClass_CompanionObject() {
+		return (EReference) classEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -462,7 +470,16 @@ public class ScalaPackageImpl extends EPackageImpl implements ScalaPackage {
 	 * @generated
 	 */
 	public EAttribute getClass_IsFinal() {
-		return (EAttribute) classEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) classEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getClass_IsAbstract() {
+		return (EAttribute) classEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -497,8 +514,8 @@ public class ScalaPackageImpl extends EPackageImpl implements ScalaPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getAttribute() {
-		return attributeEClass;
+	public EClass getField() {
+		return fieldEClass;
 	}
 
 	/**
@@ -506,8 +523,8 @@ public class ScalaPackageImpl extends EPackageImpl implements ScalaPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAttribute_IsFinal() {
-		return (EAttribute) attributeEClass.getEStructuralFeatures().get(0);
+	public EAttribute getField_IsFinal() {
+		return (EAttribute) fieldEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -515,8 +532,8 @@ public class ScalaPackageImpl extends EPackageImpl implements ScalaPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAttribute_IsOverriding() {
-		return (EAttribute) attributeEClass.getEStructuralFeatures().get(1);
+	public EAttribute getField_IsOverriding() {
+		return (EAttribute) fieldEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -524,8 +541,26 @@ public class ScalaPackageImpl extends EPackageImpl implements ScalaPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAttribute_Visibility() {
-		return (EReference) attributeEClass.getEStructuralFeatures().get(2);
+	public EReference getField_Visibility() {
+		return (EReference) fieldEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getConstructor() {
+		return constructorEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getConstructor_Parameters() {
+		return (EReference) constructorEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -806,7 +841,6 @@ public class ScalaPackageImpl extends EPackageImpl implements ScalaPackage {
 		createEReference(typedElementEClass, TYPED_ELEMENT__GENERIC_TYPE);
 
 		classifierEClass = createEClass(CLASSIFIER);
-		createEReference(classifierEClass, CLASSIFIER__ATTRIBUTES);
 		createEReference(classifierEClass, CLASSIFIER__METHODS);
 		createEReference(classifierEClass, CLASSIFIER__SUPER_TYPE);
 		createEReference(classifierEClass, CLASSIFIER__TRAITS);
@@ -819,6 +853,8 @@ public class ScalaPackageImpl extends EPackageImpl implements ScalaPackage {
 				EXTENDABLE_CLASSIFIER__IS_SEALED);
 
 		classEClass = createEClass(CLASS);
+		createEReference(classEClass, CLASS__FIELDS);
+		createEReference(classEClass, CLASS__CONSTRUCTORS);
 		createEReference(classEClass, CLASS__COMPANION_OBJECT);
 		createEAttribute(classEClass, CLASS__IS_FINAL);
 		createEAttribute(classEClass, CLASS__IS_ABSTRACT);
@@ -828,10 +864,13 @@ public class ScalaPackageImpl extends EPackageImpl implements ScalaPackage {
 
 		traitEClass = createEClass(TRAIT);
 
-		attributeEClass = createEClass(ATTRIBUTE);
-		createEAttribute(attributeEClass, ATTRIBUTE__IS_FINAL);
-		createEAttribute(attributeEClass, ATTRIBUTE__IS_OVERRIDING);
-		createEReference(attributeEClass, ATTRIBUTE__VISIBILITY);
+		fieldEClass = createEClass(FIELD);
+		createEAttribute(fieldEClass, FIELD__IS_FINAL);
+		createEAttribute(fieldEClass, FIELD__IS_OVERRIDING);
+		createEReference(fieldEClass, FIELD__VISIBILITY);
+
+		constructorEClass = createEClass(CONSTRUCTOR);
+		createEReference(constructorEClass, CONSTRUCTOR__PARAMETERS);
 
 		methodEClass = createEClass(METHOD);
 		createEReference(methodEClass, METHOD__SIGNATURE);
@@ -912,8 +951,8 @@ public class ScalaPackageImpl extends EPackageImpl implements ScalaPackage {
 		objectEClass.getESuperTypes().add(this.getCaseClassifier());
 		traitEClass.getESuperTypes().add(this.getClassifier());
 		traitEClass.getESuperTypes().add(this.getExtendableClassifier());
-		attributeEClass.getESuperTypes().add(this.getNamedElement());
-		attributeEClass.getESuperTypes().add(this.getTypedElement());
+		fieldEClass.getESuperTypes().add(this.getNamedElement());
+		fieldEClass.getESuperTypes().add(this.getTypedElement());
 		methodEClass.getESuperTypes().add(this.getNamedElement());
 		methodSignatureEClass.getESuperTypes().add(this.getTypedElement());
 		methodSignatureEClass.getESuperTypes().add(this.getType());
@@ -975,11 +1014,6 @@ public class ScalaPackageImpl extends EPackageImpl implements ScalaPackage {
 				Classifier.class,
 				"Classifier", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEReference(
-				getClassifier_Attributes(),
-				this.getAttribute(),
-				null,
-				"attributes", null, 0, -1, Classifier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEReference(
 				getClassifier_Methods(),
 				this.getMethod(),
 				null,
@@ -1018,6 +1052,16 @@ public class ScalaPackageImpl extends EPackageImpl implements ScalaPackage {
 				com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Class.class,
 				"Class", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEReference(
+				getClass_Fields(),
+				this.getField(),
+				null,
+				"fields", null, 0, -1, com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Class.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+		initEReference(
+				getClass_Constructors(),
+				this.getConstructor(),
+				null,
+				"constructors", null, 0, -1, com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Class.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+		initEReference(
 				getClass_CompanionObject(),
 				this.getObject(),
 				this.getObject_CompanionClass(),
@@ -1047,22 +1091,32 @@ public class ScalaPackageImpl extends EPackageImpl implements ScalaPackage {
 				"Trait", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 
 		initEClass(
-				attributeEClass,
-				Attribute.class,
-				"Attribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+				fieldEClass,
+				Field.class,
+				"Field", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEAttribute(
-				getAttribute_IsFinal(),
+				getField_IsFinal(),
 				ecorePackage.getEBoolean(),
-				"isFinal", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+				"isFinal", null, 0, 1, Field.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
 		initEAttribute(
-				getAttribute_IsOverriding(),
+				getField_IsOverriding(),
 				ecorePackage.getEBoolean(),
-				"isOverriding", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+				"isOverriding", null, 0, 1, Field.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
 		initEReference(
-				getAttribute_Visibility(),
+				getField_Visibility(),
 				this.getVisibility(),
 				null,
-				"visibility", null, 1, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+				"visibility", null, 1, 1, Field.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+
+		initEClass(
+				constructorEClass,
+				Constructor.class,
+				"Constructor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEReference(
+				getConstructor_Parameters(),
+				this.getParameter(),
+				null,
+				"parameters", null, 0, -1, Constructor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
 
 		initEClass(
 				methodEClass,

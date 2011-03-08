@@ -233,22 +233,13 @@ public interface ScalaPackage extends EPackage {
 	int CLASSIFIER__NAME = NAMED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CLASSIFIER__ATTRIBUTES = NAMED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Methods</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLASSIFIER__METHODS = NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int CLASSIFIER__METHODS = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Super Type</b></em>' reference.
@@ -257,7 +248,7 @@ public interface ScalaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLASSIFIER__SUPER_TYPE = NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int CLASSIFIER__SUPER_TYPE = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Traits</b></em>' reference list.
@@ -266,7 +257,7 @@ public interface ScalaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLASSIFIER__TRAITS = NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int CLASSIFIER__TRAITS = NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Classifier</em>' class.
@@ -275,7 +266,7 @@ public interface ScalaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLASSIFIER_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int CLASSIFIER_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.CaseClassifier <em>Case Classifier</em>}' class.
@@ -304,15 +295,6 @@ public interface ScalaPackage extends EPackage {
 	 * @ordered
 	 */
 	int CASE_CLASSIFIER__NAME = CLASSIFIER__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CASE_CLASSIFIER__ATTRIBUTES = CLASSIFIER__ATTRIBUTES;
 
 	/**
 	 * The feature id for the '<em><b>Methods</b></em>' containment reference list.
@@ -416,15 +398,6 @@ public interface ScalaPackage extends EPackage {
 	int CLASS__NAME = CASE_CLASSIFIER__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CLASS__ATTRIBUTES = CASE_CLASSIFIER__ATTRIBUTES;
-
-	/**
 	 * The feature id for the '<em><b>Methods</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -470,13 +443,31 @@ public interface ScalaPackage extends EPackage {
 	int CLASS__IS_SEALED = CASE_CLASSIFIER_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Fields</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLASS__FIELDS = CASE_CLASSIFIER_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Constructors</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLASS__CONSTRUCTORS = CASE_CLASSIFIER_FEATURE_COUNT + 2;
+
+	/**
 	 * The feature id for the '<em><b>Companion Object</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLASS__COMPANION_OBJECT = CASE_CLASSIFIER_FEATURE_COUNT + 1;
+	int CLASS__COMPANION_OBJECT = CASE_CLASSIFIER_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Is Final</b></em>' attribute.
@@ -485,7 +476,7 @@ public interface ScalaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLASS__IS_FINAL = CASE_CLASSIFIER_FEATURE_COUNT + 2;
+	int CLASS__IS_FINAL = CASE_CLASSIFIER_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -494,7 +485,7 @@ public interface ScalaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLASS__IS_ABSTRACT = CASE_CLASSIFIER_FEATURE_COUNT + 3;
+	int CLASS__IS_ABSTRACT = CASE_CLASSIFIER_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Class</em>' class.
@@ -503,7 +494,7 @@ public interface ScalaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLASS_FEATURE_COUNT = CASE_CLASSIFIER_FEATURE_COUNT + 4;
+	int CLASS_FEATURE_COUNT = CASE_CLASSIFIER_FEATURE_COUNT + 6;
 
 	/**
 	 * The meta object id for the '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ObjectImpl <em>Object</em>}' class.
@@ -532,15 +523,6 @@ public interface ScalaPackage extends EPackage {
 	 * @ordered
 	 */
 	int OBJECT__NAME = CASE_CLASSIFIER__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OBJECT__ATTRIBUTES = CASE_CLASSIFIER__ATTRIBUTES;
 
 	/**
 	 * The feature id for the '<em><b>Methods</b></em>' containment reference list.
@@ -625,15 +607,6 @@ public interface ScalaPackage extends EPackage {
 	int TRAIT__NAME = CLASSIFIER__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRAIT__ATTRIBUTES = CLASSIFIER__ATTRIBUTES;
-
-	/**
 	 * The feature id for the '<em><b>Methods</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -679,14 +652,14 @@ public interface ScalaPackage extends EPackage {
 	int TRAIT_FEATURE_COUNT = CLASSIFIER_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.AttributeImpl <em>Attribute</em>}' class.
+	 * The meta object id for the '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.FieldImpl <em>Field</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.AttributeImpl
-	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ScalaPackageImpl#getAttribute()
+	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.FieldImpl
+	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ScalaPackageImpl#getField()
 	 * @generated
 	 */
-	int ATTRIBUTE = 10;
+	int FIELD = 10;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' reference.
@@ -695,7 +668,7 @@ public interface ScalaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE__COMMENT = NAMED_ELEMENT__COMMENT;
+	int FIELD__COMMENT = NAMED_ELEMENT__COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -704,7 +677,7 @@ public interface ScalaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE__NAME = NAMED_ELEMENT__NAME;
+	int FIELD__NAME = NAMED_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Generic Type</b></em>' containment reference.
@@ -713,7 +686,7 @@ public interface ScalaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE__GENERIC_TYPE = NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int FIELD__GENERIC_TYPE = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Is Final</b></em>' attribute.
@@ -722,7 +695,7 @@ public interface ScalaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE__IS_FINAL = NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int FIELD__IS_FINAL = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Is Overriding</b></em>' attribute.
@@ -731,7 +704,7 @@ public interface ScalaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE__IS_OVERRIDING = NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int FIELD__IS_OVERRIDING = NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Visibility</b></em>' containment reference.
@@ -740,16 +713,44 @@ public interface ScalaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE__VISIBILITY = NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int FIELD__VISIBILITY = NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
-	 * The number of structural features of the '<em>Attribute</em>' class.
+	 * The number of structural features of the '<em>Field</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int FIELD_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
+	 * The meta object id for the '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ConstructorImpl <em>Constructor</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ConstructorImpl
+	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ScalaPackageImpl#getConstructor()
+	 * @generated
+	 */
+	int CONSTRUCTOR = 11;
+
+	/**
+	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTRUCTOR__PARAMETERS = 0;
+
+	/**
+	 * The number of structural features of the '<em>Constructor</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTRUCTOR_FEATURE_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.MethodImpl <em>Method</em>}' class.
@@ -759,7 +760,7 @@ public interface ScalaPackage extends EPackage {
 	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ScalaPackageImpl#getMethod()
 	 * @generated
 	 */
-	int METHOD = 11;
+	int METHOD = 12;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' reference.
@@ -841,7 +842,7 @@ public interface ScalaPackage extends EPackage {
 	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ScalaPackageImpl#getMethodSignature()
 	 * @generated
 	 */
-	int METHOD_SIGNATURE = 12;
+	int METHOD_SIGNATURE = 13;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' reference.
@@ -896,7 +897,7 @@ public interface ScalaPackage extends EPackage {
 	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ScalaPackageImpl#getModel()
 	 * @generated
 	 */
-	int MODEL = 13;
+	int MODEL = 14;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' reference.
@@ -942,7 +943,7 @@ public interface ScalaPackage extends EPackage {
 	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ScalaPackageImpl#getParameter()
 	 * @generated
 	 */
-	int PARAMETER = 14;
+	int PARAMETER = 15;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' reference.
@@ -988,7 +989,7 @@ public interface ScalaPackage extends EPackage {
 	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ScalaPackageImpl#getPackage()
 	 * @generated
 	 */
-	int PACKAGE = 15;
+	int PACKAGE = 16;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' reference.
@@ -1052,7 +1053,7 @@ public interface ScalaPackage extends EPackage {
 	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ScalaPackageImpl#getFile()
 	 * @generated
 	 */
-	int FILE = 16;
+	int FILE = 17;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' reference.
@@ -1098,7 +1099,7 @@ public interface ScalaPackage extends EPackage {
 	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ScalaPackageImpl#getType()
 	 * @generated
 	 */
-	int TYPE = 17;
+	int TYPE = 18;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' reference.
@@ -1135,7 +1136,7 @@ public interface ScalaPackage extends EPackage {
 	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ScalaPackageImpl#getGenericType()
 	 * @generated
 	 */
-	int GENERIC_TYPE = 18;
+	int GENERIC_TYPE = 19;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' reference.
@@ -1190,7 +1191,7 @@ public interface ScalaPackage extends EPackage {
 	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ScalaPackageImpl#getVisibility()
 	 * @generated
 	 */
-	int VISIBILITY = 19;
+	int VISIBILITY = 20;
 
 	/**
 	 * The feature id for the '<em><b>Kind</b></em>' attribute.
@@ -1227,7 +1228,7 @@ public interface ScalaPackage extends EPackage {
 	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ScalaPackageImpl#getVisibilityScope()
 	 * @generated
 	 */
-	int VISIBILITY_SCOPE = 20;
+	int VISIBILITY_SCOPE = 21;
 
 	/**
 	 * The number of structural features of the '<em>Visibility Scope</em>' class.
@@ -1246,7 +1247,7 @@ public interface ScalaPackage extends EPackage {
 	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ScalaPackageImpl#getVisibilityKind()
 	 * @generated
 	 */
-	int VISIBILITY_KIND = 21;
+	int VISIBILITY_KIND = 22;
 
 	/**
 	 * Returns the meta object for class '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Element <em>Element</em>}'.
@@ -1354,17 +1355,6 @@ public interface ScalaPackage extends EPackage {
 	EClass getClassifier();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Classifier#getAttributes <em>Attributes</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Attributes</em>'.
-	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Classifier#getAttributes()
-	 * @see #getClassifier()
-	 * @generated
-	 */
-	EReference getClassifier_Attributes();
-
-	/**
 	 * Returns the meta object for the containment reference list '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Classifier#getMethods <em>Methods</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1450,6 +1440,28 @@ public interface ScalaPackage extends EPackage {
 	EClass getClass_();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Class#getFields <em>Fields</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Fields</em>'.
+	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Class#getFields()
+	 * @see #getClass_()
+	 * @generated
+	 */
+	EReference getClass_Fields();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Class#getConstructors <em>Constructors</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Constructors</em>'.
+	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Class#getConstructors()
+	 * @see #getClass_()
+	 * @generated
+	 */
+	EReference getClass_Constructors();
+
+	/**
 	 * Returns the meta object for the reference '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Class#getCompanionObject <em>Companion Object</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1461,17 +1473,6 @@ public interface ScalaPackage extends EPackage {
 	EReference getClass_CompanionObject();
 
 	/**
-	 * Returns the meta object for the attribute '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Class#isIsAbstract <em>Is Abstract</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Is Abstract</em>'.
-	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Class#isIsAbstract()
-	 * @see #getClass_()
-	 * @generated
-	 */
-	EAttribute getClass_IsAbstract();
-
-	/**
 	 * Returns the meta object for the attribute '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Class#isIsFinal <em>Is Final</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1481,6 +1482,17 @@ public interface ScalaPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getClass_IsFinal();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Class#isIsAbstract <em>Is Abstract</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Is Abstract</em>'.
+	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Class#isIsAbstract()
+	 * @see #getClass_()
+	 * @generated
+	 */
+	EAttribute getClass_IsAbstract();
 
 	/**
 	 * Returns the meta object for class '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Object <em>Object</em>}'.
@@ -1514,47 +1526,68 @@ public interface ScalaPackage extends EPackage {
 	EClass getTrait();
 
 	/**
-	 * Returns the meta object for class '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Attribute <em>Attribute</em>}'.
+	 * Returns the meta object for class '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Field <em>Field</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Attribute</em>'.
-	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Attribute
+	 * @return the meta object for class '<em>Field</em>'.
+	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Field
 	 * @generated
 	 */
-	EClass getAttribute();
+	EClass getField();
 
 	/**
-	 * Returns the meta object for the attribute '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Attribute#isIsFinal <em>Is Final</em>}'.
+	 * Returns the meta object for the attribute '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Field#isIsFinal <em>Is Final</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Is Final</em>'.
-	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Attribute#isIsFinal()
-	 * @see #getAttribute()
+	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Field#isIsFinal()
+	 * @see #getField()
 	 * @generated
 	 */
-	EAttribute getAttribute_IsFinal();
+	EAttribute getField_IsFinal();
 
 	/**
-	 * Returns the meta object for the attribute '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Attribute#isIsOverriding <em>Is Overriding</em>}'.
+	 * Returns the meta object for the attribute '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Field#isIsOverriding <em>Is Overriding</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Is Overriding</em>'.
-	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Attribute#isIsOverriding()
-	 * @see #getAttribute()
+	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Field#isIsOverriding()
+	 * @see #getField()
 	 * @generated
 	 */
-	EAttribute getAttribute_IsOverriding();
+	EAttribute getField_IsOverriding();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Attribute#getVisibility <em>Visibility</em>}'.
+	 * Returns the meta object for the containment reference '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Field#getVisibility <em>Visibility</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Visibility</em>'.
-	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Attribute#getVisibility()
-	 * @see #getAttribute()
+	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Field#getVisibility()
+	 * @see #getField()
 	 * @generated
 	 */
-	EReference getAttribute_Visibility();
+	EReference getField_Visibility();
+
+	/**
+	 * Returns the meta object for class '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Constructor <em>Constructor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Constructor</em>'.
+	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Constructor
+	 * @generated
+	 */
+	EClass getConstructor();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Constructor#getParameters <em>Parameters</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Parameters</em>'.
+	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Constructor#getParameters()
+	 * @see #getConstructor()
+	 * @generated
+	 */
+	EReference getConstructor_Parameters();
 
 	/**
 	 * Returns the meta object for class '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Method <em>Method</em>}'.
@@ -1946,15 +1979,6 @@ public interface ScalaPackage extends EPackage {
 		EClass CLASSIFIER = eINSTANCE.getClassifier();
 
 		/**
-		 * The meta object literal for the '<em><b>Attributes</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CLASSIFIER__ATTRIBUTES = eINSTANCE
-				.getClassifier_Attributes();
-
-		/**
 		 * The meta object literal for the '<em><b>Methods</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2027,6 +2051,22 @@ public interface ScalaPackage extends EPackage {
 		EClass CLASS = eINSTANCE.getClass_();
 
 		/**
+		 * The meta object literal for the '<em><b>Fields</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CLASS__FIELDS = eINSTANCE.getClass_Fields();
+
+		/**
+		 * The meta object literal for the '<em><b>Constructors</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CLASS__CONSTRUCTORS = eINSTANCE.getClass_Constructors();
+
+		/**
 		 * The meta object literal for the '<em><b>Companion Object</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2036,20 +2076,20 @@ public interface ScalaPackage extends EPackage {
 				.getClass_CompanionObject();
 
 		/**
-		 * The meta object literal for the '<em><b>Is Abstract</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CLASS__IS_ABSTRACT = eINSTANCE.getClass_IsAbstract();
-
-		/**
 		 * The meta object literal for the '<em><b>Is Final</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute CLASS__IS_FINAL = eINSTANCE.getClass_IsFinal();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Abstract</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CLASS__IS_ABSTRACT = eINSTANCE.getClass_IsAbstract();
 
 		/**
 		 * The meta object literal for the '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ObjectImpl <em>Object</em>}' class.
@@ -2081,14 +2121,14 @@ public interface ScalaPackage extends EPackage {
 		EClass TRAIT = eINSTANCE.getTrait();
 
 		/**
-		 * The meta object literal for the '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.AttributeImpl <em>Attribute</em>}' class.
+		 * The meta object literal for the '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.FieldImpl <em>Field</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.AttributeImpl
-		 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ScalaPackageImpl#getAttribute()
+		 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.FieldImpl
+		 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ScalaPackageImpl#getField()
 		 * @generated
 		 */
-		EClass ATTRIBUTE = eINSTANCE.getAttribute();
+		EClass FIELD = eINSTANCE.getField();
 
 		/**
 		 * The meta object literal for the '<em><b>Is Final</b></em>' attribute feature.
@@ -2096,7 +2136,7 @@ public interface ScalaPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ATTRIBUTE__IS_FINAL = eINSTANCE.getAttribute_IsFinal();
+		EAttribute FIELD__IS_FINAL = eINSTANCE.getField_IsFinal();
 
 		/**
 		 * The meta object literal for the '<em><b>Is Overriding</b></em>' attribute feature.
@@ -2104,8 +2144,7 @@ public interface ScalaPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ATTRIBUTE__IS_OVERRIDING = eINSTANCE
-				.getAttribute_IsOverriding();
+		EAttribute FIELD__IS_OVERRIDING = eINSTANCE.getField_IsOverriding();
 
 		/**
 		 * The meta object literal for the '<em><b>Visibility</b></em>' containment reference feature.
@@ -2113,7 +2152,26 @@ public interface ScalaPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ATTRIBUTE__VISIBILITY = eINSTANCE.getAttribute_Visibility();
+		EReference FIELD__VISIBILITY = eINSTANCE.getField_Visibility();
+
+		/**
+		 * The meta object literal for the '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ConstructorImpl <em>Constructor</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ConstructorImpl
+		 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ScalaPackageImpl#getConstructor()
+		 * @generated
+		 */
+		EClass CONSTRUCTOR = eINSTANCE.getConstructor();
+
+		/**
+		 * The meta object literal for the '<em><b>Parameters</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONSTRUCTOR__PARAMETERS = eINSTANCE
+				.getConstructor_Parameters();
 
 		/**
 		 * The meta object literal for the '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.MethodImpl <em>Method</em>}' class.

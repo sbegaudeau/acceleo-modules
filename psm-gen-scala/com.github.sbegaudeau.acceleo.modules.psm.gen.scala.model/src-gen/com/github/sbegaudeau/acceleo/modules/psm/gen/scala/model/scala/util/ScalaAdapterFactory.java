@@ -10,12 +10,13 @@
  */
 package com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.util;
 
-import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Attribute;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.CaseClassifier;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Classifier;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Comment;
+import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Constructor;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Element;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.ExtendableClassifier;
+import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Field;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.File;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.GenericType;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Method;
@@ -145,8 +146,13 @@ public class ScalaAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseAttribute(Attribute object) {
-			return createAttributeAdapter();
+		public Adapter caseField(Field object) {
+			return createFieldAdapter();
+		}
+
+		@Override
+		public Adapter caseConstructor(Constructor object) {
+			return createConstructorAdapter();
 		}
 
 		@Override
@@ -360,16 +366,30 @@ public class ScalaAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Attribute <em>Attribute</em>}'.
+	 * Creates a new adapter for an object of class '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Field <em>Field</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Attribute
+	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Field
 	 * @generated
 	 */
-	public Adapter createAttributeAdapter() {
+	public Adapter createFieldAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Constructor <em>Constructor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Constructor
+	 * @generated
+	 */
+	public Adapter createConstructorAdapter() {
 		return null;
 	}
 

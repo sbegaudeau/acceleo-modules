@@ -76,13 +76,22 @@ public interface ScalaFactory extends EFactory {
 	Trait createTrait();
 
 	/**
-	 * Returns a new object of class '<em>Attribute</em>'.
+	 * Returns a new object of class '<em>Field</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Attribute</em>'.
+	 * @return a new object of class '<em>Field</em>'.
 	 * @generated
 	 */
-	Attribute createAttribute();
+	Field createField();
+
+	/**
+	 * Returns a new object of class '<em>Constructor</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Constructor</em>'.
+	 * @generated
+	 */
+	Constructor createConstructor();
 
 	/**
 	 * Returns a new object of class '<em>Method</em>'.

@@ -10,9 +10,10 @@
  */
 package com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl;
 
-import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Attribute;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Comment;
+import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Constructor;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.ExtendableClassifier;
+import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Field;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.File;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.GenericType;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Method;
@@ -88,8 +89,10 @@ public class ScalaFactoryImpl extends EFactoryImpl implements ScalaFactory {
 			return createObject();
 		case ScalaPackage.TRAIT:
 			return createTrait();
-		case ScalaPackage.ATTRIBUTE:
-			return createAttribute();
+		case ScalaPackage.FIELD:
+			return createField();
+		case ScalaPackage.CONSTRUCTOR:
+			return createConstructor();
 		case ScalaPackage.METHOD:
 			return createMethod();
 		case ScalaPackage.METHOD_SIGNATURE:
@@ -199,9 +202,19 @@ public class ScalaFactoryImpl extends EFactoryImpl implements ScalaFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Attribute createAttribute() {
-		AttributeImpl attribute = new AttributeImpl();
-		return attribute;
+	public Field createField() {
+		FieldImpl field = new FieldImpl();
+		return field;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Constructor createConstructor() {
+		ConstructorImpl constructor = new ConstructorImpl();
+		return constructor;
 	}
 
 	/**

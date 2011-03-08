@@ -199,26 +199,49 @@ public class ScalaItemProviderAdapterFactory extends ScalaAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Attribute} instances.
+	 * This keeps track of the one adapter used for all {@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Field} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected AttributeItemProvider attributeItemProvider;
+	protected FieldItemProvider fieldItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Attribute}.
+	 * This creates an adapter for a {@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Field}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createAttributeAdapter() {
-		if (attributeItemProvider == null) {
-			attributeItemProvider = new AttributeItemProvider(this);
+	public Adapter createFieldAdapter() {
+		if (fieldItemProvider == null) {
+			fieldItemProvider = new FieldItemProvider(this);
 		}
 
-		return attributeItemProvider;
+		return fieldItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Constructor} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ConstructorItemProvider constructorItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Constructor}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createConstructorAdapter() {
+		if (constructorItemProvider == null) {
+			constructorItemProvider = new ConstructorItemProvider(this);
+		}
+
+		return constructorItemProvider;
 	}
 
 	/**
@@ -517,8 +540,10 @@ public class ScalaItemProviderAdapterFactory extends ScalaAdapterFactory
 			objectItemProvider.dispose();
 		if (traitItemProvider != null)
 			traitItemProvider.dispose();
-		if (attributeItemProvider != null)
-			attributeItemProvider.dispose();
+		if (fieldItemProvider != null)
+			fieldItemProvider.dispose();
+		if (constructorItemProvider != null)
+			constructorItemProvider.dispose();
 		if (methodItemProvider != null)
 			methodItemProvider.dispose();
 		if (methodSignatureItemProvider != null)

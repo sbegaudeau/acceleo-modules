@@ -10,9 +10,10 @@
  */
 package com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl;
 
-import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Attribute;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Comment;
+import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Constructor;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.ExtendableClassifier;
+import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Field;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Method;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.ScalaPackage;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Trait;
@@ -45,12 +46,13 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ClassImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ClassImpl#getName <em>Name</em>}</li>
- *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ClassImpl#getAttributes <em>Attributes</em>}</li>
  *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ClassImpl#getMethods <em>Methods</em>}</li>
  *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ClassImpl#getSuperType <em>Super Type</em>}</li>
  *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ClassImpl#getTraits <em>Traits</em>}</li>
  *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ClassImpl#isIsCase <em>Is Case</em>}</li>
  *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ClassImpl#isIsSealed <em>Is Sealed</em>}</li>
+ *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ClassImpl#getFields <em>Fields</em>}</li>
+ *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ClassImpl#getConstructors <em>Constructors</em>}</li>
  *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ClassImpl#getCompanionObject <em>Companion Object</em>}</li>
  *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ClassImpl#isIsFinal <em>Is Final</em>}</li>
  *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ClassImpl#isIsAbstract <em>Is Abstract</em>}</li>
@@ -90,16 +92,6 @@ public class ClassImpl extends EObjectImpl implements
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getAttributes() <em>Attributes</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAttributes()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Attribute> attributes;
 
 	/**
 	 * The cached value of the '{@link #getMethods() <em>Methods</em>}' containment reference list.
@@ -170,6 +162,26 @@ public class ClassImpl extends EObjectImpl implements
 	 * @ordered
 	 */
 	protected boolean isSealed = IS_SEALED_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getFields() <em>Fields</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFields()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Field> fields;
+
+	/**
+	 * The cached value of the '{@link #getConstructors() <em>Constructors</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getConstructors()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Constructor> constructors;
 
 	/**
 	 * The cached value of the '{@link #getCompanionObject() <em>Companion Object</em>}' reference.
@@ -339,19 +351,6 @@ public class ClassImpl extends EObjectImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Attribute> getAttributes() {
-		if (attributes == null) {
-			attributes = new EObjectContainmentEList<Attribute>(
-					Attribute.class, this, ScalaPackage.CLASS__ATTRIBUTES);
-		}
-		return attributes;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EList<Method> getMethods() {
 		if (methods == null) {
 			methods = new EObjectContainmentEList<Method>(Method.class, this,
@@ -463,6 +462,32 @@ public class ClassImpl extends EObjectImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Field> getFields() {
+		if (fields == null) {
+			fields = new EObjectContainmentEList<Field>(Field.class, this,
+					ScalaPackage.CLASS__FIELDS);
+		}
+		return fields;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Constructor> getConstructors() {
+		if (constructors == null) {
+			constructors = new EObjectContainmentEList<Constructor>(
+					Constructor.class, this, ScalaPackage.CLASS__CONSTRUCTORS);
+		}
+		return constructors;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Object getCompanionObject() {
 		if (companionObject != null && companionObject.eIsProxy()) {
 			InternalEObject oldCompanionObject = (InternalEObject) companionObject;
@@ -545,28 +570,6 @@ public class ClassImpl extends EObjectImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isIsAbstract() {
-		return isAbstract;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setIsAbstract(boolean newIsAbstract) {
-		boolean oldIsAbstract = isAbstract;
-		isAbstract = newIsAbstract;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					ScalaPackage.CLASS__IS_ABSTRACT, oldIsAbstract, isAbstract));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public boolean isIsFinal() {
 		return isFinal;
 	}
@@ -582,6 +585,28 @@ public class ClassImpl extends EObjectImpl implements
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET,
 					ScalaPackage.CLASS__IS_FINAL, oldIsFinal, isFinal));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isIsAbstract() {
+		return isAbstract;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setIsAbstract(boolean newIsAbstract) {
+		boolean oldIsAbstract = isAbstract;
+		isAbstract = newIsAbstract;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					ScalaPackage.CLASS__IS_ABSTRACT, oldIsAbstract, isAbstract));
 	}
 
 	/**
@@ -625,12 +650,14 @@ public class ClassImpl extends EObjectImpl implements
 		switch (featureID) {
 		case ScalaPackage.CLASS__COMMENT:
 			return basicSetComment(null, msgs);
-		case ScalaPackage.CLASS__ATTRIBUTES:
-			return ((InternalEList<?>) getAttributes()).basicRemove(otherEnd,
-					msgs);
 		case ScalaPackage.CLASS__METHODS:
 			return ((InternalEList<?>) getMethods())
 					.basicRemove(otherEnd, msgs);
+		case ScalaPackage.CLASS__FIELDS:
+			return ((InternalEList<?>) getFields()).basicRemove(otherEnd, msgs);
+		case ScalaPackage.CLASS__CONSTRUCTORS:
+			return ((InternalEList<?>) getConstructors()).basicRemove(otherEnd,
+					msgs);
 		case ScalaPackage.CLASS__COMPANION_OBJECT:
 			return basicSetCompanionObject(null, msgs);
 		}
@@ -651,8 +678,6 @@ public class ClassImpl extends EObjectImpl implements
 			return basicGetComment();
 		case ScalaPackage.CLASS__NAME:
 			return getName();
-		case ScalaPackage.CLASS__ATTRIBUTES:
-			return getAttributes();
 		case ScalaPackage.CLASS__METHODS:
 			return getMethods();
 		case ScalaPackage.CLASS__SUPER_TYPE:
@@ -665,6 +690,10 @@ public class ClassImpl extends EObjectImpl implements
 			return isIsCase();
 		case ScalaPackage.CLASS__IS_SEALED:
 			return isIsSealed();
+		case ScalaPackage.CLASS__FIELDS:
+			return getFields();
+		case ScalaPackage.CLASS__CONSTRUCTORS:
+			return getConstructors();
 		case ScalaPackage.CLASS__COMPANION_OBJECT:
 			if (resolve)
 				return getCompanionObject();
@@ -692,10 +721,6 @@ public class ClassImpl extends EObjectImpl implements
 		case ScalaPackage.CLASS__NAME:
 			setName((String) newValue);
 			return;
-		case ScalaPackage.CLASS__ATTRIBUTES:
-			getAttributes().clear();
-			getAttributes().addAll((Collection<? extends Attribute>) newValue);
-			return;
 		case ScalaPackage.CLASS__METHODS:
 			getMethods().clear();
 			getMethods().addAll((Collection<? extends Method>) newValue);
@@ -712,6 +737,15 @@ public class ClassImpl extends EObjectImpl implements
 			return;
 		case ScalaPackage.CLASS__IS_SEALED:
 			setIsSealed((Boolean) newValue);
+			return;
+		case ScalaPackage.CLASS__FIELDS:
+			getFields().clear();
+			getFields().addAll((Collection<? extends Field>) newValue);
+			return;
+		case ScalaPackage.CLASS__CONSTRUCTORS:
+			getConstructors().clear();
+			getConstructors().addAll(
+					(Collection<? extends Constructor>) newValue);
 			return;
 		case ScalaPackage.CLASS__COMPANION_OBJECT:
 			setCompanionObject((com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Object) newValue);
@@ -740,9 +774,6 @@ public class ClassImpl extends EObjectImpl implements
 		case ScalaPackage.CLASS__NAME:
 			setName(NAME_EDEFAULT);
 			return;
-		case ScalaPackage.CLASS__ATTRIBUTES:
-			getAttributes().clear();
-			return;
 		case ScalaPackage.CLASS__METHODS:
 			getMethods().clear();
 			return;
@@ -757,6 +788,12 @@ public class ClassImpl extends EObjectImpl implements
 			return;
 		case ScalaPackage.CLASS__IS_SEALED:
 			setIsSealed(IS_SEALED_EDEFAULT);
+			return;
+		case ScalaPackage.CLASS__FIELDS:
+			getFields().clear();
+			return;
+		case ScalaPackage.CLASS__CONSTRUCTORS:
+			getConstructors().clear();
 			return;
 		case ScalaPackage.CLASS__COMPANION_OBJECT:
 			setCompanionObject((com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Object) null);
@@ -784,8 +821,6 @@ public class ClassImpl extends EObjectImpl implements
 		case ScalaPackage.CLASS__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT
 					.equals(name);
-		case ScalaPackage.CLASS__ATTRIBUTES:
-			return attributes != null && !attributes.isEmpty();
 		case ScalaPackage.CLASS__METHODS:
 			return methods != null && !methods.isEmpty();
 		case ScalaPackage.CLASS__SUPER_TYPE:
@@ -796,6 +831,10 @@ public class ClassImpl extends EObjectImpl implements
 			return isCase != IS_CASE_EDEFAULT;
 		case ScalaPackage.CLASS__IS_SEALED:
 			return isSealed != IS_SEALED_EDEFAULT;
+		case ScalaPackage.CLASS__FIELDS:
+			return fields != null && !fields.isEmpty();
+		case ScalaPackage.CLASS__CONSTRUCTORS:
+			return constructors != null && !constructors.isEmpty();
 		case ScalaPackage.CLASS__COMPANION_OBJECT:
 			return companionObject != null;
 		case ScalaPackage.CLASS__IS_FINAL:

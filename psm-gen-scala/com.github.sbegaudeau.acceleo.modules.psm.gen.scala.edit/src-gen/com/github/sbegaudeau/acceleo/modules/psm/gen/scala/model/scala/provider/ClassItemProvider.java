@@ -218,26 +218,6 @@ public class ClassItemProvider extends ItemProviderAdapter implements
 	}
 
 	/**
-	 * This adds a property descriptor for the Is Abstract feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIsAbstractPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(
-						((ComposeableAdapterFactory) adapterFactory)
-								.getRootAdapterFactory(),
-						getResourceLocator(),
-						getString("_UI_Class_isAbstract_feature"), //$NON-NLS-1$
-						getString(
-								"_UI_PropertyDescriptor_description", "_UI_Class_isAbstract_feature", "_UI_Class_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-						ScalaPackage.Literals.CLASS__IS_ABSTRACT, true, false,
-						false, ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-						null, null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Is Final feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -258,6 +238,26 @@ public class ClassItemProvider extends ItemProviderAdapter implements
 	}
 
 	/**
+	 * This adds a property descriptor for the Is Abstract feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsAbstractPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(
+						((ComposeableAdapterFactory) adapterFactory)
+								.getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_Class_isAbstract_feature"), //$NON-NLS-1$
+						getString(
+								"_UI_PropertyDescriptor_description", "_UI_Class_isAbstract_feature", "_UI_Class_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						ScalaPackage.Literals.CLASS__IS_ABSTRACT, true, false,
+						false, ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+						null, null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -270,8 +270,9 @@ public class ClassItemProvider extends ItemProviderAdapter implements
 			Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ScalaPackage.Literals.CLASSIFIER__ATTRIBUTES);
 			childrenFeatures.add(ScalaPackage.Literals.CLASSIFIER__METHODS);
+			childrenFeatures.add(ScalaPackage.Literals.CLASS__FIELDS);
+			childrenFeatures.add(ScalaPackage.Literals.CLASS__CONSTRUCTORS);
 		}
 		return childrenFeatures;
 	}
@@ -336,8 +337,9 @@ public class ClassItemProvider extends ItemProviderAdapter implements
 			fireNotifyChanged(new ViewerNotification(notification,
 					notification.getNotifier(), false, true));
 			return;
-		case ScalaPackage.CLASS__ATTRIBUTES:
 		case ScalaPackage.CLASS__METHODS:
+		case ScalaPackage.CLASS__FIELDS:
+		case ScalaPackage.CLASS__CONSTRUCTORS:
 			fireNotifyChanged(new ViewerNotification(notification,
 					notification.getNotifier(), true, false));
 			return;
@@ -358,12 +360,16 @@ public class ClassItemProvider extends ItemProviderAdapter implements
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add(createChildParameter(
-				ScalaPackage.Literals.CLASSIFIER__ATTRIBUTES,
-				ScalaFactory.eINSTANCE.createAttribute()));
-
-		newChildDescriptors.add(createChildParameter(
 				ScalaPackage.Literals.CLASSIFIER__METHODS,
 				ScalaFactory.eINSTANCE.createMethod()));
+
+		newChildDescriptors.add(createChildParameter(
+				ScalaPackage.Literals.CLASS__FIELDS,
+				ScalaFactory.eINSTANCE.createField()));
+
+		newChildDescriptors.add(createChildParameter(
+				ScalaPackage.Literals.CLASS__CONSTRUCTORS,
+				ScalaFactory.eINSTANCE.createConstructor()));
 	}
 
 	/**

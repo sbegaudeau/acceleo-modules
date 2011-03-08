@@ -10,7 +10,6 @@
  */
 package com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl;
 
-import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Attribute;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Comment;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.ExtendableClassifier;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Method;
@@ -43,7 +42,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ObjectImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ObjectImpl#getName <em>Name</em>}</li>
- *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ObjectImpl#getAttributes <em>Attributes</em>}</li>
  *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ObjectImpl#getMethods <em>Methods</em>}</li>
  *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ObjectImpl#getSuperType <em>Super Type</em>}</li>
  *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ObjectImpl#getTraits <em>Traits</em>}</li>
@@ -85,16 +83,6 @@ public class ObjectImpl extends EObjectImpl implements
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getAttributes() <em>Attributes</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAttributes()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Attribute> attributes;
 
 	/**
 	 * The cached value of the '{@link #getMethods() <em>Methods</em>}' containment reference list.
@@ -267,19 +255,6 @@ public class ObjectImpl extends EObjectImpl implements
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET,
 					ScalaPackage.OBJECT__NAME, oldName, name));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<Attribute> getAttributes() {
-		if (attributes == null) {
-			attributes = new EObjectContainmentEList<Attribute>(
-					Attribute.class, this, ScalaPackage.OBJECT__ATTRIBUTES);
-		}
-		return attributes;
 	}
 
 	/**
@@ -494,9 +469,6 @@ public class ObjectImpl extends EObjectImpl implements
 		switch (featureID) {
 		case ScalaPackage.OBJECT__COMMENT:
 			return basicSetComment(null, msgs);
-		case ScalaPackage.OBJECT__ATTRIBUTES:
-			return ((InternalEList<?>) getAttributes()).basicRemove(otherEnd,
-					msgs);
 		case ScalaPackage.OBJECT__METHODS:
 			return ((InternalEList<?>) getMethods())
 					.basicRemove(otherEnd, msgs);
@@ -520,8 +492,6 @@ public class ObjectImpl extends EObjectImpl implements
 			return basicGetComment();
 		case ScalaPackage.OBJECT__NAME:
 			return getName();
-		case ScalaPackage.OBJECT__ATTRIBUTES:
-			return getAttributes();
 		case ScalaPackage.OBJECT__METHODS:
 			return getMethods();
 		case ScalaPackage.OBJECT__SUPER_TYPE:
@@ -554,10 +524,6 @@ public class ObjectImpl extends EObjectImpl implements
 			return;
 		case ScalaPackage.OBJECT__NAME:
 			setName((String) newValue);
-			return;
-		case ScalaPackage.OBJECT__ATTRIBUTES:
-			getAttributes().clear();
-			getAttributes().addAll((Collection<? extends Attribute>) newValue);
 			return;
 		case ScalaPackage.OBJECT__METHODS:
 			getMethods().clear();
@@ -594,9 +560,6 @@ public class ObjectImpl extends EObjectImpl implements
 		case ScalaPackage.OBJECT__NAME:
 			setName(NAME_EDEFAULT);
 			return;
-		case ScalaPackage.OBJECT__ATTRIBUTES:
-			getAttributes().clear();
-			return;
 		case ScalaPackage.OBJECT__METHODS:
 			getMethods().clear();
 			return;
@@ -629,8 +592,6 @@ public class ObjectImpl extends EObjectImpl implements
 		case ScalaPackage.OBJECT__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT
 					.equals(name);
-		case ScalaPackage.OBJECT__ATTRIBUTES:
-			return attributes != null && !attributes.isEmpty();
 		case ScalaPackage.OBJECT__METHODS:
 			return methods != null && !methods.isEmpty();
 		case ScalaPackage.OBJECT__SUPER_TYPE:

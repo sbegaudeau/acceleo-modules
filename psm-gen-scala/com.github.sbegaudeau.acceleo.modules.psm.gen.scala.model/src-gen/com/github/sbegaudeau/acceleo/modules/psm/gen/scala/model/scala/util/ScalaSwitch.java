@@ -10,12 +10,13 @@
  */
 package com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.util;
 
-import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Attribute;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.CaseClassifier;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Classifier;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Comment;
+import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Constructor;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Element;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.ExtendableClassifier;
+import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Field;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.File;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.GenericType;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Method;
@@ -232,15 +233,22 @@ public class ScalaSwitch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case ScalaPackage.ATTRIBUTE: {
-			Attribute attribute = (Attribute) theEObject;
-			T result = caseAttribute(attribute);
+		case ScalaPackage.FIELD: {
+			Field field = (Field) theEObject;
+			T result = caseField(field);
 			if (result == null)
-				result = caseNamedElement(attribute);
+				result = caseNamedElement(field);
 			if (result == null)
-				result = caseTypedElement(attribute);
+				result = caseTypedElement(field);
 			if (result == null)
-				result = caseElement(attribute);
+				result = caseElement(field);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case ScalaPackage.CONSTRUCTOR: {
+			Constructor constructor = (Constructor) theEObject;
+			T result = caseConstructor(constructor);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -515,17 +523,32 @@ public class ScalaSwitch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Attribute</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Field</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Attribute</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Field</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseAttribute(Attribute object) {
+	public T caseField(Field object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Constructor</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Constructor</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseConstructor(Constructor object) {
 		return null;
 	}
 
