@@ -23,31 +23,24 @@ Other contributors :
 [/template]
 
 [template public genDefaultConstructor (aClass : Class) ]
-[if (aClass.fields->size() > 0)]([aClass.fields.genConstructorParameter()/]) [/if]
+[if (aClass.fields->size() > 0)]([aClass.fields.genDefaultConstructorParameter()->sep(', ')/]) [/if]
 [/template]
 
-[template public genConstructorParameter (aField : Field) ]
-[aField.genName()/] : [aField.genType()/]
+[template public genDefaultConstructorParameter (aField : Field) ]
+[aField.genName()/]: [aField.genType()/]
 [/template]
 
 [template public genFields (aClass : Class) ]
-var x: Int = xc
-   
-var y: Int = yc
+[for (aField : Field | aClass.fields)]
+[aField.genOverride()/][if (aField.isFinal)]val [else]var [/if][aField.genName()/]: [aField.genType()/];
+[/for]
 [/template]
 
 [template public genConstructors (aClass : Class) ]
-def this(x1 : Int, x2 : Int) = {
+[for (aConstructor : Constructor | aClass.constructors)]
+def this([aConstructor.parameters.genParameter()->sep(', ')/]) = {
     this();
 }
-[/template]
-
-[template public genMethods (aClass : Class) ]
-def move(dx: Int, dy: Int) {
-   x = x + dx
-   y = y + dy
-}
-    
-override def toString(): String = "(" + x + ", " + y + ")";
+[/for]
 [/template]
 

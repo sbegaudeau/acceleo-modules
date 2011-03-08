@@ -13,6 +13,10 @@
 [aNamedElement.name/]
 [/template]
 
+[template public genType(aTypedElement : TypedElement)]
+[aTypedElement.genericType.name/]
+[/template]
+
 [template public genCase(aCaseClassifier : CaseClassifier)]
 [if (aCaseClassifier.isCase)]case [/if]
 [/template]
@@ -29,7 +33,23 @@
 [if (aClass.isFinal)]final [/if]
 [/template]
 
-[template public genType(aTypedElement : TypedElement)]
-[aTypedElement.genericType.name/]
+[template public genOverride(aField : Field)]
+[if (aField.isOverriding)]override [/if]
+[/template]
+
+[template public genOverride(aMethod : Method)]
+[if (aMethod.isOverriding)]override [/if]
+[/template]
+
+[template public genMethods (aClassifier : Classifier) ]
+[for (aMethod : Method | aClassifier.methods)]
+[aMethod.genOverride()/]def [aMethod.genName()/]([aMethod.signature.parameters.genParameter()->sep(', ')/]) {
+    
+}
+[/for]
+[/template]
+
+[template public genParameter(aParameter : Parameter)]
+[aParameter.genName()/]: [aParameter.genType()/]
 [/template]
 
