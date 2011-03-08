@@ -1,0 +1,30 @@
+[comment encoding = UTF-8 /]
+[module classifierBody('http://github.com/sbegaudeau/acceleo/scalametamodel/2011/01')/]
+
+[template public genClassifierDocumentation(aClassifier : Classifier)]
+
+[/template]
+
+[template public genClassifierBody(aClassifier : Classifier)]
+// TODO: Should handle the generation for [aClassifier.eClass().name/].
+[/template]
+
+[template public genName(aClassifier : Classifier)]
+[aClassifier.name/]
+[/template]
+
+[template public genCase(aCaseClassifier : CaseClassifier)]
+[if (aCaseClassifier.isCase)]case [/if]
+[/template]
+
+[template public genSealed(anExtendableClassifier : ExtendableClassifier)]
+[if (anExtendableClassifier.isSealed)]sealed [/if]
+[/template]
+
+[template public genAbstract(aClass : Class)]
+[if (aClass.isAbstract)]abstract [/if]
+[/template]
+
+[template public genFinal(aClass : Class)]
+[if (aClass.isFinal)]final [/if]
+[/template]

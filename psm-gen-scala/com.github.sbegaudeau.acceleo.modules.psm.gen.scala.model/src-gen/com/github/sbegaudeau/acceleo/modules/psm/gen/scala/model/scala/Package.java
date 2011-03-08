@@ -30,7 +30,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface Package extends NamedElement {
+public interface Package extends NamedElement, VisibilityScope {
 	/**
 	 * Returns the value of the '<em><b>Files</b></em>' containment reference list.
 	 * The list contents are of type {@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.File}.

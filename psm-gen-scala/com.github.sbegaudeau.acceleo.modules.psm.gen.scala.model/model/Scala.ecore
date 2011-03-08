@@ -28,28 +28,32 @@
         eType="#//Attribute" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="methods" upperBound="-1"
         eType="#//Method" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="superClass" eType="#//Class"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isAbstract" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isSealed" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Definition" abstract="true" interface="true"
-      eSuperTypes="#//Classifier">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="superType" eType="#//ExtendableClassifier"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="traits" upperBound="-1"
         eType="#//Trait"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CaseClassifier" abstract="true" interface="true"
+      eSuperTypes="#//Classifier #//VisibilityScope">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isCase" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Class" eSuperTypes="#//Definition">
+  <eClassifiers xsi:type="ecore:EClass" name="ExtendableClassifier">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isSealed" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Class" eSuperTypes="#//CaseClassifier #//ExtendableClassifier">
     <eStructuralFeatures xsi:type="ecore:EReference" name="companionObject" eType="#//Object"
         eOpposite="#//Object/companionClass"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isFinal" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isAbstract" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Object" eSuperTypes="#//Definition">
+  <eClassifiers xsi:type="ecore:EClass" name="Object" eSuperTypes="#//CaseClassifier">
     <eStructuralFeatures xsi:type="ecore:EReference" name="companionClass" eType="#//Class"
         eOpposite="#//Class/companionObject"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Trait" eSuperTypes="#//Classifier"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Trait" eSuperTypes="#//Classifier #//ExtendableClassifier"/>
   <eClassifiers xsi:type="ecore:EClass" name="Attribute" eSuperTypes="#//NamedElement #//TypedElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isFinal" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isOverriding" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
@@ -74,7 +78,7 @@
         eType="#//Package" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Parameter" eSuperTypes="#//NamedElement #//TypedElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Package" eSuperTypes="#//NamedElement">
+  <eClassifiers xsi:type="ecore:EClass" name="Package" eSuperTypes="#//NamedElement #//VisibilityScope">
     <eStructuralFeatures xsi:type="ecore:EReference" name="files" upperBound="-1"
         eType="#//File" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="subPackages" upperBound="-1"

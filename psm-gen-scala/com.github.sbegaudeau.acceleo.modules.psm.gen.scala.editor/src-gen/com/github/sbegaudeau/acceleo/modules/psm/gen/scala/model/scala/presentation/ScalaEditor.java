@@ -1349,7 +1349,7 @@ public class ScalaEditor extends MultiPageEditorPart implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings({ "rawtypes" })
+	@SuppressWarnings("unchecked")
 	@Override
 	public Object getAdapter(Class key) {
 		if (key.equals(IContentOutlinePage.class)) {

@@ -12,6 +12,7 @@ package com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl;
 
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Attribute;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Comment;
+import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.ExtendableClassifier;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Method;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.ScalaPackage;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Trait;
@@ -44,9 +45,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ObjectImpl#getName <em>Name</em>}</li>
  *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ObjectImpl#getAttributes <em>Attributes</em>}</li>
  *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ObjectImpl#getMethods <em>Methods</em>}</li>
- *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ObjectImpl#getSuperClass <em>Super Class</em>}</li>
- *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ObjectImpl#isIsAbstract <em>Is Abstract</em>}</li>
- *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ObjectImpl#isIsSealed <em>Is Sealed</em>}</li>
+ *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ObjectImpl#getSuperType <em>Super Type</em>}</li>
  *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ObjectImpl#getTraits <em>Traits</em>}</li>
  *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ObjectImpl#isIsCase <em>Is Case</em>}</li>
  *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ObjectImpl#getCompanionClass <em>Companion Class</em>}</li>
@@ -108,54 +107,14 @@ public class ObjectImpl extends EObjectImpl implements
 	protected EList<Method> methods;
 
 	/**
-	 * The cached value of the '{@link #getSuperClass() <em>Super Class</em>}' reference.
+	 * The cached value of the '{@link #getSuperType() <em>Super Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSuperClass()
+	 * @see #getSuperType()
 	 * @generated
 	 * @ordered
 	 */
-	protected com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Class superClass;
-
-	/**
-	 * The default value of the '{@link #isIsAbstract() <em>Is Abstract</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isIsAbstract()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean IS_ABSTRACT_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isIsAbstract() <em>Is Abstract</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isIsAbstract()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean isAbstract = IS_ABSTRACT_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #isIsSealed() <em>Is Sealed</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isIsSealed()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean IS_SEALED_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isIsSealed() <em>Is Sealed</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isIsSealed()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean isSealed = IS_SEALED_EDEFAULT;
+	protected ExtendableClassifier superType;
 
 	/**
 	 * The cached value of the '{@link #getTraits() <em>Traits</em>}' reference list.
@@ -341,18 +300,18 @@ public class ObjectImpl extends EObjectImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Class getSuperClass() {
-		if (superClass != null && superClass.eIsProxy()) {
-			InternalEObject oldSuperClass = (InternalEObject) superClass;
-			superClass = (com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Class) eResolveProxy(oldSuperClass);
-			if (superClass != oldSuperClass) {
+	public ExtendableClassifier getSuperType() {
+		if (superType != null && superType.eIsProxy()) {
+			InternalEObject oldSuperType = (InternalEObject) superType;
+			superType = (ExtendableClassifier) eResolveProxy(oldSuperType);
+			if (superType != oldSuperType) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							ScalaPackage.OBJECT__SUPER_CLASS, oldSuperClass,
-							superClass));
+							ScalaPackage.OBJECT__SUPER_TYPE, oldSuperType,
+							superType));
 			}
 		}
-		return superClass;
+		return superType;
 	}
 
 	/**
@@ -360,8 +319,8 @@ public class ObjectImpl extends EObjectImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Class basicGetSuperClass() {
-		return superClass;
+	public ExtendableClassifier basicGetSuperType() {
+		return superType;
 	}
 
 	/**
@@ -369,57 +328,12 @@ public class ObjectImpl extends EObjectImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSuperClass(
-			com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Class newSuperClass) {
-		com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Class oldSuperClass = superClass;
-		superClass = newSuperClass;
+	public void setSuperType(ExtendableClassifier newSuperType) {
+		ExtendableClassifier oldSuperType = superType;
+		superType = newSuperType;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET,
-					ScalaPackage.OBJECT__SUPER_CLASS, oldSuperClass, superClass));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isIsAbstract() {
-		return isAbstract;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setIsAbstract(boolean newIsAbstract) {
-		boolean oldIsAbstract = isAbstract;
-		isAbstract = newIsAbstract;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					ScalaPackage.OBJECT__IS_ABSTRACT, oldIsAbstract, isAbstract));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isIsSealed() {
-		return isSealed;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setIsSealed(boolean newIsSealed) {
-		boolean oldIsSealed = isSealed;
-		isSealed = newIsSealed;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					ScalaPackage.OBJECT__IS_SEALED, oldIsSealed, isSealed));
+					ScalaPackage.OBJECT__SUPER_TYPE, oldSuperType, superType));
 	}
 
 	/**
@@ -610,14 +524,10 @@ public class ObjectImpl extends EObjectImpl implements
 			return getAttributes();
 		case ScalaPackage.OBJECT__METHODS:
 			return getMethods();
-		case ScalaPackage.OBJECT__SUPER_CLASS:
+		case ScalaPackage.OBJECT__SUPER_TYPE:
 			if (resolve)
-				return getSuperClass();
-			return basicGetSuperClass();
-		case ScalaPackage.OBJECT__IS_ABSTRACT:
-			return isIsAbstract();
-		case ScalaPackage.OBJECT__IS_SEALED:
-			return isIsSealed();
+				return getSuperType();
+			return basicGetSuperType();
 		case ScalaPackage.OBJECT__TRAITS:
 			return getTraits();
 		case ScalaPackage.OBJECT__IS_CASE:
@@ -653,14 +563,8 @@ public class ObjectImpl extends EObjectImpl implements
 			getMethods().clear();
 			getMethods().addAll((Collection<? extends Method>) newValue);
 			return;
-		case ScalaPackage.OBJECT__SUPER_CLASS:
-			setSuperClass((com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Class) newValue);
-			return;
-		case ScalaPackage.OBJECT__IS_ABSTRACT:
-			setIsAbstract((Boolean) newValue);
-			return;
-		case ScalaPackage.OBJECT__IS_SEALED:
-			setIsSealed((Boolean) newValue);
+		case ScalaPackage.OBJECT__SUPER_TYPE:
+			setSuperType((ExtendableClassifier) newValue);
 			return;
 		case ScalaPackage.OBJECT__TRAITS:
 			getTraits().clear();
@@ -696,14 +600,8 @@ public class ObjectImpl extends EObjectImpl implements
 		case ScalaPackage.OBJECT__METHODS:
 			getMethods().clear();
 			return;
-		case ScalaPackage.OBJECT__SUPER_CLASS:
-			setSuperClass((com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Class) null);
-			return;
-		case ScalaPackage.OBJECT__IS_ABSTRACT:
-			setIsAbstract(IS_ABSTRACT_EDEFAULT);
-			return;
-		case ScalaPackage.OBJECT__IS_SEALED:
-			setIsSealed(IS_SEALED_EDEFAULT);
+		case ScalaPackage.OBJECT__SUPER_TYPE:
+			setSuperType((ExtendableClassifier) null);
 			return;
 		case ScalaPackage.OBJECT__TRAITS:
 			getTraits().clear();
@@ -735,12 +633,8 @@ public class ObjectImpl extends EObjectImpl implements
 			return attributes != null && !attributes.isEmpty();
 		case ScalaPackage.OBJECT__METHODS:
 			return methods != null && !methods.isEmpty();
-		case ScalaPackage.OBJECT__SUPER_CLASS:
-			return superClass != null;
-		case ScalaPackage.OBJECT__IS_ABSTRACT:
-			return isAbstract != IS_ABSTRACT_EDEFAULT;
-		case ScalaPackage.OBJECT__IS_SEALED:
-			return isSealed != IS_SEALED_EDEFAULT;
+		case ScalaPackage.OBJECT__SUPER_TYPE:
+			return superType != null;
 		case ScalaPackage.OBJECT__TRAITS:
 			return traits != null && !traits.isEmpty();
 		case ScalaPackage.OBJECT__IS_CASE:
@@ -764,10 +658,6 @@ public class ObjectImpl extends EObjectImpl implements
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: "); //$NON-NLS-1$
 		result.append(name);
-		result.append(", isAbstract: "); //$NON-NLS-1$
-		result.append(isAbstract);
-		result.append(", isSealed: "); //$NON-NLS-1$
-		result.append(isSealed);
 		result.append(", isCase: "); //$NON-NLS-1$
 		result.append(isCase);
 		result.append(')');

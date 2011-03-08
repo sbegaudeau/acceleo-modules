@@ -11,8 +11,20 @@ Original contributor :
 Other contributors : 
  	*
 /]
-[module classBody('http://github.com/sbegaudeau/acceleo/scalametamodel/2011/01') extends com::github::sbegaudeau::acceleo::modules::psm::gen::scala::common::filebody::fileBody/]
+[module classBody('http://github.com/sbegaudeau/acceleo/scalametamodel/2011/01') extends com::github::sbegaudeau::acceleo::modules::psm::gen::scala::common::classifierBody/]
 
-[template public genBody(aClass : Class) overrides genBody]
-
+[template public genClassifierBody(aClass : Class) overrides genClassifierBody]
+[aClass.genFinal()/][aClass.genAbstract()/][aClass.genSealed()/][aClass.genCase()/]class [aClass.genName()/] {
+    var x: Int = xc
+   
+    var y: Int = yc
+   
+    def move(dx: Int, dy: Int) {
+       x = x + dx
+       y = y + dy
+    }
+    
+    override def toString(): String = "(" + x + ", " + y + ")";
+}
 [/template]
+

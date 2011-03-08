@@ -12,9 +12,11 @@ package com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl;
 
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Attribute;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Comment;
+import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.ExtendableClassifier;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Method;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.ScalaPackage;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Trait;
+import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Type;
 
 import java.util.Collection;
 
@@ -30,6 +32,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -43,8 +46,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.TraitImpl#getName <em>Name</em>}</li>
  *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.TraitImpl#getAttributes <em>Attributes</em>}</li>
  *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.TraitImpl#getMethods <em>Methods</em>}</li>
- *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.TraitImpl#getSuperClass <em>Super Class</em>}</li>
- *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.TraitImpl#isIsAbstract <em>Is Abstract</em>}</li>
+ *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.TraitImpl#getSuperType <em>Super Type</em>}</li>
+ *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.TraitImpl#getTraits <em>Traits</em>}</li>
  *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.TraitImpl#isIsSealed <em>Is Sealed</em>}</li>
  * </ul>
  * </p>
@@ -103,34 +106,24 @@ public class TraitImpl extends EObjectImpl implements Trait {
 	protected EList<Method> methods;
 
 	/**
-	 * The cached value of the '{@link #getSuperClass() <em>Super Class</em>}' reference.
+	 * The cached value of the '{@link #getSuperType() <em>Super Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSuperClass()
+	 * @see #getSuperType()
 	 * @generated
 	 * @ordered
 	 */
-	protected com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Class superClass;
+	protected ExtendableClassifier superType;
 
 	/**
-	 * The default value of the '{@link #isIsAbstract() <em>Is Abstract</em>}' attribute.
+	 * The cached value of the '{@link #getTraits() <em>Traits</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isIsAbstract()
+	 * @see #getTraits()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean IS_ABSTRACT_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isIsAbstract() <em>Is Abstract</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isIsAbstract()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean isAbstract = IS_ABSTRACT_EDEFAULT;
+	protected EList<Trait> traits;
 
 	/**
 	 * The default value of the '{@link #isIsSealed() <em>Is Sealed</em>}' attribute.
@@ -296,18 +289,18 @@ public class TraitImpl extends EObjectImpl implements Trait {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Class getSuperClass() {
-		if (superClass != null && superClass.eIsProxy()) {
-			InternalEObject oldSuperClass = (InternalEObject) superClass;
-			superClass = (com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Class) eResolveProxy(oldSuperClass);
-			if (superClass != oldSuperClass) {
+	public ExtendableClassifier getSuperType() {
+		if (superType != null && superType.eIsProxy()) {
+			InternalEObject oldSuperType = (InternalEObject) superType;
+			superType = (ExtendableClassifier) eResolveProxy(oldSuperType);
+			if (superType != oldSuperType) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							ScalaPackage.TRAIT__SUPER_CLASS, oldSuperClass,
-							superClass));
+							ScalaPackage.TRAIT__SUPER_TYPE, oldSuperType,
+							superType));
 			}
 		}
-		return superClass;
+		return superType;
 	}
 
 	/**
@@ -315,8 +308,8 @@ public class TraitImpl extends EObjectImpl implements Trait {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Class basicGetSuperClass() {
-		return superClass;
+	public ExtendableClassifier basicGetSuperType() {
+		return superType;
 	}
 
 	/**
@@ -324,13 +317,12 @@ public class TraitImpl extends EObjectImpl implements Trait {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSuperClass(
-			com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Class newSuperClass) {
-		com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Class oldSuperClass = superClass;
-		superClass = newSuperClass;
+	public void setSuperType(ExtendableClassifier newSuperType) {
+		ExtendableClassifier oldSuperType = superType;
+		superType = newSuperType;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET,
-					ScalaPackage.TRAIT__SUPER_CLASS, oldSuperClass, superClass));
+					ScalaPackage.TRAIT__SUPER_TYPE, oldSuperType, superType));
 	}
 
 	/**
@@ -338,21 +330,12 @@ public class TraitImpl extends EObjectImpl implements Trait {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isIsAbstract() {
-		return isAbstract;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setIsAbstract(boolean newIsAbstract) {
-		boolean oldIsAbstract = isAbstract;
-		isAbstract = newIsAbstract;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					ScalaPackage.TRAIT__IS_ABSTRACT, oldIsAbstract, isAbstract));
+	public EList<Trait> getTraits() {
+		if (traits == null) {
+			traits = new EObjectResolvingEList<Trait>(Trait.class, this,
+					ScalaPackage.TRAIT__TRAITS);
+		}
+		return traits;
 	}
 
 	/**
@@ -435,12 +418,12 @@ public class TraitImpl extends EObjectImpl implements Trait {
 			return getAttributes();
 		case ScalaPackage.TRAIT__METHODS:
 			return getMethods();
-		case ScalaPackage.TRAIT__SUPER_CLASS:
+		case ScalaPackage.TRAIT__SUPER_TYPE:
 			if (resolve)
-				return getSuperClass();
-			return basicGetSuperClass();
-		case ScalaPackage.TRAIT__IS_ABSTRACT:
-			return isIsAbstract();
+				return getSuperType();
+			return basicGetSuperType();
+		case ScalaPackage.TRAIT__TRAITS:
+			return getTraits();
 		case ScalaPackage.TRAIT__IS_SEALED:
 			return isIsSealed();
 		}
@@ -470,11 +453,12 @@ public class TraitImpl extends EObjectImpl implements Trait {
 			getMethods().clear();
 			getMethods().addAll((Collection<? extends Method>) newValue);
 			return;
-		case ScalaPackage.TRAIT__SUPER_CLASS:
-			setSuperClass((com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Class) newValue);
+		case ScalaPackage.TRAIT__SUPER_TYPE:
+			setSuperType((ExtendableClassifier) newValue);
 			return;
-		case ScalaPackage.TRAIT__IS_ABSTRACT:
-			setIsAbstract((Boolean) newValue);
+		case ScalaPackage.TRAIT__TRAITS:
+			getTraits().clear();
+			getTraits().addAll((Collection<? extends Trait>) newValue);
 			return;
 		case ScalaPackage.TRAIT__IS_SEALED:
 			setIsSealed((Boolean) newValue);
@@ -503,11 +487,11 @@ public class TraitImpl extends EObjectImpl implements Trait {
 		case ScalaPackage.TRAIT__METHODS:
 			getMethods().clear();
 			return;
-		case ScalaPackage.TRAIT__SUPER_CLASS:
-			setSuperClass((com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Class) null);
+		case ScalaPackage.TRAIT__SUPER_TYPE:
+			setSuperType((ExtendableClassifier) null);
 			return;
-		case ScalaPackage.TRAIT__IS_ABSTRACT:
-			setIsAbstract(IS_ABSTRACT_EDEFAULT);
+		case ScalaPackage.TRAIT__TRAITS:
+			getTraits().clear();
 			return;
 		case ScalaPackage.TRAIT__IS_SEALED:
 			setIsSealed(IS_SEALED_EDEFAULT);
@@ -533,14 +517,62 @@ public class TraitImpl extends EObjectImpl implements Trait {
 			return attributes != null && !attributes.isEmpty();
 		case ScalaPackage.TRAIT__METHODS:
 			return methods != null && !methods.isEmpty();
-		case ScalaPackage.TRAIT__SUPER_CLASS:
-			return superClass != null;
-		case ScalaPackage.TRAIT__IS_ABSTRACT:
-			return isAbstract != IS_ABSTRACT_EDEFAULT;
+		case ScalaPackage.TRAIT__SUPER_TYPE:
+			return superType != null;
+		case ScalaPackage.TRAIT__TRAITS:
+			return traits != null && !traits.isEmpty();
 		case ScalaPackage.TRAIT__IS_SEALED:
 			return isSealed != IS_SEALED_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == Type.class) {
+			switch (derivedFeatureID) {
+			default:
+				return -1;
+			}
+		}
+		if (baseClass == ExtendableClassifier.class) {
+			switch (derivedFeatureID) {
+			case ScalaPackage.TRAIT__IS_SEALED:
+				return ScalaPackage.EXTENDABLE_CLASSIFIER__IS_SEALED;
+			default:
+				return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == Type.class) {
+			switch (baseFeatureID) {
+			default:
+				return -1;
+			}
+		}
+		if (baseClass == ExtendableClassifier.class) {
+			switch (baseFeatureID) {
+			case ScalaPackage.EXTENDABLE_CLASSIFIER__IS_SEALED:
+				return ScalaPackage.TRAIT__IS_SEALED;
+			default:
+				return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 	/**
@@ -556,8 +588,6 @@ public class TraitImpl extends EObjectImpl implements Trait {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: "); //$NON-NLS-1$
 		result.append(name);
-		result.append(", isAbstract: "); //$NON-NLS-1$
-		result.append(isAbstract);
 		result.append(", isSealed: "); //$NON-NLS-1$
 		result.append(isSealed);
 		result.append(')');

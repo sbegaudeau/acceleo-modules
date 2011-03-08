@@ -11,10 +11,11 @@
 package com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.util;
 
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Attribute;
+import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.CaseClassifier;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Classifier;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Comment;
-import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Definition;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Element;
+import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.ExtendableClassifier;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.File;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.GenericType;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Method;
@@ -117,8 +118,13 @@ public class ScalaAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseDefinition(Definition object) {
-			return createDefinitionAdapter();
+		public Adapter caseCaseClassifier(CaseClassifier object) {
+			return createCaseClassifierAdapter();
+		}
+
+		@Override
+		public Adapter caseExtendableClassifier(ExtendableClassifier object) {
+			return createExtendableClassifierAdapter();
 		}
 
 		@Override
@@ -284,16 +290,30 @@ public class ScalaAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Definition <em>Definition</em>}'.
+	 * Creates a new adapter for an object of class '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.CaseClassifier <em>Case Classifier</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Definition
+	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.CaseClassifier
 	 * @generated
 	 */
-	public Adapter createDefinitionAdapter() {
+	public Adapter createCaseClassifierAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.ExtendableClassifier <em>Extendable Classifier</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.ExtendableClassifier
+	 * @generated
+	 */
+	public Adapter createExtendableClassifierAdapter() {
 		return null;
 	}
 

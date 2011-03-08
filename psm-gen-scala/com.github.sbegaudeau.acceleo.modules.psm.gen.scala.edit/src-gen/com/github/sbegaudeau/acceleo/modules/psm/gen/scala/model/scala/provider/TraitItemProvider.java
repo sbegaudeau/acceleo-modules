@@ -71,8 +71,8 @@ public class TraitItemProvider extends ItemProviderAdapter implements
 
 			addCommentPropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
-			addSuperClassPropertyDescriptor(object);
-			addIsAbstractPropertyDescriptor(object);
+			addSuperTypePropertyDescriptor(object);
+			addTraitsPropertyDescriptor(object);
 			addIsSealedPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -118,42 +118,41 @@ public class TraitItemProvider extends ItemProviderAdapter implements
 	}
 
 	/**
-	 * This adds a property descriptor for the Super Class feature.
+	 * This adds a property descriptor for the Super Type feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addSuperClassPropertyDescriptor(Object object) {
+	protected void addSuperTypePropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(
 						((ComposeableAdapterFactory) adapterFactory)
 								.getRootAdapterFactory(),
 						getResourceLocator(),
-						getString("_UI_Classifier_superClass_feature"), //$NON-NLS-1$
+						getString("_UI_Classifier_superType_feature"), //$NON-NLS-1$
 						getString(
-								"_UI_PropertyDescriptor_description", "_UI_Classifier_superClass_feature", "_UI_Classifier_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-						ScalaPackage.Literals.CLASSIFIER__SUPER_CLASS, true,
+								"_UI_PropertyDescriptor_description", "_UI_Classifier_superType_feature", "_UI_Classifier_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						ScalaPackage.Literals.CLASSIFIER__SUPER_TYPE, true,
 						false, true, null, null, null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Is Abstract feature.
+	 * This adds a property descriptor for the Traits feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addIsAbstractPropertyDescriptor(Object object) {
+	protected void addTraitsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(
 						((ComposeableAdapterFactory) adapterFactory)
 								.getRootAdapterFactory(),
 						getResourceLocator(),
-						getString("_UI_Classifier_isAbstract_feature"), //$NON-NLS-1$
+						getString("_UI_Classifier_traits_feature"), //$NON-NLS-1$
 						getString(
-								"_UI_PropertyDescriptor_description", "_UI_Classifier_isAbstract_feature", "_UI_Classifier_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-						ScalaPackage.Literals.CLASSIFIER__IS_ABSTRACT, true,
-						false, false,
-						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
+								"_UI_PropertyDescriptor_description", "_UI_Classifier_traits_feature", "_UI_Classifier_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						ScalaPackage.Literals.CLASSIFIER__TRAITS, true, false,
+						true, null, null, null));
 	}
 
 	/**
@@ -168,11 +167,11 @@ public class TraitItemProvider extends ItemProviderAdapter implements
 						((ComposeableAdapterFactory) adapterFactory)
 								.getRootAdapterFactory(),
 						getResourceLocator(),
-						getString("_UI_Classifier_isSealed_feature"), //$NON-NLS-1$
+						getString("_UI_ExtendableClassifier_isSealed_feature"), //$NON-NLS-1$
 						getString(
-								"_UI_PropertyDescriptor_description", "_UI_Classifier_isSealed_feature", "_UI_Classifier_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-						ScalaPackage.Literals.CLASSIFIER__IS_SEALED, true,
-						false, false,
+								"_UI_PropertyDescriptor_description", "_UI_ExtendableClassifier_isSealed_feature", "_UI_ExtendableClassifier_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						ScalaPackage.Literals.EXTENDABLE_CLASSIFIER__IS_SEALED,
+						true, false, false,
 						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
 	}
 
@@ -246,7 +245,6 @@ public class TraitItemProvider extends ItemProviderAdapter implements
 
 		switch (notification.getFeatureID(Trait.class)) {
 		case ScalaPackage.TRAIT__NAME:
-		case ScalaPackage.TRAIT__IS_ABSTRACT:
 		case ScalaPackage.TRAIT__IS_SEALED:
 			fireNotifyChanged(new ViewerNotification(notification,
 					notification.getNotifier(), false, true));

@@ -20,5 +20,5 @@ package com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala;
  * @model
  * @generated
  */
-public interface Trait extends Classifier {
+public interface Trait extends Classifier, ExtendableClassifier {
 } // Trait

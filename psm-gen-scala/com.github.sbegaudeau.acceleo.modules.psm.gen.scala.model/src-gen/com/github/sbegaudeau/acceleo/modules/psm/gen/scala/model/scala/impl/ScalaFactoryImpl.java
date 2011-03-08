@@ -12,6 +12,7 @@ package com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl;
 
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Attribute;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Comment;
+import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.ExtendableClassifier;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.File;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.GenericType;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Method;
@@ -79,6 +80,8 @@ public class ScalaFactoryImpl extends EFactoryImpl implements ScalaFactory {
 		switch (eClass.getClassifierID()) {
 		case ScalaPackage.COMMENT:
 			return createComment();
+		case ScalaPackage.EXTENDABLE_CLASSIFIER:
+			return createExtendableClassifier();
 		case ScalaPackage.CLASS:
 			return createClass();
 		case ScalaPackage.OBJECT:
@@ -149,6 +152,16 @@ public class ScalaFactoryImpl extends EFactoryImpl implements ScalaFactory {
 	public Comment createComment() {
 		CommentImpl comment = new CommentImpl();
 		return comment;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ExtendableClassifier createExtendableClassifier() {
+		ExtendableClassifierImpl extendableClassifier = new ExtendableClassifierImpl();
+		return extendableClassifier;
 	}
 
 	/**

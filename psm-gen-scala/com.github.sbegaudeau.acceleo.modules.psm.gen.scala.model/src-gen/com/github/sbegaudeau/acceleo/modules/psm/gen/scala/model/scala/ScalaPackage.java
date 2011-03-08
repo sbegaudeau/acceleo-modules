@@ -251,113 +251,13 @@ public interface ScalaPackage extends EPackage {
 	int CLASSIFIER__METHODS = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Super Class</b></em>' reference.
+	 * The feature id for the '<em><b>Super Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLASSIFIER__SUPER_CLASS = NAMED_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CLASSIFIER__IS_ABSTRACT = NAMED_ELEMENT_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Is Sealed</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CLASSIFIER__IS_SEALED = NAMED_ELEMENT_FEATURE_COUNT + 4;
-
-	/**
-	 * The number of structural features of the '<em>Classifier</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CLASSIFIER_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 5;
-
-	/**
-	 * The meta object id for the '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Definition <em>Definition</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Definition
-	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ScalaPackageImpl#getDefinition()
-	 * @generated
-	 */
-	int DEFINITION = 5;
-
-	/**
-	 * The feature id for the '<em><b>Comment</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DEFINITION__COMMENT = CLASSIFIER__COMMENT;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DEFINITION__NAME = CLASSIFIER__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DEFINITION__ATTRIBUTES = CLASSIFIER__ATTRIBUTES;
-
-	/**
-	 * The feature id for the '<em><b>Methods</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DEFINITION__METHODS = CLASSIFIER__METHODS;
-
-	/**
-	 * The feature id for the '<em><b>Super Class</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DEFINITION__SUPER_CLASS = CLASSIFIER__SUPER_CLASS;
-
-	/**
-	 * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DEFINITION__IS_ABSTRACT = CLASSIFIER__IS_ABSTRACT;
-
-	/**
-	 * The feature id for the '<em><b>Is Sealed</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DEFINITION__IS_SEALED = CLASSIFIER__IS_SEALED;
+	int CLASSIFIER__SUPER_TYPE = NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Traits</b></em>' reference list.
@@ -366,7 +266,80 @@ public interface ScalaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEFINITION__TRAITS = CLASSIFIER_FEATURE_COUNT + 0;
+	int CLASSIFIER__TRAITS = NAMED_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of structural features of the '<em>Classifier</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLASSIFIER_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
+	 * The meta object id for the '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.CaseClassifier <em>Case Classifier</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.CaseClassifier
+	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ScalaPackageImpl#getCaseClassifier()
+	 * @generated
+	 */
+	int CASE_CLASSIFIER = 5;
+
+	/**
+	 * The feature id for the '<em><b>Comment</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CASE_CLASSIFIER__COMMENT = CLASSIFIER__COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CASE_CLASSIFIER__NAME = CLASSIFIER__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CASE_CLASSIFIER__ATTRIBUTES = CLASSIFIER__ATTRIBUTES;
+
+	/**
+	 * The feature id for the '<em><b>Methods</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CASE_CLASSIFIER__METHODS = CLASSIFIER__METHODS;
+
+	/**
+	 * The feature id for the '<em><b>Super Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CASE_CLASSIFIER__SUPER_TYPE = CLASSIFIER__SUPER_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Traits</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CASE_CLASSIFIER__TRAITS = CLASSIFIER__TRAITS;
 
 	/**
 	 * The feature id for the '<em><b>Is Case</b></em>' attribute.
@@ -375,16 +348,44 @@ public interface ScalaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DEFINITION__IS_CASE = CLASSIFIER_FEATURE_COUNT + 1;
+	int CASE_CLASSIFIER__IS_CASE = CLASSIFIER_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>Definition</em>' class.
+	 * The number of structural features of the '<em>Case Classifier</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEFINITION_FEATURE_COUNT = CLASSIFIER_FEATURE_COUNT + 2;
+	int CASE_CLASSIFIER_FEATURE_COUNT = CLASSIFIER_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ExtendableClassifierImpl <em>Extendable Classifier</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ExtendableClassifierImpl
+	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ScalaPackageImpl#getExtendableClassifier()
+	 * @generated
+	 */
+	int EXTENDABLE_CLASSIFIER = 6;
+
+	/**
+	 * The feature id for the '<em><b>Is Sealed</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTENDABLE_CLASSIFIER__IS_SEALED = 0;
+
+	/**
+	 * The number of structural features of the '<em>Extendable Classifier</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTENDABLE_CLASSIFIER_FEATURE_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ClassImpl <em>Class</em>}' class.
@@ -394,7 +395,7 @@ public interface ScalaPackage extends EPackage {
 	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ScalaPackageImpl#getClass_()
 	 * @generated
 	 */
-	int CLASS = 6;
+	int CLASS = 7;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' reference.
@@ -403,7 +404,7 @@ public interface ScalaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLASS__COMMENT = DEFINITION__COMMENT;
+	int CLASS__COMMENT = CASE_CLASSIFIER__COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -412,7 +413,7 @@ public interface ScalaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLASS__NAME = DEFINITION__NAME;
+	int CLASS__NAME = CASE_CLASSIFIER__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
@@ -421,7 +422,7 @@ public interface ScalaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLASS__ATTRIBUTES = DEFINITION__ATTRIBUTES;
+	int CLASS__ATTRIBUTES = CASE_CLASSIFIER__ATTRIBUTES;
 
 	/**
 	 * The feature id for the '<em><b>Methods</b></em>' containment reference list.
@@ -430,34 +431,16 @@ public interface ScalaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLASS__METHODS = DEFINITION__METHODS;
+	int CLASS__METHODS = CASE_CLASSIFIER__METHODS;
 
 	/**
-	 * The feature id for the '<em><b>Super Class</b></em>' reference.
+	 * The feature id for the '<em><b>Super Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLASS__SUPER_CLASS = DEFINITION__SUPER_CLASS;
-
-	/**
-	 * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CLASS__IS_ABSTRACT = DEFINITION__IS_ABSTRACT;
-
-	/**
-	 * The feature id for the '<em><b>Is Sealed</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CLASS__IS_SEALED = DEFINITION__IS_SEALED;
+	int CLASS__SUPER_TYPE = CASE_CLASSIFIER__SUPER_TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Traits</b></em>' reference list.
@@ -466,7 +449,7 @@ public interface ScalaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLASS__TRAITS = DEFINITION__TRAITS;
+	int CLASS__TRAITS = CASE_CLASSIFIER__TRAITS;
 
 	/**
 	 * The feature id for the '<em><b>Is Case</b></em>' attribute.
@@ -475,7 +458,16 @@ public interface ScalaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLASS__IS_CASE = DEFINITION__IS_CASE;
+	int CLASS__IS_CASE = CASE_CLASSIFIER__IS_CASE;
+
+	/**
+	 * The feature id for the '<em><b>Is Sealed</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLASS__IS_SEALED = CASE_CLASSIFIER_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Companion Object</b></em>' reference.
@@ -484,7 +476,25 @@ public interface ScalaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLASS__COMPANION_OBJECT = DEFINITION_FEATURE_COUNT + 0;
+	int CLASS__COMPANION_OBJECT = CASE_CLASSIFIER_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Is Final</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLASS__IS_FINAL = CASE_CLASSIFIER_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLASS__IS_ABSTRACT = CASE_CLASSIFIER_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Class</em>' class.
@@ -493,7 +503,7 @@ public interface ScalaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLASS_FEATURE_COUNT = DEFINITION_FEATURE_COUNT + 1;
+	int CLASS_FEATURE_COUNT = CASE_CLASSIFIER_FEATURE_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ObjectImpl <em>Object</em>}' class.
@@ -503,7 +513,7 @@ public interface ScalaPackage extends EPackage {
 	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ScalaPackageImpl#getObject()
 	 * @generated
 	 */
-	int OBJECT = 7;
+	int OBJECT = 8;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' reference.
@@ -512,7 +522,7 @@ public interface ScalaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT__COMMENT = DEFINITION__COMMENT;
+	int OBJECT__COMMENT = CASE_CLASSIFIER__COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -521,7 +531,7 @@ public interface ScalaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT__NAME = DEFINITION__NAME;
+	int OBJECT__NAME = CASE_CLASSIFIER__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
@@ -530,7 +540,7 @@ public interface ScalaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT__ATTRIBUTES = DEFINITION__ATTRIBUTES;
+	int OBJECT__ATTRIBUTES = CASE_CLASSIFIER__ATTRIBUTES;
 
 	/**
 	 * The feature id for the '<em><b>Methods</b></em>' containment reference list.
@@ -539,34 +549,16 @@ public interface ScalaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT__METHODS = DEFINITION__METHODS;
+	int OBJECT__METHODS = CASE_CLASSIFIER__METHODS;
 
 	/**
-	 * The feature id for the '<em><b>Super Class</b></em>' reference.
+	 * The feature id for the '<em><b>Super Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT__SUPER_CLASS = DEFINITION__SUPER_CLASS;
-
-	/**
-	 * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OBJECT__IS_ABSTRACT = DEFINITION__IS_ABSTRACT;
-
-	/**
-	 * The feature id for the '<em><b>Is Sealed</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OBJECT__IS_SEALED = DEFINITION__IS_SEALED;
+	int OBJECT__SUPER_TYPE = CASE_CLASSIFIER__SUPER_TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Traits</b></em>' reference list.
@@ -575,7 +567,7 @@ public interface ScalaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT__TRAITS = DEFINITION__TRAITS;
+	int OBJECT__TRAITS = CASE_CLASSIFIER__TRAITS;
 
 	/**
 	 * The feature id for the '<em><b>Is Case</b></em>' attribute.
@@ -584,7 +576,7 @@ public interface ScalaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT__IS_CASE = DEFINITION__IS_CASE;
+	int OBJECT__IS_CASE = CASE_CLASSIFIER__IS_CASE;
 
 	/**
 	 * The feature id for the '<em><b>Companion Class</b></em>' reference.
@@ -593,7 +585,7 @@ public interface ScalaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT__COMPANION_CLASS = DEFINITION_FEATURE_COUNT + 0;
+	int OBJECT__COMPANION_CLASS = CASE_CLASSIFIER_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Object</em>' class.
@@ -602,7 +594,7 @@ public interface ScalaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT_FEATURE_COUNT = DEFINITION_FEATURE_COUNT + 1;
+	int OBJECT_FEATURE_COUNT = CASE_CLASSIFIER_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.TraitImpl <em>Trait</em>}' class.
@@ -612,7 +604,7 @@ public interface ScalaPackage extends EPackage {
 	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ScalaPackageImpl#getTrait()
 	 * @generated
 	 */
-	int TRAIT = 8;
+	int TRAIT = 9;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' reference.
@@ -651,22 +643,22 @@ public interface ScalaPackage extends EPackage {
 	int TRAIT__METHODS = CLASSIFIER__METHODS;
 
 	/**
-	 * The feature id for the '<em><b>Super Class</b></em>' reference.
+	 * The feature id for the '<em><b>Super Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRAIT__SUPER_CLASS = CLASSIFIER__SUPER_CLASS;
+	int TRAIT__SUPER_TYPE = CLASSIFIER__SUPER_TYPE;
 
 	/**
-	 * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
+	 * The feature id for the '<em><b>Traits</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRAIT__IS_ABSTRACT = CLASSIFIER__IS_ABSTRACT;
+	int TRAIT__TRAITS = CLASSIFIER__TRAITS;
 
 	/**
 	 * The feature id for the '<em><b>Is Sealed</b></em>' attribute.
@@ -675,7 +667,7 @@ public interface ScalaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRAIT__IS_SEALED = CLASSIFIER__IS_SEALED;
+	int TRAIT__IS_SEALED = CLASSIFIER_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Trait</em>' class.
@@ -684,7 +676,7 @@ public interface ScalaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRAIT_FEATURE_COUNT = CLASSIFIER_FEATURE_COUNT + 0;
+	int TRAIT_FEATURE_COUNT = CLASSIFIER_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.AttributeImpl <em>Attribute</em>}' class.
@@ -694,7 +686,7 @@ public interface ScalaPackage extends EPackage {
 	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ScalaPackageImpl#getAttribute()
 	 * @generated
 	 */
-	int ATTRIBUTE = 9;
+	int ATTRIBUTE = 10;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' reference.
@@ -767,7 +759,7 @@ public interface ScalaPackage extends EPackage {
 	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ScalaPackageImpl#getMethod()
 	 * @generated
 	 */
-	int METHOD = 10;
+	int METHOD = 11;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' reference.
@@ -849,7 +841,7 @@ public interface ScalaPackage extends EPackage {
 	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ScalaPackageImpl#getMethodSignature()
 	 * @generated
 	 */
-	int METHOD_SIGNATURE = 11;
+	int METHOD_SIGNATURE = 12;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' reference.
@@ -904,7 +896,7 @@ public interface ScalaPackage extends EPackage {
 	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ScalaPackageImpl#getModel()
 	 * @generated
 	 */
-	int MODEL = 12;
+	int MODEL = 13;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' reference.
@@ -950,7 +942,7 @@ public interface ScalaPackage extends EPackage {
 	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ScalaPackageImpl#getParameter()
 	 * @generated
 	 */
-	int PARAMETER = 13;
+	int PARAMETER = 14;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' reference.
@@ -996,7 +988,7 @@ public interface ScalaPackage extends EPackage {
 	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ScalaPackageImpl#getPackage()
 	 * @generated
 	 */
-	int PACKAGE = 14;
+	int PACKAGE = 15;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' reference.
@@ -1060,7 +1052,7 @@ public interface ScalaPackage extends EPackage {
 	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ScalaPackageImpl#getFile()
 	 * @generated
 	 */
-	int FILE = 15;
+	int FILE = 16;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' reference.
@@ -1106,7 +1098,7 @@ public interface ScalaPackage extends EPackage {
 	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ScalaPackageImpl#getType()
 	 * @generated
 	 */
-	int TYPE = 16;
+	int TYPE = 17;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' reference.
@@ -1143,7 +1135,7 @@ public interface ScalaPackage extends EPackage {
 	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ScalaPackageImpl#getGenericType()
 	 * @generated
 	 */
-	int GENERIC_TYPE = 17;
+	int GENERIC_TYPE = 18;
 
 	/**
 	 * The feature id for the '<em><b>Comment</b></em>' reference.
@@ -1198,7 +1190,7 @@ public interface ScalaPackage extends EPackage {
 	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ScalaPackageImpl#getVisibility()
 	 * @generated
 	 */
-	int VISIBILITY = 18;
+	int VISIBILITY = 19;
 
 	/**
 	 * The feature id for the '<em><b>Kind</b></em>' attribute.
@@ -1235,7 +1227,7 @@ public interface ScalaPackage extends EPackage {
 	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ScalaPackageImpl#getVisibilityScope()
 	 * @generated
 	 */
-	int VISIBILITY_SCOPE = 19;
+	int VISIBILITY_SCOPE = 20;
 
 	/**
 	 * The number of structural features of the '<em>Visibility Scope</em>' class.
@@ -1254,7 +1246,7 @@ public interface ScalaPackage extends EPackage {
 	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ScalaPackageImpl#getVisibilityKind()
 	 * @generated
 	 */
-	int VISIBILITY_KIND = 20;
+	int VISIBILITY_KIND = 21;
 
 	/**
 	 * Returns the meta object for class '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Element <em>Element</em>}'.
@@ -1384,69 +1376,68 @@ public interface ScalaPackage extends EPackage {
 	EReference getClassifier_Methods();
 
 	/**
-	 * Returns the meta object for the reference '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Classifier#getSuperClass <em>Super Class</em>}'.
+	 * Returns the meta object for the reference '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Classifier#getSuperType <em>Super Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Super Class</em>'.
-	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Classifier#getSuperClass()
+	 * @return the meta object for the reference '<em>Super Type</em>'.
+	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Classifier#getSuperType()
 	 * @see #getClassifier()
 	 * @generated
 	 */
-	EReference getClassifier_SuperClass();
+	EReference getClassifier_SuperType();
 
 	/**
-	 * Returns the meta object for the attribute '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Classifier#isIsAbstract <em>Is Abstract</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Is Abstract</em>'.
-	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Classifier#isIsAbstract()
-	 * @see #getClassifier()
-	 * @generated
-	 */
-	EAttribute getClassifier_IsAbstract();
-
-	/**
-	 * Returns the meta object for the attribute '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Classifier#isIsSealed <em>Is Sealed</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Is Sealed</em>'.
-	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Classifier#isIsSealed()
-	 * @see #getClassifier()
-	 * @generated
-	 */
-	EAttribute getClassifier_IsSealed();
-
-	/**
-	 * Returns the meta object for class '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Definition <em>Definition</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Definition</em>'.
-	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Definition
-	 * @generated
-	 */
-	EClass getDefinition();
-
-	/**
-	 * Returns the meta object for the reference list '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Definition#getTraits <em>Traits</em>}'.
+	 * Returns the meta object for the reference list '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Classifier#getTraits <em>Traits</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference list '<em>Traits</em>'.
-	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Definition#getTraits()
-	 * @see #getDefinition()
+	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Classifier#getTraits()
+	 * @see #getClassifier()
 	 * @generated
 	 */
-	EReference getDefinition_Traits();
+	EReference getClassifier_Traits();
 
 	/**
-	 * Returns the meta object for the attribute '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Definition#isIsCase <em>Is Case</em>}'.
+	 * Returns the meta object for class '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.CaseClassifier <em>Case Classifier</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Case Classifier</em>'.
+	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.CaseClassifier
+	 * @generated
+	 */
+	EClass getCaseClassifier();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.CaseClassifier#isIsCase <em>Is Case</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Is Case</em>'.
-	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Definition#isIsCase()
-	 * @see #getDefinition()
+	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.CaseClassifier#isIsCase()
+	 * @see #getCaseClassifier()
 	 * @generated
 	 */
-	EAttribute getDefinition_IsCase();
+	EAttribute getCaseClassifier_IsCase();
+
+	/**
+	 * Returns the meta object for class '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.ExtendableClassifier <em>Extendable Classifier</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Extendable Classifier</em>'.
+	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.ExtendableClassifier
+	 * @generated
+	 */
+	EClass getExtendableClassifier();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.ExtendableClassifier#isIsSealed <em>Is Sealed</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Is Sealed</em>'.
+	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.ExtendableClassifier#isIsSealed()
+	 * @see #getExtendableClassifier()
+	 * @generated
+	 */
+	EAttribute getExtendableClassifier_IsSealed();
 
 	/**
 	 * Returns the meta object for class '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Class <em>Class</em>}'.
@@ -1468,6 +1459,28 @@ public interface ScalaPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getClass_CompanionObject();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Class#isIsAbstract <em>Is Abstract</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Is Abstract</em>'.
+	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Class#isIsAbstract()
+	 * @see #getClass_()
+	 * @generated
+	 */
+	EAttribute getClass_IsAbstract();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Class#isIsFinal <em>Is Final</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Is Final</em>'.
+	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Class#isIsFinal()
+	 * @see #getClass_()
+	 * @generated
+	 */
+	EAttribute getClass_IsFinal();
 
 	/**
 	 * Returns the meta object for class '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Object <em>Object</em>}'.
@@ -1950,40 +1963,12 @@ public interface ScalaPackage extends EPackage {
 		EReference CLASSIFIER__METHODS = eINSTANCE.getClassifier_Methods();
 
 		/**
-		 * The meta object literal for the '<em><b>Super Class</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Super Type</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CLASSIFIER__SUPER_CLASS = eINSTANCE
-				.getClassifier_SuperClass();
-
-		/**
-		 * The meta object literal for the '<em><b>Is Abstract</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CLASSIFIER__IS_ABSTRACT = eINSTANCE
-				.getClassifier_IsAbstract();
-
-		/**
-		 * The meta object literal for the '<em><b>Is Sealed</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CLASSIFIER__IS_SEALED = eINSTANCE.getClassifier_IsSealed();
-
-		/**
-		 * The meta object literal for the '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Definition <em>Definition</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Definition
-		 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ScalaPackageImpl#getDefinition()
-		 * @generated
-		 */
-		EClass DEFINITION = eINSTANCE.getDefinition();
+		EReference CLASSIFIER__SUPER_TYPE = eINSTANCE.getClassifier_SuperType();
 
 		/**
 		 * The meta object literal for the '<em><b>Traits</b></em>' reference list feature.
@@ -1991,7 +1976,17 @@ public interface ScalaPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DEFINITION__TRAITS = eINSTANCE.getDefinition_Traits();
+		EReference CLASSIFIER__TRAITS = eINSTANCE.getClassifier_Traits();
+
+		/**
+		 * The meta object literal for the '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.CaseClassifier <em>Case Classifier</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.CaseClassifier
+		 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ScalaPackageImpl#getCaseClassifier()
+		 * @generated
+		 */
+		EClass CASE_CLASSIFIER = eINSTANCE.getCaseClassifier();
 
 		/**
 		 * The meta object literal for the '<em><b>Is Case</b></em>' attribute feature.
@@ -1999,7 +1994,27 @@ public interface ScalaPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute DEFINITION__IS_CASE = eINSTANCE.getDefinition_IsCase();
+		EAttribute CASE_CLASSIFIER__IS_CASE = eINSTANCE
+				.getCaseClassifier_IsCase();
+
+		/**
+		 * The meta object literal for the '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ExtendableClassifierImpl <em>Extendable Classifier</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ExtendableClassifierImpl
+		 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ScalaPackageImpl#getExtendableClassifier()
+		 * @generated
+		 */
+		EClass EXTENDABLE_CLASSIFIER = eINSTANCE.getExtendableClassifier();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Sealed</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EXTENDABLE_CLASSIFIER__IS_SEALED = eINSTANCE
+				.getExtendableClassifier_IsSealed();
 
 		/**
 		 * The meta object literal for the '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ClassImpl <em>Class</em>}' class.
@@ -2019,6 +2034,22 @@ public interface ScalaPackage extends EPackage {
 		 */
 		EReference CLASS__COMPANION_OBJECT = eINSTANCE
 				.getClass_CompanionObject();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Abstract</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CLASS__IS_ABSTRACT = eINSTANCE.getClass_IsAbstract();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Final</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CLASS__IS_FINAL = eINSTANCE.getClass_IsFinal();
 
 		/**
 		 * The meta object literal for the '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ObjectImpl <em>Object</em>}' class.

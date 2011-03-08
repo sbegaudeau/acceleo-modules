@@ -22,9 +22,8 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Classifier#getAttributes <em>Attributes</em>}</li>
  *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Classifier#getMethods <em>Methods</em>}</li>
- *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Classifier#getSuperClass <em>Super Class</em>}</li>
- *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Classifier#isIsAbstract <em>Is Abstract</em>}</li>
- *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Classifier#isIsSealed <em>Is Sealed</em>}</li>
+ *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Classifier#getSuperType <em>Super Type</em>}</li>
+ *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Classifier#getTraits <em>Traits</em>}</li>
  * </ul>
  * </p>
  *
@@ -66,84 +65,45 @@ public interface Classifier extends NamedElement, Type {
 	EList<Method> getMethods();
 
 	/**
-	 * Returns the value of the '<em><b>Super Class</b></em>' reference.
+	 * Returns the value of the '<em><b>Super Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Super Class</em>' reference isn't clear,
+	 * If the meaning of the '<em>Super Type</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Super Class</em>' reference.
-	 * @see #setSuperClass(com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Class)
-	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.ScalaPackage#getClassifier_SuperClass()
+	 * @return the value of the '<em>Super Type</em>' reference.
+	 * @see #setSuperType(ExtendableClassifier)
+	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.ScalaPackage#getClassifier_SuperType()
 	 * @model
 	 * @generated
 	 */
-	com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Class getSuperClass();
+	ExtendableClassifier getSuperType();
 
 	/**
-	 * Sets the value of the '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Classifier#getSuperClass <em>Super Class</em>}' reference.
+	 * Sets the value of the '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Classifier#getSuperType <em>Super Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Super Class</em>' reference.
-	 * @see #getSuperClass()
+	 * @param value the new value of the '<em>Super Type</em>' reference.
+	 * @see #getSuperType()
 	 * @generated
 	 */
-	void setSuperClass(
-			com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Class value);
+	void setSuperType(ExtendableClassifier value);
 
 	/**
-	 * Returns the value of the '<em><b>Is Abstract</b></em>' attribute.
-	 * The default value is <code>"false"</code>.
+	 * Returns the value of the '<em><b>Traits</b></em>' reference list.
+	 * The list contents are of type {@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Trait}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Is Abstract</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Traits</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Is Abstract</em>' attribute.
-	 * @see #setIsAbstract(boolean)
-	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.ScalaPackage#getClassifier_IsAbstract()
-	 * @model default="false" required="true"
+	 * @return the value of the '<em>Traits</em>' reference list.
+	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.ScalaPackage#getClassifier_Traits()
+	 * @model
 	 * @generated
 	 */
-	boolean isIsAbstract();
-
-	/**
-	 * Sets the value of the '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Classifier#isIsAbstract <em>Is Abstract</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Is Abstract</em>' attribute.
-	 * @see #isIsAbstract()
-	 * @generated
-	 */
-	void setIsAbstract(boolean value);
-
-	/**
-	 * Returns the value of the '<em><b>Is Sealed</b></em>' attribute.
-	 * The default value is <code>"false"</code>.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Is Sealed</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Is Sealed</em>' attribute.
-	 * @see #setIsSealed(boolean)
-	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.ScalaPackage#getClassifier_IsSealed()
-	 * @model default="false" required="true"
-	 * @generated
-	 */
-	boolean isIsSealed();
-
-	/**
-	 * Sets the value of the '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Classifier#isIsSealed <em>Is Sealed</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Is Sealed</em>' attribute.
-	 * @see #isIsSealed()
-	 * @generated
-	 */
-	void setIsSealed(boolean value);
+	EList<Trait> getTraits();
 
 } // Classifier

@@ -11,10 +11,11 @@
 package com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.util;
 
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Attribute;
+import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.CaseClassifier;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Classifier;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Comment;
-import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Definition;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Element;
+import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.ExtendableClassifier;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.File;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.GenericType;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Method;
@@ -150,17 +151,26 @@ public class ScalaSwitch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case ScalaPackage.DEFINITION: {
-			Definition definition = (Definition) theEObject;
-			T result = caseDefinition(definition);
+		case ScalaPackage.CASE_CLASSIFIER: {
+			CaseClassifier caseClassifier = (CaseClassifier) theEObject;
+			T result = caseCaseClassifier(caseClassifier);
 			if (result == null)
-				result = caseClassifier(definition);
+				result = caseClassifier(caseClassifier);
 			if (result == null)
-				result = caseType(definition);
+				result = caseVisibilityScope(caseClassifier);
 			if (result == null)
-				result = caseNamedElement(definition);
+				result = caseType(caseClassifier);
 			if (result == null)
-				result = caseElement(definition);
+				result = caseNamedElement(caseClassifier);
+			if (result == null)
+				result = caseElement(caseClassifier);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case ScalaPackage.EXTENDABLE_CLASSIFIER: {
+			ExtendableClassifier extendableClassifier = (ExtendableClassifier) theEObject;
+			T result = caseExtendableClassifier(extendableClassifier);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -169,9 +179,13 @@ public class ScalaSwitch<T> {
 			com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Class class_ = (com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Class) theEObject;
 			T result = caseClass(class_);
 			if (result == null)
-				result = caseDefinition(class_);
+				result = caseCaseClassifier(class_);
+			if (result == null)
+				result = caseExtendableClassifier(class_);
 			if (result == null)
 				result = caseClassifier(class_);
+			if (result == null)
+				result = caseVisibilityScope(class_);
 			if (result == null)
 				result = caseType(class_);
 			if (result == null)
@@ -186,9 +200,11 @@ public class ScalaSwitch<T> {
 			com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Object object = (com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Object) theEObject;
 			T result = caseObject(object);
 			if (result == null)
-				result = caseDefinition(object);
+				result = caseCaseClassifier(object);
 			if (result == null)
 				result = caseClassifier(object);
+			if (result == null)
+				result = caseVisibilityScope(object);
 			if (result == null)
 				result = caseType(object);
 			if (result == null)
@@ -204,6 +220,8 @@ public class ScalaSwitch<T> {
 			T result = caseTrait(trait);
 			if (result == null)
 				result = caseClassifier(trait);
+			if (result == null)
+				result = caseExtendableClassifier(trait);
 			if (result == null)
 				result = caseType(trait);
 			if (result == null)
@@ -282,6 +300,8 @@ public class ScalaSwitch<T> {
 			T result = casePackage(package_);
 			if (result == null)
 				result = caseNamedElement(package_);
+			if (result == null)
+				result = caseVisibilityScope(package_);
 			if (result == null)
 				result = caseElement(package_);
 			if (result == null)
@@ -418,17 +438,32 @@ public class ScalaSwitch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Definition</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Case Classifier</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Definition</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Case Classifier</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseDefinition(Definition object) {
+	public T caseCaseClassifier(CaseClassifier object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Extendable Classifier</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Extendable Classifier</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseExtendableClassifier(ExtendableClassifier object) {
 		return null;
 	}
 

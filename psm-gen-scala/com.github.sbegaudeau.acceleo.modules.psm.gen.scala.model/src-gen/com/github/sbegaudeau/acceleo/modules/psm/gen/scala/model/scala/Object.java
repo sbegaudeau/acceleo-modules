@@ -26,7 +26,7 @@ package com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala;
  * @model
  * @generated
  */
-public interface Object extends Definition {
+public interface Object extends CaseClassifier {
 	/**
 	 * Returns the value of the '<em><b>Companion Class</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Class#getCompanionObject <em>Companion Object</em>}'.

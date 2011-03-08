@@ -70,12 +70,13 @@ public class ClassItemProvider extends ItemProviderAdapter implements
 
 			addCommentPropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
-			addSuperClassPropertyDescriptor(object);
-			addIsAbstractPropertyDescriptor(object);
-			addIsSealedPropertyDescriptor(object);
+			addSuperTypePropertyDescriptor(object);
 			addTraitsPropertyDescriptor(object);
 			addIsCasePropertyDescriptor(object);
+			addIsSealedPropertyDescriptor(object);
 			addCompanionObjectPropertyDescriptor(object);
+			addIsFinalPropertyDescriptor(object);
+			addIsAbstractPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -120,40 +121,59 @@ public class ClassItemProvider extends ItemProviderAdapter implements
 	}
 
 	/**
-	 * This adds a property descriptor for the Super Class feature.
+	 * This adds a property descriptor for the Super Type feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addSuperClassPropertyDescriptor(Object object) {
+	protected void addSuperTypePropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(
 						((ComposeableAdapterFactory) adapterFactory)
 								.getRootAdapterFactory(),
 						getResourceLocator(),
-						getString("_UI_Classifier_superClass_feature"), //$NON-NLS-1$
+						getString("_UI_Classifier_superType_feature"), //$NON-NLS-1$
 						getString(
-								"_UI_PropertyDescriptor_description", "_UI_Classifier_superClass_feature", "_UI_Classifier_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-						ScalaPackage.Literals.CLASSIFIER__SUPER_CLASS, true,
+								"_UI_PropertyDescriptor_description", "_UI_Classifier_superType_feature", "_UI_Classifier_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						ScalaPackage.Literals.CLASSIFIER__SUPER_TYPE, true,
 						false, true, null, null, null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Is Abstract feature.
+	 * This adds a property descriptor for the Traits feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addIsAbstractPropertyDescriptor(Object object) {
+	protected void addTraitsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(
 						((ComposeableAdapterFactory) adapterFactory)
 								.getRootAdapterFactory(),
 						getResourceLocator(),
-						getString("_UI_Classifier_isAbstract_feature"), //$NON-NLS-1$
+						getString("_UI_Classifier_traits_feature"), //$NON-NLS-1$
 						getString(
-								"_UI_PropertyDescriptor_description", "_UI_Classifier_isAbstract_feature", "_UI_Classifier_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-						ScalaPackage.Literals.CLASSIFIER__IS_ABSTRACT, true,
+								"_UI_PropertyDescriptor_description", "_UI_Classifier_traits_feature", "_UI_Classifier_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						ScalaPackage.Literals.CLASSIFIER__TRAITS, true, false,
+						true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Is Case feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsCasePropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(
+						((ComposeableAdapterFactory) adapterFactory)
+								.getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_CaseClassifier_isCase_feature"), //$NON-NLS-1$
+						getString(
+								"_UI_PropertyDescriptor_description", "_UI_CaseClassifier_isCase_feature", "_UI_CaseClassifier_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						ScalaPackage.Literals.CASE_CLASSIFIER__IS_CASE, true,
 						false, false,
 						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
 	}
@@ -170,51 +190,12 @@ public class ClassItemProvider extends ItemProviderAdapter implements
 						((ComposeableAdapterFactory) adapterFactory)
 								.getRootAdapterFactory(),
 						getResourceLocator(),
-						getString("_UI_Classifier_isSealed_feature"), //$NON-NLS-1$
+						getString("_UI_ExtendableClassifier_isSealed_feature"), //$NON-NLS-1$
 						getString(
-								"_UI_PropertyDescriptor_description", "_UI_Classifier_isSealed_feature", "_UI_Classifier_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-						ScalaPackage.Literals.CLASSIFIER__IS_SEALED, true,
-						false, false,
+								"_UI_PropertyDescriptor_description", "_UI_ExtendableClassifier_isSealed_feature", "_UI_ExtendableClassifier_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						ScalaPackage.Literals.EXTENDABLE_CLASSIFIER__IS_SEALED,
+						true, false, false,
 						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Traits feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addTraitsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(
-						((ComposeableAdapterFactory) adapterFactory)
-								.getRootAdapterFactory(),
-						getResourceLocator(),
-						getString("_UI_Definition_traits_feature"), //$NON-NLS-1$
-						getString(
-								"_UI_PropertyDescriptor_description", "_UI_Definition_traits_feature", "_UI_Definition_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-						ScalaPackage.Literals.DEFINITION__TRAITS, true, false,
-						true, null, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Is Case feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIsCasePropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(
-						((ComposeableAdapterFactory) adapterFactory)
-								.getRootAdapterFactory(),
-						getResourceLocator(),
-						getString("_UI_Definition_isCase_feature"), //$NON-NLS-1$
-						getString(
-								"_UI_PropertyDescriptor_description", "_UI_Definition_isCase_feature", "_UI_Definition_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-						ScalaPackage.Literals.DEFINITION__IS_CASE, true, false,
-						false, ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-						null, null));
 	}
 
 	/**
@@ -234,6 +215,46 @@ public class ClassItemProvider extends ItemProviderAdapter implements
 								"_UI_PropertyDescriptor_description", "_UI_Class_companionObject_feature", "_UI_Class_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 						ScalaPackage.Literals.CLASS__COMPANION_OBJECT, true,
 						false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Is Abstract feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsAbstractPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(
+						((ComposeableAdapterFactory) adapterFactory)
+								.getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_Class_isAbstract_feature"), //$NON-NLS-1$
+						getString(
+								"_UI_PropertyDescriptor_description", "_UI_Class_isAbstract_feature", "_UI_Class_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						ScalaPackage.Literals.CLASS__IS_ABSTRACT, true, false,
+						false, ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+						null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Is Final feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsFinalPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(
+						((ComposeableAdapterFactory) adapterFactory)
+								.getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_Class_isFinal_feature"), //$NON-NLS-1$
+						getString(
+								"_UI_PropertyDescriptor_description", "_UI_Class_isFinal_feature", "_UI_Class_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						ScalaPackage.Literals.CLASS__IS_FINAL, true, false,
+						false, ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+						null, null));
 	}
 
 	/**
@@ -308,9 +329,10 @@ public class ClassItemProvider extends ItemProviderAdapter implements
 		switch (notification
 				.getFeatureID(com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Class.class)) {
 		case ScalaPackage.CLASS__NAME:
-		case ScalaPackage.CLASS__IS_ABSTRACT:
-		case ScalaPackage.CLASS__IS_SEALED:
 		case ScalaPackage.CLASS__IS_CASE:
+		case ScalaPackage.CLASS__IS_SEALED:
+		case ScalaPackage.CLASS__IS_FINAL:
+		case ScalaPackage.CLASS__IS_ABSTRACT:
 			fireNotifyChanged(new ViewerNotification(notification,
 					notification.getNotifier(), false, true));
 			return;

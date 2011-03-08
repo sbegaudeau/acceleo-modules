@@ -19,6 +19,8 @@ package com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala;
  * The following features are supported:
  * <ul>
  *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Class#getCompanionObject <em>Companion Object</em>}</li>
+ *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Class#isIsFinal <em>Is Final</em>}</li>
+ *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Class#isIsAbstract <em>Is Abstract</em>}</li>
  * </ul>
  * </p>
  *
@@ -26,7 +28,7 @@ package com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala;
  * @model
  * @generated
  */
-public interface Class extends Definition {
+public interface Class extends CaseClassifier, ExtendableClassifier {
 	/**
 	 * Returns the value of the '<em><b>Companion Object</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Object#getCompanionClass <em>Companion Class</em>}'.
@@ -55,5 +57,59 @@ public interface Class extends Definition {
 	 */
 	void setCompanionObject(
 			com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Object value);
+
+	/**
+	 * Returns the value of the '<em><b>Is Abstract</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Is Abstract</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Is Abstract</em>' attribute.
+	 * @see #setIsAbstract(boolean)
+	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.ScalaPackage#getClass_IsAbstract()
+	 * @model default="false" required="true"
+	 * @generated
+	 */
+	boolean isIsAbstract();
+
+	/**
+	 * Sets the value of the '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Class#isIsAbstract <em>Is Abstract</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Is Abstract</em>' attribute.
+	 * @see #isIsAbstract()
+	 * @generated
+	 */
+	void setIsAbstract(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Is Final</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Is Final</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Is Final</em>' attribute.
+	 * @see #setIsFinal(boolean)
+	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.ScalaPackage#getClass_IsFinal()
+	 * @model default="false" required="true"
+	 * @generated
+	 */
+	boolean isIsFinal();
+
+	/**
+	 * Sets the value of the '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Class#isIsFinal <em>Is Final</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Is Final</em>' attribute.
+	 * @see #isIsFinal()
+	 * @generated
+	 */
+	void setIsFinal(boolean value);
 
 } // Class

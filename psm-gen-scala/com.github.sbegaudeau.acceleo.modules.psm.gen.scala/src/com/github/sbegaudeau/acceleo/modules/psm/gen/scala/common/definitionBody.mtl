@@ -1,0 +1,6 @@
+[comment encoding = UTF-8 /]
+[module definitionBody('http://github.com/sbegaudeau/acceleo/scalametamodel/2011/01')/]
+
+[template public definitionBody(aClass : Class)]
+	[aClass.name/]
+[/template]
