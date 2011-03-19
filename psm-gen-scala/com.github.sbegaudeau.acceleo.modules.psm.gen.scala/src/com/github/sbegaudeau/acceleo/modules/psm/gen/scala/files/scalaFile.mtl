@@ -21,7 +21,7 @@ Other contributors :
 	* @param aFile The file to generate.
 /]
 [template public genScalaFile(aFile : File)]
-[file (aFile.genPackagePath() + '.' + aFile.name.toUpperFirst() + '.scala', false, 'UTF-8')]
+[file (aFile.genPackagePath().replaceAll('\\.', '/') + '/' + aFile.name.toUpperFirst() + '.scala', false, 'UTF-8')]
 [aFile.genBody()/]
 [/file]
 [/template]
