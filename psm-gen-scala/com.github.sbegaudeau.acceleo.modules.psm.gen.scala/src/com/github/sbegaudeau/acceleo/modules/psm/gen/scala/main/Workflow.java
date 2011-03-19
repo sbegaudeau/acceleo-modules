@@ -258,6 +258,7 @@ public class Workflow extends AbstractAcceleoGenerator {
 		 */
 		propertiesFiles.add("default.properties");
 		propertiesFiles.add("import.properties");
+		propertiesFiles.add("type.properties");
 		return propertiesFiles;
 	}
 

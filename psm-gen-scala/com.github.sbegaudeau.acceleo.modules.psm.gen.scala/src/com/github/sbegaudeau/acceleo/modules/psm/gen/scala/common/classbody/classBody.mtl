@@ -23,7 +23,7 @@ Other contributors :
 [/template]
 
 [template public genDefaultConstructor (aClass : Class) ]
-[if (aClass.fields->size() > 0)]([aClass.fields.genDefaultConstructorParameter()->sep(', ')/]) [/if]
+[if (aClass.fields->select(aField : Field | aField.isConstructorProperty)->size() > 0)]([aClass.fields->select(aField : Field | aField.isConstructorProperty).genDefaultConstructorParameter()->sep(', ')/]) [/if]
 [/template]
 
 [template public genDefaultConstructorParameter (aField : Field) ]
@@ -31,8 +31,8 @@ Other contributors :
 [/template]
 
 [template public genFields (aClass : Class) ]
-[for (aField : Field | aClass.fields)]
-[aField.genOverride()/][if (aField.isFinal)]val [else]var [/if][aField.genName()/]: [aField.genType()/];
+[for (aField : Field | aClass.fields->select(aField : Field | not aField.isConstructorProperty))]
+[aField.genOverride()/][if (aField.isFinal)]val [else]var [/if][aField.genName()/]: [aField.genType()/][if (not aClass.isAbstract)] = [aField.genDefaultValue()/][else] = [aField.genAbstractDefaultValue()/][/if]
 [/for]
 [/template]
 

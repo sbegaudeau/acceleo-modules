@@ -65,3 +65,10 @@ Other contributors :
 [aParameter.genName()/]: [aParameter.genType()/]
 [/template]
 
+[template public genDefaultValue(aField : Field)]
+[if ('true'.equalsIgnoreCase(getProperty('classifierBody.gen.fieldDefaultTypeValue')))][getProperty(aField.type.name)/][else]null[/if]
+[/template]
+
+[template public genAbstractDefaultValue(aField : Field)]
+
+[/template]
