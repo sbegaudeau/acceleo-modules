@@ -11,7 +11,7 @@ Original contributor :
 Other contributors : 
  	*
 /]
-[module fileBody('http://github.com/sbegaudeau/acceleo/scalametamodel/2011/01')/]
+[module fileCommon('http://github.com/sbegaudeau/acceleo/scalametamodel/2011/01')/]
 
 [import com::github::sbegaudeau::acceleo::modules::psm::gen::scala::common::classifierBody /]
 [import com::github::sbegaudeau::acceleo::modules::psm::gen::scala::common::classbody::classBody /]
@@ -32,11 +32,13 @@ Other contributors :
 [/template]
 
 [template public genFileHeader(aFile : File)]
-
+/**
+ * This file has been generated thanks to the Acceleo Scala generator.
+ */
 [/template]
 
 [template public genPackageDeclaration(aFile : File)]
-
+package [aFile.genPackagePath()/];
 [/template]
 
 

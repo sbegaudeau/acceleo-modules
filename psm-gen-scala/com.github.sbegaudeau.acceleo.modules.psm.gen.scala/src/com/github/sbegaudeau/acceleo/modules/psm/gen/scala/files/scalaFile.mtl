@@ -13,7 +13,7 @@ Other contributors :
 /]
 [module scalaFile('http://github.com/sbegaudeau/acceleo/scalametamodel/2011/01')/]
 
-[import com::github::sbegaudeau::acceleo::modules::psm::gen::scala::common::fileBody /]
+[import com::github::sbegaudeau::acceleo::modules::psm::gen::scala::common::fileCommon /]
 
 
 [comment 
