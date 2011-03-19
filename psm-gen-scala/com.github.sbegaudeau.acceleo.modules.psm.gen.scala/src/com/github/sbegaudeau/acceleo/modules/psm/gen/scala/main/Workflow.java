@@ -19,11 +19,15 @@ import java.util.List;
 import org.eclipse.acceleo.engine.event.IAcceleoTextGenerationListener;
 import org.eclipse.acceleo.engine.generation.strategy.IAcceleoGenerationStrategy;
 import org.eclipse.acceleo.engine.service.AbstractAcceleoGenerator;
+import org.eclipse.acceleo.engine.service.AcceleoService;
+import org.eclipse.acceleo.engine.service.properties.AbstractAcceleoPropertiesLoaderService;
 import org.eclipse.emf.common.util.BasicMonitor;
 import org.eclipse.emf.common.util.Monitor;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+
+import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.main.properties.AcceleoPluginPropertiesLoaderService;
 
 /**
  * Entry point of the 'Workflow' generation module.
@@ -252,8 +256,8 @@ public class Workflow extends AbstractAcceleoGenerator {
 		 * "org.eclipse.acceleo.sample", the path that needs be added to this
 		 * list is "org.eclipse.acceleo.sample.messages".
 		 */
-		propertiesFiles.add("com.github.sbegaudeau.acceleo.modules.psm.gen.scala.main.default");
-		propertiesFiles.add("com.github.sbegaudeau.acceleo.modules.psm.gen.scala.main.import");
+		propertiesFiles.add("default.properties");
+		propertiesFiles.add("import.properties");
 		return propertiesFiles;
 	}
 
@@ -310,5 +314,21 @@ public class Workflow extends AbstractAcceleoGenerator {
         // TODO If you need additional resource factories registrations, do them here. The following line is an example for UML.
         // resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put(UMLResource.FILE_EXTENSION, UMLResource.Factory.INSTANCE);
     }
+	
+	/**
+	 * Returns the Acceleo properties loader service which will handle the AcceleoPropertiesLoader to load and
+	 * save the properties files.
+	 * 
+	 * @param acceleoService
+	 *            The Acceleo service
+	 * @return The Acceleo properties loader service which will handle the AcceleoPropertiesLoader to load and
+	 *         save the properties files.
+	 * @notgenerated
+	 */
+	@Override
+	protected AbstractAcceleoPropertiesLoaderService getPropertiesLoaderService(
+			AcceleoService acceleoService) {
+		return new AcceleoPluginPropertiesLoaderService(acceleoService);
+	}
 
 }

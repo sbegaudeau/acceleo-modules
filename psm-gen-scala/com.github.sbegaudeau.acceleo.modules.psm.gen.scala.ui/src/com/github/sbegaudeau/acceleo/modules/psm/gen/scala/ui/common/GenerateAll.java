@@ -18,6 +18,8 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.common.util.BasicMonitor;
 import org.eclipse.emf.common.util.URI;
 
+import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.main.Workflow;
+
 
 /**
  * Main entry point of the 'Scala' generation module.
@@ -71,7 +73,7 @@ public class GenerateAll {
 		if (!targetFolder.exists()) {
 			targetFolder.mkdirs();
 		}
-		com.github.sbegaudeau.acceleo.modules.psm.gen.scala.main.Workflow gen0 = new com.github.sbegaudeau.acceleo.modules.psm.gen.scala.main.Workflow(modelURI, targetFolder, arguments);
-		gen0.doGenerate(BasicMonitor.toMonitor(monitor));
+		Workflow scalaGenerationWorkflow = new Workflow(modelURI, targetFolder, arguments);
+		scalaGenerationWorkflow.doGenerate(BasicMonitor.toMonitor(monitor));
 	}
 }
