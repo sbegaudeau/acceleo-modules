@@ -55,8 +55,8 @@ Other contributors :
 
 [template public genMethods (aClassifier : Classifier) ]
 [for (aMethod : Method | aClassifier.methods)]
-[aMethod.genOverride()/]def [aMethod.genName()/]([aMethod.signature.parameters.genParameter()->sep(', ')/]) {
-    
+[aMethod.genOverride()/]def [aMethod.genName()/]([aMethod.signature.parameters.genParameter()->sep(', ')/]): [aMethod.signature.genType()/] = {
+    return null
 }
 [/for]
 [/template]
