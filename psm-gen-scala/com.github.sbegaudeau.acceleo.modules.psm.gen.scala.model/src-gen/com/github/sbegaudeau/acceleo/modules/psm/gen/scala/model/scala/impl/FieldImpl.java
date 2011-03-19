@@ -12,8 +12,8 @@ package com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl;
 
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Comment;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Field;
-import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.GenericType;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.ScalaPackage;
+import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Type;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.TypedElement;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Visibility;
 
@@ -35,7 +35,8 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * <ul>
  *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.FieldImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.FieldImpl#getName <em>Name</em>}</li>
- *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.FieldImpl#getGenericType <em>Generic Type</em>}</li>
+ *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.FieldImpl#getType <em>Type</em>}</li>
+ *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.FieldImpl#isIsOption <em>Is Option</em>}</li>
  *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.FieldImpl#isIsFinal <em>Is Final</em>}</li>
  *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.FieldImpl#isIsOverriding <em>Is Overriding</em>}</li>
  *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.FieldImpl#getVisibility <em>Visibility</em>}</li>
@@ -76,14 +77,34 @@ public class FieldImpl extends EObjectImpl implements Field {
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getGenericType() <em>Generic Type</em>}' containment reference.
+	 * The cached value of the '{@link #getType() <em>Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getGenericType()
+	 * @see #getType()
 	 * @generated
 	 * @ordered
 	 */
-	protected GenericType genericType;
+	protected Type type;
+
+	/**
+	 * The default value of the '{@link #isIsOption() <em>Is Option</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsOption()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean IS_OPTION_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isIsOption() <em>Is Option</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsOption()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean isOption = IS_OPTION_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #isIsFinal() <em>Is Final</em>}' attribute.
@@ -253,29 +274,17 @@ public class FieldImpl extends EObjectImpl implements Field {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public GenericType getGenericType() {
-		return genericType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetGenericType(GenericType newGenericType,
-			NotificationChain msgs) {
-		GenericType oldGenericType = genericType;
-		genericType = newGenericType;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this,
-					Notification.SET, ScalaPackage.FIELD__GENERIC_TYPE,
-					oldGenericType, newGenericType);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
+	public Type getType() {
+		if (type != null && type.eIsProxy()) {
+			InternalEObject oldType = (InternalEObject) type;
+			type = (Type) eResolveProxy(oldType);
+			if (type != oldType) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							ScalaPackage.FIELD__TYPE, oldType, type));
+			}
 		}
-		return msgs;
+		return type;
 	}
 
 	/**
@@ -283,24 +292,43 @@ public class FieldImpl extends EObjectImpl implements Field {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setGenericType(GenericType newGenericType) {
-		if (newGenericType != genericType) {
-			NotificationChain msgs = null;
-			if (genericType != null)
-				msgs = ((InternalEObject) genericType).eInverseRemove(this,
-						EOPPOSITE_FEATURE_BASE
-								- ScalaPackage.FIELD__GENERIC_TYPE, null, msgs);
-			if (newGenericType != null)
-				msgs = ((InternalEObject) newGenericType).eInverseAdd(this,
-						EOPPOSITE_FEATURE_BASE
-								- ScalaPackage.FIELD__GENERIC_TYPE, null, msgs);
-			msgs = basicSetGenericType(newGenericType, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
+	public Type basicGetType() {
+		return type;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setType(Type newType) {
+		Type oldType = type;
+		type = newType;
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET,
-					ScalaPackage.FIELD__GENERIC_TYPE, newGenericType,
-					newGenericType));
+					ScalaPackage.FIELD__TYPE, oldType, type));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isIsOption() {
+		return isOption;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setIsOption(boolean newIsOption) {
+		boolean oldIsOption = isOption;
+		isOption = newIsOption;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					ScalaPackage.FIELD__IS_OPTION, oldIsOption, isOption));
 	}
 
 	/**
@@ -433,8 +461,6 @@ public class FieldImpl extends EObjectImpl implements Field {
 		switch (featureID) {
 		case ScalaPackage.FIELD__COMMENT:
 			return basicSetComment(null, msgs);
-		case ScalaPackage.FIELD__GENERIC_TYPE:
-			return basicSetGenericType(null, msgs);
 		case ScalaPackage.FIELD__VISIBILITY:
 			return basicSetVisibility(null, msgs);
 		}
@@ -455,8 +481,12 @@ public class FieldImpl extends EObjectImpl implements Field {
 			return basicGetComment();
 		case ScalaPackage.FIELD__NAME:
 			return getName();
-		case ScalaPackage.FIELD__GENERIC_TYPE:
-			return getGenericType();
+		case ScalaPackage.FIELD__TYPE:
+			if (resolve)
+				return getType();
+			return basicGetType();
+		case ScalaPackage.FIELD__IS_OPTION:
+			return isIsOption();
 		case ScalaPackage.FIELD__IS_FINAL:
 			return isIsFinal();
 		case ScalaPackage.FIELD__IS_OVERRIDING:
@@ -481,8 +511,11 @@ public class FieldImpl extends EObjectImpl implements Field {
 		case ScalaPackage.FIELD__NAME:
 			setName((String) newValue);
 			return;
-		case ScalaPackage.FIELD__GENERIC_TYPE:
-			setGenericType((GenericType) newValue);
+		case ScalaPackage.FIELD__TYPE:
+			setType((Type) newValue);
+			return;
+		case ScalaPackage.FIELD__IS_OPTION:
+			setIsOption((Boolean) newValue);
 			return;
 		case ScalaPackage.FIELD__IS_FINAL:
 			setIsFinal((Boolean) newValue);
@@ -511,8 +544,11 @@ public class FieldImpl extends EObjectImpl implements Field {
 		case ScalaPackage.FIELD__NAME:
 			setName(NAME_EDEFAULT);
 			return;
-		case ScalaPackage.FIELD__GENERIC_TYPE:
-			setGenericType((GenericType) null);
+		case ScalaPackage.FIELD__TYPE:
+			setType((Type) null);
+			return;
+		case ScalaPackage.FIELD__IS_OPTION:
+			setIsOption(IS_OPTION_EDEFAULT);
 			return;
 		case ScalaPackage.FIELD__IS_FINAL:
 			setIsFinal(IS_FINAL_EDEFAULT);
@@ -540,8 +576,10 @@ public class FieldImpl extends EObjectImpl implements Field {
 		case ScalaPackage.FIELD__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT
 					.equals(name);
-		case ScalaPackage.FIELD__GENERIC_TYPE:
-			return genericType != null;
+		case ScalaPackage.FIELD__TYPE:
+			return type != null;
+		case ScalaPackage.FIELD__IS_OPTION:
+			return isOption != IS_OPTION_EDEFAULT;
 		case ScalaPackage.FIELD__IS_FINAL:
 			return isFinal != IS_FINAL_EDEFAULT;
 		case ScalaPackage.FIELD__IS_OVERRIDING:
@@ -561,8 +599,10 @@ public class FieldImpl extends EObjectImpl implements Field {
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == TypedElement.class) {
 			switch (derivedFeatureID) {
-			case ScalaPackage.FIELD__GENERIC_TYPE:
-				return ScalaPackage.TYPED_ELEMENT__GENERIC_TYPE;
+			case ScalaPackage.FIELD__TYPE:
+				return ScalaPackage.TYPED_ELEMENT__TYPE;
+			case ScalaPackage.FIELD__IS_OPTION:
+				return ScalaPackage.TYPED_ELEMENT__IS_OPTION;
 			default:
 				return -1;
 			}
@@ -579,8 +619,10 @@ public class FieldImpl extends EObjectImpl implements Field {
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == TypedElement.class) {
 			switch (baseFeatureID) {
-			case ScalaPackage.TYPED_ELEMENT__GENERIC_TYPE:
-				return ScalaPackage.FIELD__GENERIC_TYPE;
+			case ScalaPackage.TYPED_ELEMENT__TYPE:
+				return ScalaPackage.FIELD__TYPE;
+			case ScalaPackage.TYPED_ELEMENT__IS_OPTION:
+				return ScalaPackage.FIELD__IS_OPTION;
 			default:
 				return -1;
 			}
@@ -601,6 +643,8 @@ public class FieldImpl extends EObjectImpl implements Field {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: "); //$NON-NLS-1$
 		result.append(name);
+		result.append(", isOption: "); //$NON-NLS-1$
+		result.append(isOption);
 		result.append(", isFinal: "); //$NON-NLS-1$
 		result.append(isFinal);
 		result.append(", isOverriding: "); //$NON-NLS-1$

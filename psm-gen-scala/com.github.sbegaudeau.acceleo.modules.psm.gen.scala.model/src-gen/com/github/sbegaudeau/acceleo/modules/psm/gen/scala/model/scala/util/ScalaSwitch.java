@@ -18,7 +18,6 @@ import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Element;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.ExtendableClassifier;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Field;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.File;
-import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.GenericType;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Method;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.MethodSignature;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Model;
@@ -338,19 +337,6 @@ public class ScalaSwitch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case ScalaPackage.GENERIC_TYPE: {
-			GenericType genericType = (GenericType) theEObject;
-			T result = caseGenericType(genericType);
-			if (result == null)
-				result = caseType(genericType);
-			if (result == null)
-				result = caseNamedElement(genericType);
-			if (result == null)
-				result = caseElement(genericType);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
 		case ScalaPackage.VISIBILITY: {
 			Visibility visibility = (Visibility) theEObject;
 			T result = caseVisibility(visibility);
@@ -655,21 +641,6 @@ public class ScalaSwitch<T> {
 	 * @generated
 	 */
 	public T caseType(Type object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Generic Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Generic Type</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseGenericType(GenericType object) {
 		return null;
 	}
 

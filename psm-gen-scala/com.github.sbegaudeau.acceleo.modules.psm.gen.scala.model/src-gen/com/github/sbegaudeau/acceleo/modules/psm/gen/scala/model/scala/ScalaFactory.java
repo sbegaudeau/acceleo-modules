@@ -148,15 +148,6 @@ public interface ScalaFactory extends EFactory {
 	File createFile();
 
 	/**
-	 * Returns a new object of class '<em>Generic Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Generic Type</em>'.
-	 * @generated
-	 */
-	GenericType createGenericType();
-
-	/**
 	 * Returns a new object of class '<em>Visibility</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -383,29 +383,6 @@ public class ScalaItemProviderAdapterFactory extends ScalaAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.GenericType} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected GenericTypeItemProvider genericTypeItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.GenericType}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createGenericTypeAdapter() {
-		if (genericTypeItemProvider == null) {
-			genericTypeItemProvider = new GenericTypeItemProvider(this);
-		}
-
-		return genericTypeItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Visibility} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -556,8 +533,6 @@ public class ScalaItemProviderAdapterFactory extends ScalaAdapterFactory
 			packageItemProvider.dispose();
 		if (fileItemProvider != null)
 			fileItemProvider.dispose();
-		if (genericTypeItemProvider != null)
-			genericTypeItemProvider.dispose();
 		if (visibilityItemProvider != null)
 			visibilityItemProvider.dispose();
 	}

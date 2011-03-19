@@ -187,13 +187,22 @@ public interface ScalaPackage extends EPackage {
 	int TYPED_ELEMENT__COMMENT = ELEMENT__COMMENT;
 
 	/**
-	 * The feature id for the '<em><b>Generic Type</b></em>' containment reference.
+	 * The feature id for the '<em><b>Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TYPED_ELEMENT__GENERIC_TYPE = ELEMENT_FEATURE_COUNT + 0;
+	int TYPED_ELEMENT__TYPE = ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Is Option</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TYPED_ELEMENT__IS_OPTION = ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Typed Element</em>' class.
@@ -202,7 +211,7 @@ public interface ScalaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TYPED_ELEMENT_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 1;
+	int TYPED_ELEMENT_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Classifier <em>Classifier</em>}' class.
@@ -680,13 +689,22 @@ public interface ScalaPackage extends EPackage {
 	int FIELD__NAME = NAMED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Generic Type</b></em>' containment reference.
+	 * The feature id for the '<em><b>Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FIELD__GENERIC_TYPE = NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int FIELD__TYPE = NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Is Option</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIELD__IS_OPTION = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Is Final</b></em>' attribute.
@@ -695,7 +713,7 @@ public interface ScalaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIELD__IS_FINAL = NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int FIELD__IS_FINAL = NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Is Overriding</b></em>' attribute.
@@ -704,7 +722,7 @@ public interface ScalaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIELD__IS_OVERRIDING = NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int FIELD__IS_OVERRIDING = NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Visibility</b></em>' containment reference.
@@ -713,7 +731,7 @@ public interface ScalaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIELD__VISIBILITY = NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int FIELD__VISIBILITY = NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Field</em>' class.
@@ -722,7 +740,7 @@ public interface ScalaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIELD_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int FIELD_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ConstructorImpl <em>Constructor</em>}' class.
@@ -854,13 +872,22 @@ public interface ScalaPackage extends EPackage {
 	int METHOD_SIGNATURE__COMMENT = TYPED_ELEMENT__COMMENT;
 
 	/**
-	 * The feature id for the '<em><b>Generic Type</b></em>' containment reference.
+	 * The feature id for the '<em><b>Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int METHOD_SIGNATURE__GENERIC_TYPE = TYPED_ELEMENT__GENERIC_TYPE;
+	int METHOD_SIGNATURE__TYPE = TYPED_ELEMENT__TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Is Option</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int METHOD_SIGNATURE__IS_OPTION = TYPED_ELEMENT__IS_OPTION;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -964,13 +991,22 @@ public interface ScalaPackage extends EPackage {
 	int PARAMETER__NAME = NAMED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Generic Type</b></em>' containment reference.
+	 * The feature id for the '<em><b>Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER__GENERIC_TYPE = NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int PARAMETER__TYPE = NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Is Option</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER__IS_OPTION = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Parameter</em>' class.
@@ -979,7 +1015,7 @@ public interface ScalaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int PARAMETER_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.PackageImpl <em>Package</em>}' class.
@@ -1129,61 +1165,6 @@ public interface ScalaPackage extends EPackage {
 	int TYPE_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.GenericTypeImpl <em>Generic Type</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.GenericTypeImpl
-	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ScalaPackageImpl#getGenericType()
-	 * @generated
-	 */
-	int GENERIC_TYPE = 19;
-
-	/**
-	 * The feature id for the '<em><b>Comment</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GENERIC_TYPE__COMMENT = TYPE__COMMENT;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GENERIC_TYPE__NAME = TYPE__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GENERIC_TYPE__TYPE = TYPE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Is Option</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GENERIC_TYPE__IS_OPTION = TYPE_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Generic Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GENERIC_TYPE_FEATURE_COUNT = TYPE_FEATURE_COUNT + 2;
-
-	/**
 	 * The meta object id for the '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.VisibilityImpl <em>Visibility</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1191,7 +1172,7 @@ public interface ScalaPackage extends EPackage {
 	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ScalaPackageImpl#getVisibility()
 	 * @generated
 	 */
-	int VISIBILITY = 20;
+	int VISIBILITY = 19;
 
 	/**
 	 * The feature id for the '<em><b>Kind</b></em>' attribute.
@@ -1228,7 +1209,7 @@ public interface ScalaPackage extends EPackage {
 	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ScalaPackageImpl#getVisibilityScope()
 	 * @generated
 	 */
-	int VISIBILITY_SCOPE = 21;
+	int VISIBILITY_SCOPE = 20;
 
 	/**
 	 * The number of structural features of the '<em>Visibility Scope</em>' class.
@@ -1247,7 +1228,7 @@ public interface ScalaPackage extends EPackage {
 	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ScalaPackageImpl#getVisibilityKind()
 	 * @generated
 	 */
-	int VISIBILITY_KIND = 22;
+	int VISIBILITY_KIND = 21;
 
 	/**
 	 * Returns the meta object for class '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Element <em>Element</em>}'.
@@ -1334,15 +1315,26 @@ public interface ScalaPackage extends EPackage {
 	EClass getTypedElement();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.TypedElement#getGenericType <em>Generic Type</em>}'.
+	 * Returns the meta object for the reference '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.TypedElement#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Generic Type</em>'.
-	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.TypedElement#getGenericType()
+	 * @return the meta object for the reference '<em>Type</em>'.
+	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.TypedElement#getType()
 	 * @see #getTypedElement()
 	 * @generated
 	 */
-	EReference getTypedElement_GenericType();
+	EReference getTypedElement_Type();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.TypedElement#isIsOption <em>Is Option</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Is Option</em>'.
+	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.TypedElement#isIsOption()
+	 * @see #getTypedElement()
+	 * @generated
+	 */
+	EAttribute getTypedElement_IsOption();
 
 	/**
 	 * Returns the meta object for class '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Classifier <em>Classifier</em>}'.
@@ -1781,38 +1773,6 @@ public interface ScalaPackage extends EPackage {
 	EClass getType();
 
 	/**
-	 * Returns the meta object for class '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.GenericType <em>Generic Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Generic Type</em>'.
-	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.GenericType
-	 * @generated
-	 */
-	EClass getGenericType();
-
-	/**
-	 * Returns the meta object for the reference '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.GenericType#getType <em>Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Type</em>'.
-	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.GenericType#getType()
-	 * @see #getGenericType()
-	 * @generated
-	 */
-	EReference getGenericType_Type();
-
-	/**
-	 * Returns the meta object for the attribute '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.GenericType#isIsOption <em>Is Option</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Is Option</em>'.
-	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.GenericType#isIsOption()
-	 * @see #getGenericType()
-	 * @generated
-	 */
-	EAttribute getGenericType_IsOption();
-
-	/**
 	 * Returns the meta object for class '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Visibility <em>Visibility</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1960,13 +1920,21 @@ public interface ScalaPackage extends EPackage {
 		EClass TYPED_ELEMENT = eINSTANCE.getTypedElement();
 
 		/**
-		 * The meta object literal for the '<em><b>Generic Type</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Type</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TYPED_ELEMENT__GENERIC_TYPE = eINSTANCE
-				.getTypedElement_GenericType();
+		EReference TYPED_ELEMENT__TYPE = eINSTANCE.getTypedElement_Type();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Option</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TYPED_ELEMENT__IS_OPTION = eINSTANCE
+				.getTypedElement_IsOption();
 
 		/**
 		 * The meta object literal for the '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Classifier <em>Classifier</em>}' class.
@@ -2331,33 +2299,6 @@ public interface ScalaPackage extends EPackage {
 		 * @generated
 		 */
 		EClass TYPE = eINSTANCE.getType();
-
-		/**
-		 * The meta object literal for the '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.GenericTypeImpl <em>Generic Type</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.GenericTypeImpl
-		 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ScalaPackageImpl#getGenericType()
-		 * @generated
-		 */
-		EClass GENERIC_TYPE = eINSTANCE.getGenericType();
-
-		/**
-		 * The meta object literal for the '<em><b>Type</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference GENERIC_TYPE__TYPE = eINSTANCE.getGenericType_Type();
-
-		/**
-		 * The meta object literal for the '<em><b>Is Option</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute GENERIC_TYPE__IS_OPTION = eINSTANCE
-				.getGenericType_IsOption();
 
 		/**
 		 * The meta object literal for the '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.VisibilityImpl <em>Visibility</em>}' class.

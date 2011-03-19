@@ -71,6 +71,8 @@ public class FieldItemProvider extends ItemProviderAdapter implements
 
 			addCommentPropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
+			addTypePropertyDescriptor(object);
+			addIsOptionPropertyDescriptor(object);
 			addIsFinalPropertyDescriptor(object);
 			addIsOverridingPropertyDescriptor(object);
 		}
@@ -114,6 +116,45 @@ public class FieldItemProvider extends ItemProviderAdapter implements
 						ScalaPackage.Literals.NAMED_ELEMENT__NAME, true, false,
 						false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 						null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Type feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(
+						((ComposeableAdapterFactory) adapterFactory)
+								.getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_TypedElement_type_feature"), //$NON-NLS-1$
+						getString(
+								"_UI_PropertyDescriptor_description", "_UI_TypedElement_type_feature", "_UI_TypedElement_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						ScalaPackage.Literals.TYPED_ELEMENT__TYPE, true, false,
+						true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Is Option feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsOptionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(
+						((ComposeableAdapterFactory) adapterFactory)
+								.getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_TypedElement_isOption_feature"), //$NON-NLS-1$
+						getString(
+								"_UI_PropertyDescriptor_description", "_UI_TypedElement_isOption_feature", "_UI_TypedElement_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						ScalaPackage.Literals.TYPED_ELEMENT__IS_OPTION, true,
+						false, false,
+						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -169,8 +210,6 @@ public class FieldItemProvider extends ItemProviderAdapter implements
 			Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures
-					.add(ScalaPackage.Literals.TYPED_ELEMENT__GENERIC_TYPE);
 			childrenFeatures.add(ScalaPackage.Literals.FIELD__VISIBILITY);
 		}
 		return childrenFeatures;
@@ -227,12 +266,12 @@ public class FieldItemProvider extends ItemProviderAdapter implements
 
 		switch (notification.getFeatureID(Field.class)) {
 		case ScalaPackage.FIELD__NAME:
+		case ScalaPackage.FIELD__IS_OPTION:
 		case ScalaPackage.FIELD__IS_FINAL:
 		case ScalaPackage.FIELD__IS_OVERRIDING:
 			fireNotifyChanged(new ViewerNotification(notification,
 					notification.getNotifier(), false, true));
 			return;
-		case ScalaPackage.FIELD__GENERIC_TYPE:
 		case ScalaPackage.FIELD__VISIBILITY:
 			fireNotifyChanged(new ViewerNotification(notification,
 					notification.getNotifier(), true, false));
@@ -252,10 +291,6 @@ public class FieldItemProvider extends ItemProviderAdapter implements
 	protected void collectNewChildDescriptors(
 			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add(createChildParameter(
-				ScalaPackage.Literals.TYPED_ELEMENT__GENERIC_TYPE,
-				ScalaFactory.eINSTANCE.createGenericType()));
 
 		newChildDescriptors.add(createChildParameter(
 				ScalaPackage.Literals.FIELD__VISIBILITY,

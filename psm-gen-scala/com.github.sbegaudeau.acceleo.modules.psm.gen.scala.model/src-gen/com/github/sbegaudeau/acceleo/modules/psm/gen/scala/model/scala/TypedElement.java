@@ -18,7 +18,8 @@ package com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.TypedElement#getGenericType <em>Generic Type</em>}</li>
+ *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.TypedElement#getType <em>Type</em>}</li>
+ *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.TypedElement#isIsOption <em>Is Option</em>}</li>
  * </ul>
  * </p>
  *
@@ -28,29 +29,56 @@ package com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala;
  */
 public interface TypedElement extends Element {
 	/**
-	 * Returns the value of the '<em><b>Generic Type</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Generic Type</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Type</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Generic Type</em>' containment reference.
-	 * @see #setGenericType(GenericType)
-	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.ScalaPackage#getTypedElement_GenericType()
-	 * @model containment="true" required="true"
+	 * @return the value of the '<em>Type</em>' reference.
+	 * @see #setType(Type)
+	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.ScalaPackage#getTypedElement_Type()
+	 * @model required="true"
 	 * @generated
 	 */
-	GenericType getGenericType();
+	Type getType();
 
 	/**
-	 * Sets the value of the '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.TypedElement#getGenericType <em>Generic Type</em>}' containment reference.
+	 * Sets the value of the '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.TypedElement#getType <em>Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Generic Type</em>' containment reference.
-	 * @see #getGenericType()
+	 * @param value the new value of the '<em>Type</em>' reference.
+	 * @see #getType()
 	 * @generated
 	 */
-	void setGenericType(GenericType value);
+	void setType(Type value);
+
+	/**
+	 * Returns the value of the '<em><b>Is Option</b></em>' attribute.
+	 * The default value is <code>"false"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Is Option</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Is Option</em>' attribute.
+	 * @see #setIsOption(boolean)
+	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.ScalaPackage#getTypedElement_IsOption()
+	 * @model default="false"
+	 * @generated
+	 */
+	boolean isIsOption();
+
+	/**
+	 * Sets the value of the '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.TypedElement#isIsOption <em>Is Option</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Is Option</em>' attribute.
+	 * @see #isIsOption()
+	 * @generated
+	 */
+	void setIsOption(boolean value);
 
 } // TypedElement

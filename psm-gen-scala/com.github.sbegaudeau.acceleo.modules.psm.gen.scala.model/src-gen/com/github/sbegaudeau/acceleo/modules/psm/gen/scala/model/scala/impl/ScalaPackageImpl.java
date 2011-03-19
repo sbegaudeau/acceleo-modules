@@ -18,7 +18,6 @@ import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Element;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.ExtendableClassifier;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Field;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.File;
-import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.GenericType;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Method;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.MethodSignature;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Model;
@@ -186,13 +185,6 @@ public class ScalaPackageImpl extends EPackageImpl implements ScalaPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass genericTypeEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass visibilityEClass = null;
 
 	/**
@@ -350,8 +342,17 @@ public class ScalaPackageImpl extends EPackageImpl implements ScalaPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getTypedElement_GenericType() {
+	public EReference getTypedElement_Type() {
 		return (EReference) typedElementEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getTypedElement_IsOption() {
+		return (EAttribute) typedElementEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -731,33 +732,6 @@ public class ScalaPackageImpl extends EPackageImpl implements ScalaPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getGenericType() {
-		return genericTypeEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getGenericType_Type() {
-		return (EReference) genericTypeEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getGenericType_IsOption() {
-		return (EAttribute) genericTypeEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getVisibility() {
 		return visibilityEClass;
 	}
@@ -838,7 +812,8 @@ public class ScalaPackageImpl extends EPackageImpl implements ScalaPackage {
 		createEAttribute(namedElementEClass, NAMED_ELEMENT__NAME);
 
 		typedElementEClass = createEClass(TYPED_ELEMENT);
-		createEReference(typedElementEClass, TYPED_ELEMENT__GENERIC_TYPE);
+		createEReference(typedElementEClass, TYPED_ELEMENT__TYPE);
+		createEAttribute(typedElementEClass, TYPED_ELEMENT__IS_OPTION);
 
 		classifierEClass = createEClass(CLASSIFIER);
 		createEReference(classifierEClass, CLASSIFIER__METHODS);
@@ -896,10 +871,6 @@ public class ScalaPackageImpl extends EPackageImpl implements ScalaPackage {
 		createEReference(fileEClass, FILE__CLASSIFIERS);
 
 		typeEClass = createEClass(TYPE);
-
-		genericTypeEClass = createEClass(GENERIC_TYPE);
-		createEReference(genericTypeEClass, GENERIC_TYPE__TYPE);
-		createEAttribute(genericTypeEClass, GENERIC_TYPE__IS_OPTION);
 
 		visibilityEClass = createEClass(VISIBILITY);
 		createEAttribute(visibilityEClass, VISIBILITY__KIND);
@@ -963,7 +934,6 @@ public class ScalaPackageImpl extends EPackageImpl implements ScalaPackage {
 		packageEClass.getESuperTypes().add(this.getVisibilityScope());
 		fileEClass.getESuperTypes().add(this.getNamedElement());
 		typeEClass.getESuperTypes().add(this.getNamedElement());
-		genericTypeEClass.getESuperTypes().add(this.getType());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(
@@ -1004,10 +974,14 @@ public class ScalaPackageImpl extends EPackageImpl implements ScalaPackage {
 				TypedElement.class,
 				"TypedElement", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEReference(
-				getTypedElement_GenericType(),
-				this.getGenericType(),
+				getTypedElement_Type(),
+				this.getType(),
 				null,
-				"genericType", null, 1, 1, TypedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+				"type", null, 1, 1, TypedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(
+				getTypedElement_IsOption(),
+				ecorePackage.getEBoolean(),
+				"isOption", "false", 0, 1, TypedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$ //$NON-NLS-2$
 
 		initEClass(
 				classifierEClass,
@@ -1202,20 +1176,6 @@ public class ScalaPackageImpl extends EPackageImpl implements ScalaPackage {
 
 		initEClass(typeEClass, Type.class,
 				"Type", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-
-		initEClass(
-				genericTypeEClass,
-				GenericType.class,
-				"GenericType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEReference(
-				getGenericType_Type(),
-				this.getType(),
-				null,
-				"type", null, 1, 1, GenericType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(
-				getGenericType_IsOption(),
-				ecorePackage.getEBoolean(),
-				"isOption", "false", 0, 1, GenericType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$ //$NON-NLS-2$
 
 		initEClass(
 				visibilityEClass,

@@ -13,7 +13,6 @@ package com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.provider
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.edit.ScalaEditPlugin;
 
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Parameter;
-import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.ScalaFactory;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.ScalaPackage;
 
 import java.util.Collection;
@@ -23,8 +22,6 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
-
-import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
@@ -71,6 +68,8 @@ public class ParameterItemProvider extends ItemProviderAdapter implements
 
 			addCommentPropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
+			addTypePropertyDescriptor(object);
+			addIsOptionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -115,35 +114,42 @@ public class ParameterItemProvider extends ItemProviderAdapter implements
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
-	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * This adds a property descriptor for the Type feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(
-			Object object) {
-		if (childrenFeatures == null) {
-			super.getChildrenFeatures(object);
-			childrenFeatures
-					.add(ScalaPackage.Literals.TYPED_ELEMENT__GENERIC_TYPE);
-		}
-		return childrenFeatures;
+	protected void addTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(
+						((ComposeableAdapterFactory) adapterFactory)
+								.getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_TypedElement_type_feature"), //$NON-NLS-1$
+						getString(
+								"_UI_PropertyDescriptor_description", "_UI_TypedElement_type_feature", "_UI_TypedElement_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						ScalaPackage.Literals.TYPED_ELEMENT__TYPE, true, false,
+						true, null, null, null));
 	}
 
 	/**
+	 * This adds a property descriptor for the Is Option feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child) {
-		// Check the type of the specified child object and return the proper feature to use for
-		// adding (see {@link AddCommand}) it as a child.
-
-		return super.getChildFeature(object, child);
+	protected void addIsOptionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(
+						((ComposeableAdapterFactory) adapterFactory)
+								.getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_TypedElement_isOption_feature"), //$NON-NLS-1$
+						getString(
+								"_UI_PropertyDescriptor_description", "_UI_TypedElement_isOption_feature", "_UI_TypedElement_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						ScalaPackage.Literals.TYPED_ELEMENT__IS_OPTION, true,
+						false, false,
+						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -184,12 +190,9 @@ public class ParameterItemProvider extends ItemProviderAdapter implements
 
 		switch (notification.getFeatureID(Parameter.class)) {
 		case ScalaPackage.PARAMETER__NAME:
+		case ScalaPackage.PARAMETER__IS_OPTION:
 			fireNotifyChanged(new ViewerNotification(notification,
 					notification.getNotifier(), false, true));
-			return;
-		case ScalaPackage.PARAMETER__GENERIC_TYPE:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), true, false));
 			return;
 		}
 		super.notifyChanged(notification);
@@ -206,10 +209,6 @@ public class ParameterItemProvider extends ItemProviderAdapter implements
 	protected void collectNewChildDescriptors(
 			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add(createChildParameter(
-				ScalaPackage.Literals.TYPED_ELEMENT__GENERIC_TYPE,
-				ScalaFactory.eINSTANCE.createGenericType()));
 	}
 
 	/**

@@ -11,9 +11,9 @@
 package com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl;
 
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Comment;
-import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.GenericType;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Parameter;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.ScalaPackage;
+import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Type;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.TypedElement;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -34,7 +34,8 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * <ul>
  *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ParameterImpl#getComment <em>Comment</em>}</li>
  *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ParameterImpl#getName <em>Name</em>}</li>
- *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ParameterImpl#getGenericType <em>Generic Type</em>}</li>
+ *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ParameterImpl#getType <em>Type</em>}</li>
+ *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ParameterImpl#isIsOption <em>Is Option</em>}</li>
  * </ul>
  * </p>
  *
@@ -72,14 +73,34 @@ public class ParameterImpl extends EObjectImpl implements Parameter {
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getGenericType() <em>Generic Type</em>}' containment reference.
+	 * The cached value of the '{@link #getType() <em>Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getGenericType()
+	 * @see #getType()
 	 * @generated
 	 * @ordered
 	 */
-	protected GenericType genericType;
+	protected Type type;
+
+	/**
+	 * The default value of the '{@link #isIsOption() <em>Is Option</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsOption()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean IS_OPTION_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isIsOption() <em>Is Option</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsOption()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean isOption = IS_OPTION_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -200,29 +221,17 @@ public class ParameterImpl extends EObjectImpl implements Parameter {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public GenericType getGenericType() {
-		return genericType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetGenericType(GenericType newGenericType,
-			NotificationChain msgs) {
-		GenericType oldGenericType = genericType;
-		genericType = newGenericType;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this,
-					Notification.SET, ScalaPackage.PARAMETER__GENERIC_TYPE,
-					oldGenericType, newGenericType);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
+	public Type getType() {
+		if (type != null && type.eIsProxy()) {
+			InternalEObject oldType = (InternalEObject) type;
+			type = (Type) eResolveProxy(oldType);
+			if (type != oldType) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							ScalaPackage.PARAMETER__TYPE, oldType, type));
+			}
 		}
-		return msgs;
+		return type;
 	}
 
 	/**
@@ -230,26 +239,43 @@ public class ParameterImpl extends EObjectImpl implements Parameter {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setGenericType(GenericType newGenericType) {
-		if (newGenericType != genericType) {
-			NotificationChain msgs = null;
-			if (genericType != null)
-				msgs = ((InternalEObject) genericType).eInverseRemove(this,
-						EOPPOSITE_FEATURE_BASE
-								- ScalaPackage.PARAMETER__GENERIC_TYPE, null,
-						msgs);
-			if (newGenericType != null)
-				msgs = ((InternalEObject) newGenericType).eInverseAdd(this,
-						EOPPOSITE_FEATURE_BASE
-								- ScalaPackage.PARAMETER__GENERIC_TYPE, null,
-						msgs);
-			msgs = basicSetGenericType(newGenericType, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
+	public Type basicGetType() {
+		return type;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setType(Type newType) {
+		Type oldType = type;
+		type = newType;
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET,
-					ScalaPackage.PARAMETER__GENERIC_TYPE, newGenericType,
-					newGenericType));
+					ScalaPackage.PARAMETER__TYPE, oldType, type));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isIsOption() {
+		return isOption;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setIsOption(boolean newIsOption) {
+		boolean oldIsOption = isOption;
+		isOption = newIsOption;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					ScalaPackage.PARAMETER__IS_OPTION, oldIsOption, isOption));
 	}
 
 	/**
@@ -282,8 +308,6 @@ public class ParameterImpl extends EObjectImpl implements Parameter {
 		switch (featureID) {
 		case ScalaPackage.PARAMETER__COMMENT:
 			return basicSetComment(null, msgs);
-		case ScalaPackage.PARAMETER__GENERIC_TYPE:
-			return basicSetGenericType(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -302,8 +326,12 @@ public class ParameterImpl extends EObjectImpl implements Parameter {
 			return basicGetComment();
 		case ScalaPackage.PARAMETER__NAME:
 			return getName();
-		case ScalaPackage.PARAMETER__GENERIC_TYPE:
-			return getGenericType();
+		case ScalaPackage.PARAMETER__TYPE:
+			if (resolve)
+				return getType();
+			return basicGetType();
+		case ScalaPackage.PARAMETER__IS_OPTION:
+			return isIsOption();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -322,8 +350,11 @@ public class ParameterImpl extends EObjectImpl implements Parameter {
 		case ScalaPackage.PARAMETER__NAME:
 			setName((String) newValue);
 			return;
-		case ScalaPackage.PARAMETER__GENERIC_TYPE:
-			setGenericType((GenericType) newValue);
+		case ScalaPackage.PARAMETER__TYPE:
+			setType((Type) newValue);
+			return;
+		case ScalaPackage.PARAMETER__IS_OPTION:
+			setIsOption((Boolean) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -343,8 +374,11 @@ public class ParameterImpl extends EObjectImpl implements Parameter {
 		case ScalaPackage.PARAMETER__NAME:
 			setName(NAME_EDEFAULT);
 			return;
-		case ScalaPackage.PARAMETER__GENERIC_TYPE:
-			setGenericType((GenericType) null);
+		case ScalaPackage.PARAMETER__TYPE:
+			setType((Type) null);
+			return;
+		case ScalaPackage.PARAMETER__IS_OPTION:
+			setIsOption(IS_OPTION_EDEFAULT);
 			return;
 		}
 		super.eUnset(featureID);
@@ -363,8 +397,10 @@ public class ParameterImpl extends EObjectImpl implements Parameter {
 		case ScalaPackage.PARAMETER__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT
 					.equals(name);
-		case ScalaPackage.PARAMETER__GENERIC_TYPE:
-			return genericType != null;
+		case ScalaPackage.PARAMETER__TYPE:
+			return type != null;
+		case ScalaPackage.PARAMETER__IS_OPTION:
+			return isOption != IS_OPTION_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -378,8 +414,10 @@ public class ParameterImpl extends EObjectImpl implements Parameter {
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == TypedElement.class) {
 			switch (derivedFeatureID) {
-			case ScalaPackage.PARAMETER__GENERIC_TYPE:
-				return ScalaPackage.TYPED_ELEMENT__GENERIC_TYPE;
+			case ScalaPackage.PARAMETER__TYPE:
+				return ScalaPackage.TYPED_ELEMENT__TYPE;
+			case ScalaPackage.PARAMETER__IS_OPTION:
+				return ScalaPackage.TYPED_ELEMENT__IS_OPTION;
 			default:
 				return -1;
 			}
@@ -396,8 +434,10 @@ public class ParameterImpl extends EObjectImpl implements Parameter {
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == TypedElement.class) {
 			switch (baseFeatureID) {
-			case ScalaPackage.TYPED_ELEMENT__GENERIC_TYPE:
-				return ScalaPackage.PARAMETER__GENERIC_TYPE;
+			case ScalaPackage.TYPED_ELEMENT__TYPE:
+				return ScalaPackage.PARAMETER__TYPE;
+			case ScalaPackage.TYPED_ELEMENT__IS_OPTION:
+				return ScalaPackage.PARAMETER__IS_OPTION;
 			default:
 				return -1;
 			}
@@ -418,6 +458,8 @@ public class ParameterImpl extends EObjectImpl implements Parameter {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: "); //$NON-NLS-1$
 		result.append(name);
+		result.append(", isOption: "); //$NON-NLS-1$
+		result.append(isOption);
 		result.append(')');
 		return result.toString();
 	}

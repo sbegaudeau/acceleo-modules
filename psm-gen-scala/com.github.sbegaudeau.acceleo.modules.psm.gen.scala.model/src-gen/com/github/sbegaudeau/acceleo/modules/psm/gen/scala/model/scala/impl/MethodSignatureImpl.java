@@ -11,7 +11,6 @@
 package com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl;
 
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Comment;
-import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.GenericType;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.MethodSignature;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.NamedElement;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Parameter;
@@ -42,7 +41,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.MethodSignatureImpl#getComment <em>Comment</em>}</li>
- *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.MethodSignatureImpl#getGenericType <em>Generic Type</em>}</li>
+ *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.MethodSignatureImpl#getType <em>Type</em>}</li>
+ *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.MethodSignatureImpl#isIsOption <em>Is Option</em>}</li>
  *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.MethodSignatureImpl#getName <em>Name</em>}</li>
  *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.MethodSignatureImpl#getParameters <em>Parameters</em>}</li>
  * </ul>
@@ -62,14 +62,34 @@ public class MethodSignatureImpl extends EObjectImpl implements MethodSignature 
 	protected Comment comment;
 
 	/**
-	 * The cached value of the '{@link #getGenericType() <em>Generic Type</em>}' containment reference.
+	 * The cached value of the '{@link #getType() <em>Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getGenericType()
+	 * @see #getType()
 	 * @generated
 	 * @ordered
 	 */
-	protected GenericType genericType;
+	protected Type type;
+
+	/**
+	 * The default value of the '{@link #isIsOption() <em>Is Option</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsOption()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean IS_OPTION_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isIsOption() <em>Is Option</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsOption()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean isOption = IS_OPTION_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -199,30 +219,17 @@ public class MethodSignatureImpl extends EObjectImpl implements MethodSignature 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public GenericType getGenericType() {
-		return genericType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetGenericType(GenericType newGenericType,
-			NotificationChain msgs) {
-		GenericType oldGenericType = genericType;
-		genericType = newGenericType;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this,
-					Notification.SET,
-					ScalaPackage.METHOD_SIGNATURE__GENERIC_TYPE,
-					oldGenericType, newGenericType);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
+	public Type getType() {
+		if (type != null && type.eIsProxy()) {
+			InternalEObject oldType = (InternalEObject) type;
+			type = (Type) eResolveProxy(oldType);
+			if (type != oldType) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							ScalaPackage.METHOD_SIGNATURE__TYPE, oldType, type));
+			}
 		}
-		return msgs;
+		return type;
 	}
 
 	/**
@@ -230,26 +237,44 @@ public class MethodSignatureImpl extends EObjectImpl implements MethodSignature 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setGenericType(GenericType newGenericType) {
-		if (newGenericType != genericType) {
-			NotificationChain msgs = null;
-			if (genericType != null)
-				msgs = ((InternalEObject) genericType).eInverseRemove(this,
-						EOPPOSITE_FEATURE_BASE
-								- ScalaPackage.METHOD_SIGNATURE__GENERIC_TYPE,
-						null, msgs);
-			if (newGenericType != null)
-				msgs = ((InternalEObject) newGenericType).eInverseAdd(this,
-						EOPPOSITE_FEATURE_BASE
-								- ScalaPackage.METHOD_SIGNATURE__GENERIC_TYPE,
-						null, msgs);
-			msgs = basicSetGenericType(newGenericType, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
+	public Type basicGetType() {
+		return type;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setType(Type newType) {
+		Type oldType = type;
+		type = newType;
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET,
-					ScalaPackage.METHOD_SIGNATURE__GENERIC_TYPE,
-					newGenericType, newGenericType));
+					ScalaPackage.METHOD_SIGNATURE__TYPE, oldType, type));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isIsOption() {
+		return isOption;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setIsOption(boolean newIsOption) {
+		boolean oldIsOption = isOption;
+		isOption = newIsOption;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					ScalaPackage.METHOD_SIGNATURE__IS_OPTION, oldIsOption,
+					isOption));
 	}
 
 	/**
@@ -318,8 +343,6 @@ public class MethodSignatureImpl extends EObjectImpl implements MethodSignature 
 		switch (featureID) {
 		case ScalaPackage.METHOD_SIGNATURE__COMMENT:
 			return basicSetComment(null, msgs);
-		case ScalaPackage.METHOD_SIGNATURE__GENERIC_TYPE:
-			return basicSetGenericType(null, msgs);
 		case ScalaPackage.METHOD_SIGNATURE__PARAMETERS:
 			return ((InternalEList<?>) getParameters()).basicRemove(otherEnd,
 					msgs);
@@ -339,8 +362,12 @@ public class MethodSignatureImpl extends EObjectImpl implements MethodSignature 
 			if (resolve)
 				return getComment();
 			return basicGetComment();
-		case ScalaPackage.METHOD_SIGNATURE__GENERIC_TYPE:
-			return getGenericType();
+		case ScalaPackage.METHOD_SIGNATURE__TYPE:
+			if (resolve)
+				return getType();
+			return basicGetType();
+		case ScalaPackage.METHOD_SIGNATURE__IS_OPTION:
+			return isIsOption();
 		case ScalaPackage.METHOD_SIGNATURE__NAME:
 			return getName();
 		case ScalaPackage.METHOD_SIGNATURE__PARAMETERS:
@@ -361,8 +388,11 @@ public class MethodSignatureImpl extends EObjectImpl implements MethodSignature 
 		case ScalaPackage.METHOD_SIGNATURE__COMMENT:
 			setComment((Comment) newValue);
 			return;
-		case ScalaPackage.METHOD_SIGNATURE__GENERIC_TYPE:
-			setGenericType((GenericType) newValue);
+		case ScalaPackage.METHOD_SIGNATURE__TYPE:
+			setType((Type) newValue);
+			return;
+		case ScalaPackage.METHOD_SIGNATURE__IS_OPTION:
+			setIsOption((Boolean) newValue);
 			return;
 		case ScalaPackage.METHOD_SIGNATURE__NAME:
 			setName((String) newValue);
@@ -386,8 +416,11 @@ public class MethodSignatureImpl extends EObjectImpl implements MethodSignature 
 		case ScalaPackage.METHOD_SIGNATURE__COMMENT:
 			setComment((Comment) null);
 			return;
-		case ScalaPackage.METHOD_SIGNATURE__GENERIC_TYPE:
-			setGenericType((GenericType) null);
+		case ScalaPackage.METHOD_SIGNATURE__TYPE:
+			setType((Type) null);
+			return;
+		case ScalaPackage.METHOD_SIGNATURE__IS_OPTION:
+			setIsOption(IS_OPTION_EDEFAULT);
 			return;
 		case ScalaPackage.METHOD_SIGNATURE__NAME:
 			setName(NAME_EDEFAULT);
@@ -409,8 +442,10 @@ public class MethodSignatureImpl extends EObjectImpl implements MethodSignature 
 		switch (featureID) {
 		case ScalaPackage.METHOD_SIGNATURE__COMMENT:
 			return comment != null;
-		case ScalaPackage.METHOD_SIGNATURE__GENERIC_TYPE:
-			return genericType != null;
+		case ScalaPackage.METHOD_SIGNATURE__TYPE:
+			return type != null;
+		case ScalaPackage.METHOD_SIGNATURE__IS_OPTION:
+			return isOption != IS_OPTION_EDEFAULT;
 		case ScalaPackage.METHOD_SIGNATURE__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT
 					.equals(name);
@@ -479,7 +514,9 @@ public class MethodSignatureImpl extends EObjectImpl implements MethodSignature 
 			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (name: "); //$NON-NLS-1$
+		result.append(" (isOption: "); //$NON-NLS-1$
+		result.append(isOption);
+		result.append(", name: "); //$NON-NLS-1$
 		result.append(name);
 		result.append(')');
 		return result.toString();

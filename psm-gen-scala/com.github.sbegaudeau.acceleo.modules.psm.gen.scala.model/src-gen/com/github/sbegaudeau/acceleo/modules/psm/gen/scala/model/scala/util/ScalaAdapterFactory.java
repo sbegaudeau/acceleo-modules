@@ -18,7 +18,6 @@ import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Element;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.ExtendableClassifier;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Field;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.File;
-import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.GenericType;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Method;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.MethodSignature;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Model;
@@ -189,11 +188,6 @@ public class ScalaAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseType(Type object) {
 			return createTypeAdapter();
-		}
-
-		@Override
-		public Adapter caseGenericType(GenericType object) {
-			return createGenericTypeAdapter();
 		}
 
 		@Override
@@ -488,20 +482,6 @@ public class ScalaAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createTypeAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.GenericType <em>Generic Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.GenericType
-	 * @generated
-	 */
-	public Adapter createGenericTypeAdapter() {
 		return null;
 	}
 

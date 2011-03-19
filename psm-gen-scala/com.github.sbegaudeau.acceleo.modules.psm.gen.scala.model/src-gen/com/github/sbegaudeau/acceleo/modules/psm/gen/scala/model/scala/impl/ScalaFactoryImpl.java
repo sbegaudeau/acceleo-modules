@@ -15,7 +15,6 @@ import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Construct
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.ExtendableClassifier;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Field;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.File;
-import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.GenericType;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Method;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.MethodSignature;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Model;
@@ -105,8 +104,6 @@ public class ScalaFactoryImpl extends EFactoryImpl implements ScalaFactory {
 			return createPackage();
 		case ScalaPackage.FILE:
 			return createFile();
-		case ScalaPackage.GENERIC_TYPE:
-			return createGenericType();
 		case ScalaPackage.VISIBILITY:
 			return createVisibility();
 		default:
@@ -275,16 +272,6 @@ public class ScalaFactoryImpl extends EFactoryImpl implements ScalaFactory {
 	public File createFile() {
 		FileImpl file = new FileImpl();
 		return file;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public GenericType createGenericType() {
-		GenericTypeImpl genericType = new GenericTypeImpl();
-		return genericType;
 	}
 
 	/**

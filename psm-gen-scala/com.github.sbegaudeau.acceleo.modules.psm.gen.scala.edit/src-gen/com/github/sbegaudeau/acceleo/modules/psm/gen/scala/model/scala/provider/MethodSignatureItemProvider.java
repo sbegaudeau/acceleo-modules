@@ -70,6 +70,8 @@ public class MethodSignatureItemProvider extends ItemProviderAdapter implements
 			super.getPropertyDescriptors(object);
 
 			addCommentPropertyDescriptor(object);
+			addTypePropertyDescriptor(object);
+			addIsOptionPropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -92,6 +94,45 @@ public class MethodSignatureItemProvider extends ItemProviderAdapter implements
 								"_UI_PropertyDescriptor_description", "_UI_Element_comment_feature", "_UI_Element_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 						ScalaPackage.Literals.ELEMENT__COMMENT, true, false,
 						true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Type feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(
+						((ComposeableAdapterFactory) adapterFactory)
+								.getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_TypedElement_type_feature"), //$NON-NLS-1$
+						getString(
+								"_UI_PropertyDescriptor_description", "_UI_TypedElement_type_feature", "_UI_TypedElement_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						ScalaPackage.Literals.TYPED_ELEMENT__TYPE, true, false,
+						true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Is Option feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsOptionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(
+						((ComposeableAdapterFactory) adapterFactory)
+								.getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_TypedElement_isOption_feature"), //$NON-NLS-1$
+						getString(
+								"_UI_PropertyDescriptor_description", "_UI_TypedElement_isOption_feature", "_UI_TypedElement_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						ScalaPackage.Literals.TYPED_ELEMENT__IS_OPTION, true,
+						false, false,
+						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -127,8 +168,6 @@ public class MethodSignatureItemProvider extends ItemProviderAdapter implements
 			Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures
-					.add(ScalaPackage.Literals.TYPED_ELEMENT__GENERIC_TYPE);
 			childrenFeatures
 					.add(ScalaPackage.Literals.METHOD_SIGNATURE__PARAMETERS);
 		}
@@ -185,11 +224,11 @@ public class MethodSignatureItemProvider extends ItemProviderAdapter implements
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(MethodSignature.class)) {
+		case ScalaPackage.METHOD_SIGNATURE__IS_OPTION:
 		case ScalaPackage.METHOD_SIGNATURE__NAME:
 			fireNotifyChanged(new ViewerNotification(notification,
 					notification.getNotifier(), false, true));
 			return;
-		case ScalaPackage.METHOD_SIGNATURE__GENERIC_TYPE:
 		case ScalaPackage.METHOD_SIGNATURE__PARAMETERS:
 			fireNotifyChanged(new ViewerNotification(notification,
 					notification.getNotifier(), true, false));
@@ -209,10 +248,6 @@ public class MethodSignatureItemProvider extends ItemProviderAdapter implements
 	protected void collectNewChildDescriptors(
 			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add(createChildParameter(
-				ScalaPackage.Literals.TYPED_ELEMENT__GENERIC_TYPE,
-				ScalaFactory.eINSTANCE.createGenericType()));
 
 		newChildDescriptors.add(createChildParameter(
 				ScalaPackage.Literals.METHOD_SIGNATURE__PARAMETERS,
