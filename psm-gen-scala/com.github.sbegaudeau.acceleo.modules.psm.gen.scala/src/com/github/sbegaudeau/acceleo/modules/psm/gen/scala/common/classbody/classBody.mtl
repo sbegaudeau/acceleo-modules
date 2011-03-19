@@ -39,8 +39,11 @@ Other contributors :
 [template public genConstructors (aClass : Class) ]
 [for (aConstructor : Constructor | aClass.constructors)]
 def this([aConstructor.parameters.genParameter()->sep(', ')/]) = {
-    this();
+    this([aConstructor.genDefaultConstructorParameters()/]);
 }
 [/for]
 [/template]
 
+[template public genDefaultConstructorParameters(aConstructor : Constructor)]
+[if (aConstructor.eContainer().oclIsKindOf(Class))][aConstructor.eContainer().oclAsType(Class).fields->select(aField : Field | aField.isConstructorProperty).genDefaultValue()->sep(', ')/][/if]
+[/template]
