@@ -34,7 +34,7 @@
             id="com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.presentation.ScalaEditorID"
             name="%_UI_ScalaEditor_label"
             icon="icons/full/obj16/ScalaModelFile.gif"
-            extensions="scala"
+            extensions="scalamodel"
             class="com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.presentation.ScalaEditor"
             contributorClass="com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.presentation.ScalaActionBarContributor">
       </editor>
