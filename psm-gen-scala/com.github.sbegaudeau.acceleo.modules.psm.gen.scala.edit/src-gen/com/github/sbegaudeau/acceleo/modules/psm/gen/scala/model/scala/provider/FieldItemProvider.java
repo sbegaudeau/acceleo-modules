@@ -73,6 +73,7 @@ public class FieldItemProvider extends ItemProviderAdapter implements
 			addNamePropertyDescriptor(object);
 			addTypePropertyDescriptor(object);
 			addIsOptionPropertyDescriptor(object);
+			addIsConstructorPropertyPropertyDescriptor(object);
 			addIsFinalPropertyDescriptor(object);
 			addIsOverridingPropertyDescriptor(object);
 		}
@@ -154,6 +155,26 @@ public class FieldItemProvider extends ItemProviderAdapter implements
 								"_UI_PropertyDescriptor_description", "_UI_TypedElement_isOption_feature", "_UI_TypedElement_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 						ScalaPackage.Literals.TYPED_ELEMENT__IS_OPTION, true,
 						false, false,
+						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Is Constructor Property feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsConstructorPropertyPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(
+						((ComposeableAdapterFactory) adapterFactory)
+								.getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_Field_isConstructorProperty_feature"), //$NON-NLS-1$
+						getString(
+								"_UI_PropertyDescriptor_description", "_UI_Field_isConstructorProperty_feature", "_UI_Field_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						ScalaPackage.Literals.FIELD__IS_CONSTRUCTOR_PROPERTY,
+						true, false, false,
 						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
 	}
 
@@ -267,6 +288,7 @@ public class FieldItemProvider extends ItemProviderAdapter implements
 		switch (notification.getFeatureID(Field.class)) {
 		case ScalaPackage.FIELD__NAME:
 		case ScalaPackage.FIELD__IS_OPTION:
+		case ScalaPackage.FIELD__IS_CONSTRUCTOR_PROPERTY:
 		case ScalaPackage.FIELD__IS_FINAL:
 		case ScalaPackage.FIELD__IS_OVERRIDING:
 			fireNotifyChanged(new ViewerNotification(notification,

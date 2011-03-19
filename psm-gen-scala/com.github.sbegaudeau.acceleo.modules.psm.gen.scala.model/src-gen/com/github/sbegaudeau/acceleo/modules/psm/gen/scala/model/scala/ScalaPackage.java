@@ -707,13 +707,22 @@ public interface ScalaPackage extends EPackage {
 	int FIELD__IS_OPTION = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Is Constructor Property</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIELD__IS_CONSTRUCTOR_PROPERTY = NAMED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
 	 * The feature id for the '<em><b>Is Final</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FIELD__IS_FINAL = NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int FIELD__IS_FINAL = NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Is Overriding</b></em>' attribute.
@@ -722,7 +731,7 @@ public interface ScalaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIELD__IS_OVERRIDING = NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int FIELD__IS_OVERRIDING = NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Visibility</b></em>' containment reference.
@@ -731,7 +740,7 @@ public interface ScalaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIELD__VISIBILITY = NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int FIELD__VISIBILITY = NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Field</em>' class.
@@ -740,7 +749,7 @@ public interface ScalaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIELD_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 5;
+	int FIELD_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The meta object id for the '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ConstructorImpl <em>Constructor</em>}' class.
@@ -1528,6 +1537,17 @@ public interface ScalaPackage extends EPackage {
 	EClass getField();
 
 	/**
+	 * Returns the meta object for the attribute '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Field#isIsConstructorProperty <em>Is Constructor Property</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Is Constructor Property</em>'.
+	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Field#isIsConstructorProperty()
+	 * @see #getField()
+	 * @generated
+	 */
+	EAttribute getField_IsConstructorProperty();
+
+	/**
 	 * Returns the meta object for the attribute '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Field#isIsFinal <em>Is Final</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2097,6 +2117,15 @@ public interface ScalaPackage extends EPackage {
 		 * @generated
 		 */
 		EClass FIELD = eINSTANCE.getField();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Constructor Property</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FIELD__IS_CONSTRUCTOR_PROPERTY = eINSTANCE
+				.getField_IsConstructorProperty();
 
 		/**
 		 * The meta object literal for the '<em><b>Is Final</b></em>' attribute feature.

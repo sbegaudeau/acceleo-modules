@@ -58,6 +58,9 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Trait" eSuperTypes="#//Classifier #//ExtendableClassifier"/>
   <eClassifiers xsi:type="ecore:EClass" name="Field" eSuperTypes="#//NamedElement #//TypedElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isConstructorProperty"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isFinal" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isOverriding" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="visibility" lowerBound="1"

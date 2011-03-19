@@ -18,6 +18,7 @@ package com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala;
  * <p>
  * The following features are supported:
  * <ul>
+ *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Field#isIsConstructorProperty <em>Is Constructor Property</em>}</li>
  *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Field#isIsFinal <em>Is Final</em>}</li>
  *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Field#isIsOverriding <em>Is Overriding</em>}</li>
  *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Field#getVisibility <em>Visibility</em>}</li>
@@ -29,6 +30,33 @@ package com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala;
  * @generated
  */
 public interface Field extends NamedElement, TypedElement {
+	/**
+	 * Returns the value of the '<em><b>Is Constructor Property</b></em>' attribute.
+	 * The default value is <code>"true"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Is Constructor Property</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Is Constructor Property</em>' attribute.
+	 * @see #setIsConstructorProperty(boolean)
+	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.ScalaPackage#getField_IsConstructorProperty()
+	 * @model default="true" required="true"
+	 * @generated
+	 */
+	boolean isIsConstructorProperty();
+
+	/**
+	 * Sets the value of the '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Field#isIsConstructorProperty <em>Is Constructor Property</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Is Constructor Property</em>' attribute.
+	 * @see #isIsConstructorProperty()
+	 * @generated
+	 */
+	void setIsConstructorProperty(boolean value);
+
 	/**
 	 * Returns the value of the '<em><b>Is Final</b></em>' attribute.
 	 * <!-- begin-user-doc -->

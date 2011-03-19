@@ -37,6 +37,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.FieldImpl#getName <em>Name</em>}</li>
  *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.FieldImpl#getType <em>Type</em>}</li>
  *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.FieldImpl#isIsOption <em>Is Option</em>}</li>
+ *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.FieldImpl#isIsConstructorProperty <em>Is Constructor Property</em>}</li>
  *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.FieldImpl#isIsFinal <em>Is Final</em>}</li>
  *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.FieldImpl#isIsOverriding <em>Is Overriding</em>}</li>
  *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.FieldImpl#getVisibility <em>Visibility</em>}</li>
@@ -105,6 +106,26 @@ public class FieldImpl extends EObjectImpl implements Field {
 	 * @ordered
 	 */
 	protected boolean isOption = IS_OPTION_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isIsConstructorProperty() <em>Is Constructor Property</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsConstructorProperty()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean IS_CONSTRUCTOR_PROPERTY_EDEFAULT = true;
+
+	/**
+	 * The cached value of the '{@link #isIsConstructorProperty() <em>Is Constructor Property</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsConstructorProperty()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean isConstructorProperty = IS_CONSTRUCTOR_PROPERTY_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #isIsFinal() <em>Is Final</em>}' attribute.
@@ -336,6 +357,29 @@ public class FieldImpl extends EObjectImpl implements Field {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isIsConstructorProperty() {
+		return isConstructorProperty;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setIsConstructorProperty(boolean newIsConstructorProperty) {
+		boolean oldIsConstructorProperty = isConstructorProperty;
+		isConstructorProperty = newIsConstructorProperty;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					ScalaPackage.FIELD__IS_CONSTRUCTOR_PROPERTY,
+					oldIsConstructorProperty, isConstructorProperty));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean isIsFinal() {
 		return isFinal;
 	}
@@ -487,6 +531,8 @@ public class FieldImpl extends EObjectImpl implements Field {
 			return basicGetType();
 		case ScalaPackage.FIELD__IS_OPTION:
 			return isIsOption();
+		case ScalaPackage.FIELD__IS_CONSTRUCTOR_PROPERTY:
+			return isIsConstructorProperty();
 		case ScalaPackage.FIELD__IS_FINAL:
 			return isIsFinal();
 		case ScalaPackage.FIELD__IS_OVERRIDING:
@@ -516,6 +562,9 @@ public class FieldImpl extends EObjectImpl implements Field {
 			return;
 		case ScalaPackage.FIELD__IS_OPTION:
 			setIsOption((Boolean) newValue);
+			return;
+		case ScalaPackage.FIELD__IS_CONSTRUCTOR_PROPERTY:
+			setIsConstructorProperty((Boolean) newValue);
 			return;
 		case ScalaPackage.FIELD__IS_FINAL:
 			setIsFinal((Boolean) newValue);
@@ -550,6 +599,9 @@ public class FieldImpl extends EObjectImpl implements Field {
 		case ScalaPackage.FIELD__IS_OPTION:
 			setIsOption(IS_OPTION_EDEFAULT);
 			return;
+		case ScalaPackage.FIELD__IS_CONSTRUCTOR_PROPERTY:
+			setIsConstructorProperty(IS_CONSTRUCTOR_PROPERTY_EDEFAULT);
+			return;
 		case ScalaPackage.FIELD__IS_FINAL:
 			setIsFinal(IS_FINAL_EDEFAULT);
 			return;
@@ -580,6 +632,8 @@ public class FieldImpl extends EObjectImpl implements Field {
 			return type != null;
 		case ScalaPackage.FIELD__IS_OPTION:
 			return isOption != IS_OPTION_EDEFAULT;
+		case ScalaPackage.FIELD__IS_CONSTRUCTOR_PROPERTY:
+			return isConstructorProperty != IS_CONSTRUCTOR_PROPERTY_EDEFAULT;
 		case ScalaPackage.FIELD__IS_FINAL:
 			return isFinal != IS_FINAL_EDEFAULT;
 		case ScalaPackage.FIELD__IS_OVERRIDING:
@@ -645,6 +699,8 @@ public class FieldImpl extends EObjectImpl implements Field {
 		result.append(name);
 		result.append(", isOption: "); //$NON-NLS-1$
 		result.append(isOption);
+		result.append(", isConstructorProperty: "); //$NON-NLS-1$
+		result.append(isConstructorProperty);
 		result.append(", isFinal: "); //$NON-NLS-1$
 		result.append(isFinal);
 		result.append(", isOverriding: "); //$NON-NLS-1$

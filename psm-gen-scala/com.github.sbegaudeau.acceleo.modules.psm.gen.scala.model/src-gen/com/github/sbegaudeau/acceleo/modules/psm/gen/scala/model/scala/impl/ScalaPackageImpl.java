@@ -524,7 +524,7 @@ public class ScalaPackageImpl extends EPackageImpl implements ScalaPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getField_IsFinal() {
+	public EAttribute getField_IsConstructorProperty() {
 		return (EAttribute) fieldEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -533,7 +533,7 @@ public class ScalaPackageImpl extends EPackageImpl implements ScalaPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getField_IsOverriding() {
+	public EAttribute getField_IsFinal() {
 		return (EAttribute) fieldEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -542,8 +542,17 @@ public class ScalaPackageImpl extends EPackageImpl implements ScalaPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getField_IsOverriding() {
+		return (EAttribute) fieldEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getField_Visibility() {
-		return (EReference) fieldEClass.getEStructuralFeatures().get(2);
+		return (EReference) fieldEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -840,6 +849,7 @@ public class ScalaPackageImpl extends EPackageImpl implements ScalaPackage {
 		traitEClass = createEClass(TRAIT);
 
 		fieldEClass = createEClass(FIELD);
+		createEAttribute(fieldEClass, FIELD__IS_CONSTRUCTOR_PROPERTY);
 		createEAttribute(fieldEClass, FIELD__IS_FINAL);
 		createEAttribute(fieldEClass, FIELD__IS_OVERRIDING);
 		createEReference(fieldEClass, FIELD__VISIBILITY);
@@ -1068,6 +1078,10 @@ public class ScalaPackageImpl extends EPackageImpl implements ScalaPackage {
 				fieldEClass,
 				Field.class,
 				"Field", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+		initEAttribute(
+				getField_IsConstructorProperty(),
+				ecorePackage.getEBoolean(),
+				"isConstructorProperty", "true", 1, 1, Field.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$ //$NON-NLS-2$
 		initEAttribute(
 				getField_IsFinal(),
 				ecorePackage.getEBoolean(),
