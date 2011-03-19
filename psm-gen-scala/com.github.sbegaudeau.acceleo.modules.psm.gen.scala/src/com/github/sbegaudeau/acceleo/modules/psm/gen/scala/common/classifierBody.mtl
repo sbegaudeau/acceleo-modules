@@ -26,7 +26,7 @@ Other contributors :
 [/template]
 
 [template public genType(aTypedElement : TypedElement)]
-[aTypedElement.genericType.name/]
+[aTypedElement.type.name/]
 [/template]
 
 [template public genCase(aCaseClassifier : CaseClassifier)]
