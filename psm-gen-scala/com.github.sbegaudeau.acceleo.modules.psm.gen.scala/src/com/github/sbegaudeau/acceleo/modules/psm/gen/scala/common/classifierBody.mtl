@@ -26,7 +26,7 @@ Other contributors :
 [/template]
 
 [template public genType(aTypedElement : TypedElement)]
-[aTypedElement.type.name/]
+[if (aTypedElement.isOption)]Option['['/][aTypedElement.type.name/][']'/][else][aTypedElement.type.name/][/if]
 [/template]
 
 [template public genCase(aCaseClassifier : CaseClassifier)]
@@ -66,7 +66,15 @@ Other contributors :
 [/template]
 
 [template public genDefaultValue(aField : Field)]
-[if ('true'.equalsIgnoreCase(getProperty('classifierBody.gen.fieldDefaultTypeValue')))][getProperty(aField.type.name)/][else]null[/if]
+[if ('true'.equalsIgnoreCase(getProperty('gen.field.defaultValue')))][aField.genDefaultPropertyValue()/][else][aField.genDefaultNullValue()/][/if]
+[/template]
+
+[template public genDefaultPropertyValue(aField : Field)]
+[if (aField.isOption)]Some([getProperty(aField.type.name)/])[else][getProperty(aField.type.name)/][/if]
+[/template]
+
+[template public genDefaultNullValue(aField : Field)]
+[if (aField.isOption)]None[else]null[/if]
 [/template]
 
 [template public genAbstractDefaultValue(aField : Field)]

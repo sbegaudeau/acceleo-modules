@@ -256,9 +256,9 @@ public class Workflow extends AbstractAcceleoGenerator {
 		 * "org.eclipse.acceleo.sample", the path that needs be added to this
 		 * list is "org.eclipse.acceleo.sample.messages".
 		 */
-		propertiesFiles.add("default.properties");
-		propertiesFiles.add("import.properties");
-		propertiesFiles.add("type.properties");
+		propertiesFiles.add("com.github.sbegaudeau.acceleo.modules.psm.gen.scala.main.default");
+		propertiesFiles.add("com.github.sbegaudeau.acceleo.modules.psm.gen.scala.main.import");
+		propertiesFiles.add("com.github.sbegaudeau.acceleo.modules.psm.gen.scala.main.type");
 		return propertiesFiles;
 	}
 
