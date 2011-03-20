@@ -16,6 +16,7 @@ import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.ScalaPack
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -23,6 +24,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -35,6 +37,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ConstructorImpl#getOwnedComment <em>Owned Comment</em>}</li>
  *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ConstructorImpl#getParameters <em>Parameters</em>}</li>
  * </ul>
  * </p>
@@ -42,6 +45,24 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * @generated
  */
 public class ConstructorImpl extends EObjectImpl implements Constructor {
+	/**
+	 * The default value of the '{@link #getOwnedComment() <em>Owned Comment</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOwnedComment()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String OWNED_COMMENT_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getOwnedComment() <em>Owned Comment</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOwnedComment()
+	 * @generated
+	 * @ordered
+	 */
+	protected String ownedComment = OWNED_COMMENT_EDEFAULT;
 	/**
 	 * The cached value of the '{@link #getParameters() <em>Parameters</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -69,6 +90,29 @@ public class ConstructorImpl extends EObjectImpl implements Constructor {
 	@Override
 	protected EClass eStaticClass() {
 		return ScalaPackage.Literals.CONSTRUCTOR;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getOwnedComment() {
+		return ownedComment;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setOwnedComment(String newOwnedComment) {
+		String oldOwnedComment = ownedComment;
+		ownedComment = newOwnedComment;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					ScalaPackage.CONSTRUCTOR__OWNED_COMMENT, oldOwnedComment,
+					ownedComment));
 	}
 
 	/**
@@ -108,6 +152,8 @@ public class ConstructorImpl extends EObjectImpl implements Constructor {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+		case ScalaPackage.CONSTRUCTOR__OWNED_COMMENT:
+			return getOwnedComment();
 		case ScalaPackage.CONSTRUCTOR__PARAMETERS:
 			return getParameters();
 		}
@@ -123,6 +169,9 @@ public class ConstructorImpl extends EObjectImpl implements Constructor {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+		case ScalaPackage.CONSTRUCTOR__OWNED_COMMENT:
+			setOwnedComment((String) newValue);
+			return;
 		case ScalaPackage.CONSTRUCTOR__PARAMETERS:
 			getParameters().clear();
 			getParameters().addAll((Collection<? extends Parameter>) newValue);
@@ -139,6 +188,9 @@ public class ConstructorImpl extends EObjectImpl implements Constructor {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+		case ScalaPackage.CONSTRUCTOR__OWNED_COMMENT:
+			setOwnedComment(OWNED_COMMENT_EDEFAULT);
+			return;
 		case ScalaPackage.CONSTRUCTOR__PARAMETERS:
 			getParameters().clear();
 			return;
@@ -154,10 +206,30 @@ public class ConstructorImpl extends EObjectImpl implements Constructor {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+		case ScalaPackage.CONSTRUCTOR__OWNED_COMMENT:
+			return OWNED_COMMENT_EDEFAULT == null ? ownedComment != null
+					: !OWNED_COMMENT_EDEFAULT.equals(ownedComment);
 		case ScalaPackage.CONSTRUCTOR__PARAMETERS:
 			return parameters != null && !parameters.isEmpty();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy())
+			return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (ownedComment: "); //$NON-NLS-1$
+		result.append(ownedComment);
+		result.append(')');
+		return result.toString();
 	}
 
 } //ConstructorImpl

@@ -725,13 +725,22 @@ public interface ScalaPackage extends EPackage {
 	int CONSTRUCTOR = 10;
 
 	/**
+	 * The feature id for the '<em><b>Owned Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTRUCTOR__OWNED_COMMENT = ELEMENT__OWNED_COMMENT;
+
+	/**
 	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONSTRUCTOR__PARAMETERS = 0;
+	int CONSTRUCTOR__PARAMETERS = ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Constructor</em>' class.
@@ -740,7 +749,7 @@ public interface ScalaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONSTRUCTOR_FEATURE_COUNT = 1;
+	int CONSTRUCTOR_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.MethodImpl <em>Method</em>}' class.

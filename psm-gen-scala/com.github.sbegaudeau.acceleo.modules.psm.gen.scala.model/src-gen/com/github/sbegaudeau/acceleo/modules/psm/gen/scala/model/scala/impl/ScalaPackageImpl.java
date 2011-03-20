@@ -895,6 +895,7 @@ public class ScalaPackageImpl extends EPackageImpl implements ScalaPackage {
 		traitEClass.getESuperTypes().add(this.getExtendableClassifier());
 		fieldEClass.getESuperTypes().add(this.getNamedElement());
 		fieldEClass.getESuperTypes().add(this.getTypedElement());
+		constructorEClass.getESuperTypes().add(this.getElement());
 		methodEClass.getESuperTypes().add(this.getNamedElement());
 		methodSignatureEClass.getESuperTypes().add(this.getTypedElement());
 		methodSignatureEClass.getESuperTypes().add(this.getType());

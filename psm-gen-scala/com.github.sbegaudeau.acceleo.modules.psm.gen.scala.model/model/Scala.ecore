@@ -60,7 +60,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="visibility" lowerBound="1"
         eType="#//Visibility" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Constructor">
+  <eClassifiers xsi:type="ecore:EClass" name="Constructor" eSuperTypes="#//Element">
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
         eType="#//Parameter" containment="true"/>
   </eClassifiers>

@@ -241,6 +241,8 @@ public class ScalaSwitch<T> {
 			Constructor constructor = (Constructor) theEObject;
 			T result = caseConstructor(constructor);
 			if (result == null)
+				result = caseElement(constructor);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
