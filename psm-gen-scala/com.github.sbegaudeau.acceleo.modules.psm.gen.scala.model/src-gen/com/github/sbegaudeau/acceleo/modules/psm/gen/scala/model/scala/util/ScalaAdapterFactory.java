@@ -12,7 +12,6 @@ package com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.util;
 
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.CaseClassifier;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Classifier;
-import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Comment;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Constructor;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Element;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.ExtendableClassifier;
@@ -95,11 +94,6 @@ public class ScalaAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseElement(Element object) {
 			return createElementAdapter();
-		}
-
-		@Override
-		public Adapter caseComment(Comment object) {
-			return createCommentAdapter();
 		}
 
 		@Override
@@ -230,20 +224,6 @@ public class ScalaAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createElementAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Comment <em>Comment</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Comment
-	 * @generated
-	 */
-	public Adapter createCommentAdapter() {
 		return null;
 	}
 

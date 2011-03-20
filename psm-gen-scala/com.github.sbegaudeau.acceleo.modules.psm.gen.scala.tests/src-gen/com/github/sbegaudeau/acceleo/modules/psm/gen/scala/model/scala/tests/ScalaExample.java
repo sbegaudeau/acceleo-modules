@@ -10,7 +10,7 @@
  */
 package com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.tests;
 
-import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Comment;
+import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.ExtendableClassifier;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.ScalaFactory;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.ScalaPackage;
 
@@ -71,7 +71,8 @@ public class ScalaExample {
 			try {
 				Resource resource = resourceSet.createResource(URI
 						.createURI("http:///My.scalamodel")); //$NON-NLS-1$
-				Comment root = ScalaFactory.eINSTANCE.createComment();
+				ExtendableClassifier root = ScalaFactory.eINSTANCE
+						.createExtendableClassifier();
 				resource.getContents().add(root);
 				resource.save(System.out, null);
 			} catch (IOException exception) {

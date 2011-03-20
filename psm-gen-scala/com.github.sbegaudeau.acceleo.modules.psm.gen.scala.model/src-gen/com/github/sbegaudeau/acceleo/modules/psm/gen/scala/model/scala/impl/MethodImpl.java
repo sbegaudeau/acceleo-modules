@@ -10,7 +10,6 @@
  */
 package com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl;
 
-import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Comment;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Method;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.MethodSignature;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.ScalaPackage;
@@ -32,7 +31,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.MethodImpl#getComment <em>Comment</em>}</li>
+ *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.MethodImpl#getOwnedComment <em>Owned Comment</em>}</li>
  *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.MethodImpl#getName <em>Name</em>}</li>
  *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.MethodImpl#getSignature <em>Signature</em>}</li>
  *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.MethodImpl#isIsAbstract <em>Is Abstract</em>}</li>
@@ -46,14 +45,24 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  */
 public class MethodImpl extends EObjectImpl implements Method {
 	/**
-	 * The cached value of the '{@link #getComment() <em>Comment</em>}' reference.
+	 * The default value of the '{@link #getOwnedComment() <em>Owned Comment</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getComment()
+	 * @see #getOwnedComment()
 	 * @generated
 	 * @ordered
 	 */
-	protected Comment comment;
+	protected static final String OWNED_COMMENT_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getOwnedComment() <em>Owned Comment</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOwnedComment()
+	 * @generated
+	 * @ordered
+	 */
+	protected String ownedComment = OWNED_COMMENT_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -179,17 +188,8 @@ public class MethodImpl extends EObjectImpl implements Method {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Comment getComment() {
-		if (comment != null && comment.eIsProxy()) {
-			InternalEObject oldComment = (InternalEObject) comment;
-			comment = (Comment) eResolveProxy(oldComment);
-			if (comment != oldComment) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							ScalaPackage.METHOD__COMMENT, oldComment, comment));
-			}
-		}
-		return comment;
+	public String getOwnedComment() {
+		return ownedComment;
 	}
 
 	/**
@@ -197,53 +197,13 @@ public class MethodImpl extends EObjectImpl implements Method {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Comment basicGetComment() {
-		return comment;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetComment(Comment newComment,
-			NotificationChain msgs) {
-		Comment oldComment = comment;
-		comment = newComment;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this,
-					Notification.SET, ScalaPackage.METHOD__COMMENT, oldComment,
-					newComment);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setComment(Comment newComment) {
-		if (newComment != comment) {
-			NotificationChain msgs = null;
-			if (comment != null)
-				msgs = ((InternalEObject) comment).eInverseRemove(this,
-						ScalaPackage.COMMENT__COMMENTED_ELEMENT, Comment.class,
-						msgs);
-			if (newComment != null)
-				msgs = ((InternalEObject) newComment).eInverseAdd(this,
-						ScalaPackage.COMMENT__COMMENTED_ELEMENT, Comment.class,
-						msgs);
-			msgs = basicSetComment(newComment, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
+	public void setOwnedComment(String newOwnedComment) {
+		String oldOwnedComment = ownedComment;
+		ownedComment = newOwnedComment;
+		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET,
-					ScalaPackage.METHOD__COMMENT, newComment, newComment));
+					ScalaPackage.METHOD__OWNED_COMMENT, oldOwnedComment,
+					ownedComment));
 	}
 
 	/**
@@ -450,30 +410,9 @@ public class MethodImpl extends EObjectImpl implements Method {
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd,
-			int featureID, NotificationChain msgs) {
-		switch (featureID) {
-		case ScalaPackage.METHOD__COMMENT:
-			if (comment != null)
-				msgs = ((InternalEObject) comment).eInverseRemove(this,
-						ScalaPackage.COMMENT__COMMENTED_ELEMENT, Comment.class,
-						msgs);
-			return basicSetComment((Comment) otherEnd, msgs);
-		}
-		return super.eInverseAdd(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd,
 			int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case ScalaPackage.METHOD__COMMENT:
-			return basicSetComment(null, msgs);
 		case ScalaPackage.METHOD__SIGNATURE:
 			return basicSetSignature(null, msgs);
 		case ScalaPackage.METHOD__VISIBILITY:
@@ -490,10 +429,8 @@ public class MethodImpl extends EObjectImpl implements Method {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case ScalaPackage.METHOD__COMMENT:
-			if (resolve)
-				return getComment();
-			return basicGetComment();
+		case ScalaPackage.METHOD__OWNED_COMMENT:
+			return getOwnedComment();
 		case ScalaPackage.METHOD__NAME:
 			return getName();
 		case ScalaPackage.METHOD__SIGNATURE:
@@ -518,8 +455,8 @@ public class MethodImpl extends EObjectImpl implements Method {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case ScalaPackage.METHOD__COMMENT:
-			setComment((Comment) newValue);
+		case ScalaPackage.METHOD__OWNED_COMMENT:
+			setOwnedComment((String) newValue);
 			return;
 		case ScalaPackage.METHOD__NAME:
 			setName((String) newValue);
@@ -551,8 +488,8 @@ public class MethodImpl extends EObjectImpl implements Method {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case ScalaPackage.METHOD__COMMENT:
-			setComment((Comment) null);
+		case ScalaPackage.METHOD__OWNED_COMMENT:
+			setOwnedComment(OWNED_COMMENT_EDEFAULT);
 			return;
 		case ScalaPackage.METHOD__NAME:
 			setName(NAME_EDEFAULT);
@@ -584,8 +521,9 @@ public class MethodImpl extends EObjectImpl implements Method {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case ScalaPackage.METHOD__COMMENT:
-			return comment != null;
+		case ScalaPackage.METHOD__OWNED_COMMENT:
+			return OWNED_COMMENT_EDEFAULT == null ? ownedComment != null
+					: !OWNED_COMMENT_EDEFAULT.equals(ownedComment);
 		case ScalaPackage.METHOD__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT
 					.equals(name);
@@ -614,7 +552,9 @@ public class MethodImpl extends EObjectImpl implements Method {
 			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (name: "); //$NON-NLS-1$
+		result.append(" (ownedComment: "); //$NON-NLS-1$
+		result.append(ownedComment);
+		result.append(", name: "); //$NON-NLS-1$
 		result.append(name);
 		result.append(", isAbstract: "); //$NON-NLS-1$
 		result.append(isAbstract);

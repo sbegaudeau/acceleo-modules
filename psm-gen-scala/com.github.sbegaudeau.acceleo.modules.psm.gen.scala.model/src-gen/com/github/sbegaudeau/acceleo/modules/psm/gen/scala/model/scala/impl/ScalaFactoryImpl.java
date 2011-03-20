@@ -10,7 +10,6 @@
  */
 package com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl;
 
-import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Comment;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Constructor;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.ExtendableClassifier;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Field;
@@ -78,8 +77,6 @@ public class ScalaFactoryImpl extends EFactoryImpl implements ScalaFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-		case ScalaPackage.COMMENT:
-			return createComment();
 		case ScalaPackage.EXTENDABLE_CLASSIFIER:
 			return createExtendableClassifier();
 		case ScalaPackage.CLASS:
@@ -142,16 +139,6 @@ public class ScalaFactoryImpl extends EFactoryImpl implements ScalaFactory {
 			throw new IllegalArgumentException(
 					"The datatype '" + eDataType.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Comment createComment() {
-		CommentImpl comment = new CommentImpl();
-		return comment;
 	}
 
 	/**

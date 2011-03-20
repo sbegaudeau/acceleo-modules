@@ -37,16 +37,6 @@ public enum VisibilityKind implements Enumerator {
 	PUBLIC(0, "public", "public"), //$NON-NLS-1$ //$NON-NLS-2$
 
 	/**
-	 * The '<em><b>Private</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #PRIVATE_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	PRIVATE(1, "private", "private"), //$NON-NLS-1$ //$NON-NLS-2$
-
-	/**
 	 * The '<em><b>Protected</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -54,7 +44,17 @@ public enum VisibilityKind implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	PROTECTED(2, "protected", "protected"); //$NON-NLS-1$ //$NON-NLS-2$
+	PROTECTED(1, "protected", "protected"), //$NON-NLS-1$ //$NON-NLS-2$
+
+	/**
+	 * The '<em><b>Private</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #PRIVATE_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	PRIVATE(2, "private", "private"); //$NON-NLS-1$ //$NON-NLS-2$
 
 	/**
 	 * The '<em><b>Public</b></em>' literal value.
@@ -72,21 +72,6 @@ public enum VisibilityKind implements Enumerator {
 	public static final int PUBLIC_VALUE = 0;
 
 	/**
-	 * The '<em><b>Private</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Private</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #PRIVATE
-	 * @model name="private"
-	 * @generated
-	 * @ordered
-	 */
-	public static final int PRIVATE_VALUE = 1;
-
-	/**
 	 * The '<em><b>Protected</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -99,7 +84,22 @@ public enum VisibilityKind implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int PROTECTED_VALUE = 2;
+	public static final int PROTECTED_VALUE = 1;
+
+	/**
+	 * The '<em><b>Private</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Private</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #PRIVATE
+	 * @model name="private"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int PRIVATE_VALUE = 2;
 
 	/**
 	 * An array of all the '<em><b>Visibility Kind</b></em>' enumerators.
@@ -108,7 +108,7 @@ public enum VisibilityKind implements Enumerator {
 	 * @generated
 	 */
 	private static final VisibilityKind[] VALUES_ARRAY = new VisibilityKind[] {
-			PUBLIC, PRIVATE, PROTECTED, };
+			PUBLIC, PROTECTED, PRIVATE, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Visibility Kind</b></em>' enumerators.
@@ -161,10 +161,10 @@ public enum VisibilityKind implements Enumerator {
 		switch (value) {
 		case PUBLIC_VALUE:
 			return PUBLIC;
-		case PRIVATE_VALUE:
-			return PRIVATE;
 		case PROTECTED_VALUE:
 			return PROTECTED;
+		case PRIVATE_VALUE:
+			return PRIVATE;
 		}
 		return null;
 	}

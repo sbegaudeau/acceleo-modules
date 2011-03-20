@@ -4,13 +4,7 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="scala"
     nsURI="http://github.com/sbegaudeau/acceleo/scalametamodel/2011/01" nsPrefix="scala">
   <eClassifiers xsi:type="ecore:EClass" name="Element" abstract="true" interface="true">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="comment" eType="#//Comment"
-        eOpposite="#//Comment/commentedElement"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Comment">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="body" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="commentedElement" lowerBound="1"
-        eType="#//Element" eOpposite="#//Element/comment"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ownedComment" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NamedElement" abstract="true" interface="true"
       eSuperTypes="#//Element">
@@ -71,13 +65,13 @@
         eType="#//Parameter" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Method" eSuperTypes="#//NamedElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="signature" eType="#//MethodSignature"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="signature" lowerBound="1"
+        eType="#//MethodSignature" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isAbstract" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isFinal" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isOverriding" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="visibility" lowerBound="1"
-        eType="#//Visibility" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="visibility" eType="#//Visibility"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MethodSignature" eSuperTypes="#//TypedElement #//Type">
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
@@ -104,8 +98,8 @@
       eSuperTypes="#//NamedElement"/>
   <eClassifiers xsi:type="ecore:EEnum" name="VisibilityKind">
     <eLiterals name="public" literal="public"/>
-    <eLiterals name="private" value="1" literal="private"/>
-    <eLiterals name="protected" value="2" literal="protected"/>
+    <eLiterals name="protected" value="1" literal="protected"/>
+    <eLiterals name="private" value="2" literal="private"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Visibility">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" lowerBound="1" eType="#//VisibilityKind"/>

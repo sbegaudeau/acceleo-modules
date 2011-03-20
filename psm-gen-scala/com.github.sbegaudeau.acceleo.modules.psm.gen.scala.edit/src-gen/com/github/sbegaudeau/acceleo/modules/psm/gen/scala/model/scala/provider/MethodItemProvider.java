@@ -69,33 +69,33 @@ public class MethodItemProvider extends ItemProviderAdapter implements
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addCommentPropertyDescriptor(object);
+			addOwnedCommentPropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
 			addIsAbstractPropertyDescriptor(object);
 			addIsFinalPropertyDescriptor(object);
 			addIsOverridingPropertyDescriptor(object);
-			addVisibilityPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Comment feature.
+	 * This adds a property descriptor for the Owned Comment feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addCommentPropertyDescriptor(Object object) {
+	protected void addOwnedCommentPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(
 						((ComposeableAdapterFactory) adapterFactory)
 								.getRootAdapterFactory(),
 						getResourceLocator(),
-						getString("_UI_Element_comment_feature"), //$NON-NLS-1$
+						getString("_UI_Element_ownedComment_feature"), //$NON-NLS-1$
 						getString(
-								"_UI_PropertyDescriptor_description", "_UI_Element_comment_feature", "_UI_Element_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-						ScalaPackage.Literals.ELEMENT__COMMENT, true, false,
-						true, null, null, null));
+								"_UI_PropertyDescriptor_description", "_UI_Element_ownedComment_feature", "_UI_Element_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						ScalaPackage.Literals.ELEMENT__OWNED_COMMENT, true,
+						false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -179,25 +179,6 @@ public class MethodItemProvider extends ItemProviderAdapter implements
 	}
 
 	/**
-	 * This adds a property descriptor for the Visibility feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addVisibilityPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(
-						((ComposeableAdapterFactory) adapterFactory)
-								.getRootAdapterFactory(),
-						getResourceLocator(),
-						getString("_UI_Method_visibility_feature"), //$NON-NLS-1$
-						getString(
-								"_UI_PropertyDescriptor_description", "_UI_Method_visibility_feature", "_UI_Method_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-						ScalaPackage.Literals.METHOD__VISIBILITY, true, false,
-						false, null, null, null));
-	}
-
-	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -211,6 +192,7 @@ public class MethodItemProvider extends ItemProviderAdapter implements
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(ScalaPackage.Literals.METHOD__SIGNATURE);
+			childrenFeatures.add(ScalaPackage.Literals.METHOD__VISIBILITY);
 		}
 		return childrenFeatures;
 	}
@@ -265,15 +247,16 @@ public class MethodItemProvider extends ItemProviderAdapter implements
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Method.class)) {
+		case ScalaPackage.METHOD__OWNED_COMMENT:
 		case ScalaPackage.METHOD__NAME:
 		case ScalaPackage.METHOD__IS_ABSTRACT:
 		case ScalaPackage.METHOD__IS_FINAL:
 		case ScalaPackage.METHOD__IS_OVERRIDING:
-		case ScalaPackage.METHOD__VISIBILITY:
 			fireNotifyChanged(new ViewerNotification(notification,
 					notification.getNotifier(), false, true));
 			return;
 		case ScalaPackage.METHOD__SIGNATURE:
+		case ScalaPackage.METHOD__VISIBILITY:
 			fireNotifyChanged(new ViewerNotification(notification,
 					notification.getNotifier(), true, false));
 			return;
@@ -296,6 +279,10 @@ public class MethodItemProvider extends ItemProviderAdapter implements
 		newChildDescriptors.add(createChildParameter(
 				ScalaPackage.Literals.METHOD__SIGNATURE,
 				ScalaFactory.eINSTANCE.createMethodSignature()));
+
+		newChildDescriptors.add(createChildParameter(
+				ScalaPackage.Literals.METHOD__VISIBILITY,
+				ScalaFactory.eINSTANCE.createVisibility()));
 	}
 
 	/**

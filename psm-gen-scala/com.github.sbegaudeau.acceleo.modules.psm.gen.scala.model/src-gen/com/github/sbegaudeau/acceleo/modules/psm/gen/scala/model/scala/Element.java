@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Element#getComment <em>Comment</em>}</li>
+ *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Element#getOwnedComment <em>Owned Comment</em>}</li>
  * </ul>
  * </p>
  *
@@ -30,31 +30,29 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Element extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Comment</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Comment#getCommentedElement <em>Commented Element</em>}'.
+	 * Returns the value of the '<em><b>Owned Comment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Comment</em>' reference isn't clear,
+	 * If the meaning of the '<em>Owned Comment</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Comment</em>' reference.
-	 * @see #setComment(Comment)
-	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.ScalaPackage#getElement_Comment()
-	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Comment#getCommentedElement
-	 * @model opposite="commentedElement"
+	 * @return the value of the '<em>Owned Comment</em>' attribute.
+	 * @see #setOwnedComment(String)
+	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.ScalaPackage#getElement_OwnedComment()
+	 * @model
 	 * @generated
 	 */
-	Comment getComment();
+	String getOwnedComment();
 
 	/**
-	 * Sets the value of the '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Element#getComment <em>Comment</em>}' reference.
+	 * Sets the value of the '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Element#getOwnedComment <em>Owned Comment</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Comment</em>' reference.
-	 * @see #getComment()
+	 * @param value the new value of the '<em>Owned Comment</em>' attribute.
+	 * @see #getOwnedComment()
 	 * @generated
 	 */
-	void setComment(Comment value);
+	void setOwnedComment(String value);
 
 } // Element

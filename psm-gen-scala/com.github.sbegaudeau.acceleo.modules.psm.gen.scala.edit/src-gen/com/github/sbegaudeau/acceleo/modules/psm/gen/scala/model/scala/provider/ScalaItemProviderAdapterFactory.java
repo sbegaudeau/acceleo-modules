@@ -83,29 +83,6 @@ public class ScalaItemProviderAdapterFactory extends ScalaAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Comment} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected CommentItemProvider commentItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Comment}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createCommentAdapter() {
-		if (commentItemProvider == null) {
-			commentItemProvider = new CommentItemProvider(this);
-		}
-
-		return commentItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.ExtendableClassifier} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -507,8 +484,6 @@ public class ScalaItemProviderAdapterFactory extends ScalaAdapterFactory
 	 * @generated
 	 */
 	public void dispose() {
-		if (commentItemProvider != null)
-			commentItemProvider.dispose();
 		if (extendableClassifierItemProvider != null)
 			extendableClassifierItemProvider.dispose();
 		if (classItemProvider != null)

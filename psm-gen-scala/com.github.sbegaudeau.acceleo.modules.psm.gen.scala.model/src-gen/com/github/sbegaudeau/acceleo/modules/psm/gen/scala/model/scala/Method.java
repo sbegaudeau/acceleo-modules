@@ -42,7 +42,7 @@ public interface Method extends NamedElement {
 	 * @return the value of the '<em>Signature</em>' containment reference.
 	 * @see #setSignature(MethodSignature)
 	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.ScalaPackage#getMethod_Signature()
-	 * @model containment="true"
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	MethodSignature getSignature();
@@ -146,7 +146,7 @@ public interface Method extends NamedElement {
 	 * @return the value of the '<em>Visibility</em>' containment reference.
 	 * @see #setVisibility(Visibility)
 	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.ScalaPackage#getMethod_Visibility()
-	 * @model containment="true" required="true"
+	 * @model containment="true"
 	 * @generated
 	 */
 	Visibility getVisibility();

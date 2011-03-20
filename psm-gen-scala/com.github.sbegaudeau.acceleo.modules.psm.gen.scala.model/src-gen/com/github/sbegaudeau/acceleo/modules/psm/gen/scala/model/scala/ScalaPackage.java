@@ -76,13 +76,13 @@ public interface ScalaPackage extends EPackage {
 	int ELEMENT = 0;
 
 	/**
-	 * The feature id for the '<em><b>Comment</b></em>' reference.
+	 * The feature id for the '<em><b>Owned Comment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT__COMMENT = 0;
+	int ELEMENT__OWNED_COMMENT = 0;
 
 	/**
 	 * The number of structural features of the '<em>Element</em>' class.
@@ -94,43 +94,6 @@ public interface ScalaPackage extends EPackage {
 	int ELEMENT_FEATURE_COUNT = 1;
 
 	/**
-	 * The meta object id for the '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.CommentImpl <em>Comment</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.CommentImpl
-	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ScalaPackageImpl#getComment()
-	 * @generated
-	 */
-	int COMMENT = 1;
-
-	/**
-	 * The feature id for the '<em><b>Body</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMENT__BODY = 0;
-
-	/**
-	 * The feature id for the '<em><b>Commented Element</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMENT__COMMENTED_ELEMENT = 1;
-
-	/**
-	 * The number of structural features of the '<em>Comment</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMMENT_FEATURE_COUNT = 2;
-
-	/**
 	 * The meta object id for the '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.NamedElement <em>Named Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -138,16 +101,16 @@ public interface ScalaPackage extends EPackage {
 	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ScalaPackageImpl#getNamedElement()
 	 * @generated
 	 */
-	int NAMED_ELEMENT = 2;
+	int NAMED_ELEMENT = 1;
 
 	/**
-	 * The feature id for the '<em><b>Comment</b></em>' reference.
+	 * The feature id for the '<em><b>Owned Comment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NAMED_ELEMENT__COMMENT = ELEMENT__COMMENT;
+	int NAMED_ELEMENT__OWNED_COMMENT = ELEMENT__OWNED_COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -175,16 +138,16 @@ public interface ScalaPackage extends EPackage {
 	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ScalaPackageImpl#getTypedElement()
 	 * @generated
 	 */
-	int TYPED_ELEMENT = 3;
+	int TYPED_ELEMENT = 2;
 
 	/**
-	 * The feature id for the '<em><b>Comment</b></em>' reference.
+	 * The feature id for the '<em><b>Owned Comment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TYPED_ELEMENT__COMMENT = ELEMENT__COMMENT;
+	int TYPED_ELEMENT__OWNED_COMMENT = ELEMENT__OWNED_COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' reference.
@@ -221,16 +184,16 @@ public interface ScalaPackage extends EPackage {
 	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ScalaPackageImpl#getClassifier()
 	 * @generated
 	 */
-	int CLASSIFIER = 4;
+	int CLASSIFIER = 3;
 
 	/**
-	 * The feature id for the '<em><b>Comment</b></em>' reference.
+	 * The feature id for the '<em><b>Owned Comment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLASSIFIER__COMMENT = NAMED_ELEMENT__COMMENT;
+	int CLASSIFIER__OWNED_COMMENT = NAMED_ELEMENT__OWNED_COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -285,16 +248,16 @@ public interface ScalaPackage extends EPackage {
 	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ScalaPackageImpl#getCaseClassifier()
 	 * @generated
 	 */
-	int CASE_CLASSIFIER = 5;
+	int CASE_CLASSIFIER = 4;
 
 	/**
-	 * The feature id for the '<em><b>Comment</b></em>' reference.
+	 * The feature id for the '<em><b>Owned Comment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CASE_CLASSIFIER__COMMENT = CLASSIFIER__COMMENT;
+	int CASE_CLASSIFIER__OWNED_COMMENT = CLASSIFIER__OWNED_COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -358,7 +321,7 @@ public interface ScalaPackage extends EPackage {
 	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ScalaPackageImpl#getExtendableClassifier()
 	 * @generated
 	 */
-	int EXTENDABLE_CLASSIFIER = 6;
+	int EXTENDABLE_CLASSIFIER = 5;
 
 	/**
 	 * The feature id for the '<em><b>Is Sealed</b></em>' attribute.
@@ -386,16 +349,16 @@ public interface ScalaPackage extends EPackage {
 	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ScalaPackageImpl#getClass_()
 	 * @generated
 	 */
-	int CLASS = 7;
+	int CLASS = 6;
 
 	/**
-	 * The feature id for the '<em><b>Comment</b></em>' reference.
+	 * The feature id for the '<em><b>Owned Comment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLASS__COMMENT = CASE_CLASSIFIER__COMMENT;
+	int CLASS__OWNED_COMMENT = CASE_CLASSIFIER__OWNED_COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -513,16 +476,16 @@ public interface ScalaPackage extends EPackage {
 	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ScalaPackageImpl#getObject()
 	 * @generated
 	 */
-	int OBJECT = 8;
+	int OBJECT = 7;
 
 	/**
-	 * The feature id for the '<em><b>Comment</b></em>' reference.
+	 * The feature id for the '<em><b>Owned Comment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OBJECT__COMMENT = CASE_CLASSIFIER__COMMENT;
+	int OBJECT__OWNED_COMMENT = CASE_CLASSIFIER__OWNED_COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -595,16 +558,16 @@ public interface ScalaPackage extends EPackage {
 	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ScalaPackageImpl#getTrait()
 	 * @generated
 	 */
-	int TRAIT = 9;
+	int TRAIT = 8;
 
 	/**
-	 * The feature id for the '<em><b>Comment</b></em>' reference.
+	 * The feature id for the '<em><b>Owned Comment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRAIT__COMMENT = CLASSIFIER__COMMENT;
+	int TRAIT__OWNED_COMMENT = CLASSIFIER__OWNED_COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -668,16 +631,16 @@ public interface ScalaPackage extends EPackage {
 	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ScalaPackageImpl#getField()
 	 * @generated
 	 */
-	int FIELD = 10;
+	int FIELD = 9;
 
 	/**
-	 * The feature id for the '<em><b>Comment</b></em>' reference.
+	 * The feature id for the '<em><b>Owned Comment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FIELD__COMMENT = NAMED_ELEMENT__COMMENT;
+	int FIELD__OWNED_COMMENT = NAMED_ELEMENT__OWNED_COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -759,7 +722,7 @@ public interface ScalaPackage extends EPackage {
 	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ScalaPackageImpl#getConstructor()
 	 * @generated
 	 */
-	int CONSTRUCTOR = 11;
+	int CONSTRUCTOR = 10;
 
 	/**
 	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
@@ -787,16 +750,16 @@ public interface ScalaPackage extends EPackage {
 	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ScalaPackageImpl#getMethod()
 	 * @generated
 	 */
-	int METHOD = 12;
+	int METHOD = 11;
 
 	/**
-	 * The feature id for the '<em><b>Comment</b></em>' reference.
+	 * The feature id for the '<em><b>Owned Comment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int METHOD__COMMENT = NAMED_ELEMENT__COMMENT;
+	int METHOD__OWNED_COMMENT = NAMED_ELEMENT__OWNED_COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -869,16 +832,16 @@ public interface ScalaPackage extends EPackage {
 	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ScalaPackageImpl#getMethodSignature()
 	 * @generated
 	 */
-	int METHOD_SIGNATURE = 13;
+	int METHOD_SIGNATURE = 12;
 
 	/**
-	 * The feature id for the '<em><b>Comment</b></em>' reference.
+	 * The feature id for the '<em><b>Owned Comment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int METHOD_SIGNATURE__COMMENT = TYPED_ELEMENT__COMMENT;
+	int METHOD_SIGNATURE__OWNED_COMMENT = TYPED_ELEMENT__OWNED_COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' reference.
@@ -933,16 +896,16 @@ public interface ScalaPackage extends EPackage {
 	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ScalaPackageImpl#getModel()
 	 * @generated
 	 */
-	int MODEL = 14;
+	int MODEL = 13;
 
 	/**
-	 * The feature id for the '<em><b>Comment</b></em>' reference.
+	 * The feature id for the '<em><b>Owned Comment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL__COMMENT = NAMED_ELEMENT__COMMENT;
+	int MODEL__OWNED_COMMENT = NAMED_ELEMENT__OWNED_COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -979,16 +942,16 @@ public interface ScalaPackage extends EPackage {
 	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ScalaPackageImpl#getParameter()
 	 * @generated
 	 */
-	int PARAMETER = 15;
+	int PARAMETER = 14;
 
 	/**
-	 * The feature id for the '<em><b>Comment</b></em>' reference.
+	 * The feature id for the '<em><b>Owned Comment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER__COMMENT = NAMED_ELEMENT__COMMENT;
+	int PARAMETER__OWNED_COMMENT = NAMED_ELEMENT__OWNED_COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1034,16 +997,16 @@ public interface ScalaPackage extends EPackage {
 	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ScalaPackageImpl#getPackage()
 	 * @generated
 	 */
-	int PACKAGE = 16;
+	int PACKAGE = 15;
 
 	/**
-	 * The feature id for the '<em><b>Comment</b></em>' reference.
+	 * The feature id for the '<em><b>Owned Comment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PACKAGE__COMMENT = NAMED_ELEMENT__COMMENT;
+	int PACKAGE__OWNED_COMMENT = NAMED_ELEMENT__OWNED_COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1098,16 +1061,16 @@ public interface ScalaPackage extends EPackage {
 	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ScalaPackageImpl#getFile()
 	 * @generated
 	 */
-	int FILE = 17;
+	int FILE = 16;
 
 	/**
-	 * The feature id for the '<em><b>Comment</b></em>' reference.
+	 * The feature id for the '<em><b>Owned Comment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FILE__COMMENT = NAMED_ELEMENT__COMMENT;
+	int FILE__OWNED_COMMENT = NAMED_ELEMENT__OWNED_COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1144,16 +1107,16 @@ public interface ScalaPackage extends EPackage {
 	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ScalaPackageImpl#getType()
 	 * @generated
 	 */
-	int TYPE = 18;
+	int TYPE = 17;
 
 	/**
-	 * The feature id for the '<em><b>Comment</b></em>' reference.
+	 * The feature id for the '<em><b>Owned Comment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TYPE__COMMENT = NAMED_ELEMENT__COMMENT;
+	int TYPE__OWNED_COMMENT = NAMED_ELEMENT__OWNED_COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1181,7 +1144,7 @@ public interface ScalaPackage extends EPackage {
 	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ScalaPackageImpl#getVisibility()
 	 * @generated
 	 */
-	int VISIBILITY = 19;
+	int VISIBILITY = 18;
 
 	/**
 	 * The feature id for the '<em><b>Kind</b></em>' attribute.
@@ -1218,7 +1181,7 @@ public interface ScalaPackage extends EPackage {
 	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ScalaPackageImpl#getVisibilityScope()
 	 * @generated
 	 */
-	int VISIBILITY_SCOPE = 20;
+	int VISIBILITY_SCOPE = 19;
 
 	/**
 	 * The number of structural features of the '<em>Visibility Scope</em>' class.
@@ -1237,7 +1200,7 @@ public interface ScalaPackage extends EPackage {
 	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ScalaPackageImpl#getVisibilityKind()
 	 * @generated
 	 */
-	int VISIBILITY_KIND = 21;
+	int VISIBILITY_KIND = 20;
 
 	/**
 	 * Returns the meta object for class '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Element <em>Element</em>}'.
@@ -1250,47 +1213,15 @@ public interface ScalaPackage extends EPackage {
 	EClass getElement();
 
 	/**
-	 * Returns the meta object for the reference '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Element#getComment <em>Comment</em>}'.
+	 * Returns the meta object for the attribute '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Element#getOwnedComment <em>Owned Comment</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Comment</em>'.
-	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Element#getComment()
+	 * @return the meta object for the attribute '<em>Owned Comment</em>'.
+	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Element#getOwnedComment()
 	 * @see #getElement()
 	 * @generated
 	 */
-	EReference getElement_Comment();
-
-	/**
-	 * Returns the meta object for class '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Comment <em>Comment</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Comment</em>'.
-	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Comment
-	 * @generated
-	 */
-	EClass getComment();
-
-	/**
-	 * Returns the meta object for the attribute '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Comment#getBody <em>Body</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Body</em>'.
-	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Comment#getBody()
-	 * @see #getComment()
-	 * @generated
-	 */
-	EAttribute getComment_Body();
-
-	/**
-	 * Returns the meta object for the reference '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Comment#getCommentedElement <em>Commented Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Commented Element</em>'.
-	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Comment#getCommentedElement()
-	 * @see #getComment()
-	 * @generated
-	 */
-	EReference getComment_CommentedElement();
+	EAttribute getElement_OwnedComment();
 
 	/**
 	 * Returns the meta object for class '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.NamedElement <em>Named Element</em>}'.
@@ -1877,39 +1808,12 @@ public interface ScalaPackage extends EPackage {
 		EClass ELEMENT = eINSTANCE.getElement();
 
 		/**
-		 * The meta object literal for the '<em><b>Comment</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Owned Comment</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ELEMENT__COMMENT = eINSTANCE.getElement_Comment();
-
-		/**
-		 * The meta object literal for the '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.CommentImpl <em>Comment</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.CommentImpl
-		 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ScalaPackageImpl#getComment()
-		 * @generated
-		 */
-		EClass COMMENT = eINSTANCE.getComment();
-
-		/**
-		 * The meta object literal for the '<em><b>Body</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute COMMENT__BODY = eINSTANCE.getComment_Body();
-
-		/**
-		 * The meta object literal for the '<em><b>Commented Element</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference COMMENT__COMMENTED_ELEMENT = eINSTANCE
-				.getComment_CommentedElement();
+		EAttribute ELEMENT__OWNED_COMMENT = eINSTANCE.getElement_OwnedComment();
 
 		/**
 		 * The meta object literal for the '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.NamedElement <em>Named Element</em>}' class.

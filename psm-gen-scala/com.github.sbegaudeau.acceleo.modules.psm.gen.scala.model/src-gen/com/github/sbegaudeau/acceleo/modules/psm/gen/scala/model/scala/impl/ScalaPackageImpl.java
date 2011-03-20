@@ -12,7 +12,6 @@ package com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl;
 
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.CaseClassifier;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Classifier;
-import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Comment;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Constructor;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Element;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.ExtendableClassifier;
@@ -53,13 +52,6 @@ public class ScalaPackageImpl extends EPackageImpl implements ScalaPackage {
 	 * @generated
 	 */
 	private EClass elementEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass commentEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -279,35 +271,8 @@ public class ScalaPackageImpl extends EPackageImpl implements ScalaPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getElement_Comment() {
-		return (EReference) elementEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getComment() {
-		return commentEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getComment_Body() {
-		return (EAttribute) commentEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getComment_CommentedElement() {
-		return (EReference) commentEClass.getEStructuralFeatures().get(1);
+	public EAttribute getElement_OwnedComment() {
+		return (EAttribute) elementEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -811,11 +776,7 @@ public class ScalaPackageImpl extends EPackageImpl implements ScalaPackage {
 
 		// Create classes and their features
 		elementEClass = createEClass(ELEMENT);
-		createEReference(elementEClass, ELEMENT__COMMENT);
-
-		commentEClass = createEClass(COMMENT);
-		createEAttribute(commentEClass, COMMENT__BODY);
-		createEReference(commentEClass, COMMENT__COMMENTED_ELEMENT);
+		createEAttribute(elementEClass, ELEMENT__OWNED_COMMENT);
 
 		namedElementEClass = createEClass(NAMED_ELEMENT);
 		createEAttribute(namedElementEClass, NAMED_ELEMENT__NAME);
@@ -950,25 +911,10 @@ public class ScalaPackageImpl extends EPackageImpl implements ScalaPackage {
 				elementEClass,
 				Element.class,
 				"Element", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEReference(
-				getElement_Comment(),
-				this.getComment(),
-				this.getComment_CommentedElement(),
-				"comment", null, 0, 1, Element.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-
-		initEClass(
-				commentEClass,
-				Comment.class,
-				"Comment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEAttribute(
-				getComment_Body(),
+				getElement_OwnedComment(),
 				ecorePackage.getEString(),
-				"body", null, 0, 1, Comment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEReference(
-				getComment_CommentedElement(),
-				this.getElement(),
-				this.getElement_Comment(),
-				"commentedElement", null, 1, 1, Comment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+				"ownedComment", null, 0, 1, Element.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
 
 		initEClass(
 				namedElementEClass,
@@ -1114,7 +1060,7 @@ public class ScalaPackageImpl extends EPackageImpl implements ScalaPackage {
 				getMethod_Signature(),
 				this.getMethodSignature(),
 				null,
-				"signature", null, 0, 1, Method.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+				"signature", null, 1, 1, Method.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
 		initEAttribute(
 				getMethod_IsAbstract(),
 				ecorePackage.getEBoolean(),
@@ -1131,7 +1077,7 @@ public class ScalaPackageImpl extends EPackageImpl implements ScalaPackage {
 				getMethod_Visibility(),
 				this.getVisibility(),
 				null,
-				"visibility", null, 1, 1, Method.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+				"visibility", null, 0, 1, Method.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
 
 		initEClass(
 				methodSignatureEClass,
@@ -1213,8 +1159,8 @@ public class ScalaPackageImpl extends EPackageImpl implements ScalaPackage {
 		// Initialize enums and add enum literals
 		initEEnum(visibilityKindEEnum, VisibilityKind.class, "VisibilityKind"); //$NON-NLS-1$
 		addEEnumLiteral(visibilityKindEEnum, VisibilityKind.PUBLIC);
-		addEEnumLiteral(visibilityKindEEnum, VisibilityKind.PRIVATE);
 		addEEnumLiteral(visibilityKindEEnum, VisibilityKind.PROTECTED);
+		addEEnumLiteral(visibilityKindEEnum, VisibilityKind.PRIVATE);
 
 		// Create resource
 		createResource(eNS_URI);

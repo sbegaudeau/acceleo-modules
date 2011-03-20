@@ -68,7 +68,7 @@ public class ClassItemProvider extends ItemProviderAdapter implements
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addCommentPropertyDescriptor(object);
+			addOwnedCommentPropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
 			addSuperTypePropertyDescriptor(object);
 			addTraitsPropertyDescriptor(object);
@@ -82,22 +82,23 @@ public class ClassItemProvider extends ItemProviderAdapter implements
 	}
 
 	/**
-	 * This adds a property descriptor for the Comment feature.
+	 * This adds a property descriptor for the Owned Comment feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addCommentPropertyDescriptor(Object object) {
+	protected void addOwnedCommentPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(
 						((ComposeableAdapterFactory) adapterFactory)
 								.getRootAdapterFactory(),
 						getResourceLocator(),
-						getString("_UI_Element_comment_feature"), //$NON-NLS-1$
+						getString("_UI_Element_ownedComment_feature"), //$NON-NLS-1$
 						getString(
-								"_UI_PropertyDescriptor_description", "_UI_Element_comment_feature", "_UI_Element_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-						ScalaPackage.Literals.ELEMENT__COMMENT, true, false,
-						true, null, null, null));
+								"_UI_PropertyDescriptor_description", "_UI_Element_ownedComment_feature", "_UI_Element_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						ScalaPackage.Literals.ELEMENT__OWNED_COMMENT, true,
+						false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -329,6 +330,7 @@ public class ClassItemProvider extends ItemProviderAdapter implements
 
 		switch (notification
 				.getFeatureID(com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Class.class)) {
+		case ScalaPackage.CLASS__OWNED_COMMENT:
 		case ScalaPackage.CLASS__NAME:
 		case ScalaPackage.CLASS__IS_CASE:
 		case ScalaPackage.CLASS__IS_SEALED:

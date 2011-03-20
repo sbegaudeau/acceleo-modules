@@ -31,15 +31,6 @@ public interface ScalaFactory extends EFactory {
 			.init();
 
 	/**
-	 * Returns a new object of class '<em>Comment</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Comment</em>'.
-	 * @generated
-	 */
-	Comment createComment();
-
-	/**
 	 * Returns a new object of class '<em>Extendable Classifier</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
