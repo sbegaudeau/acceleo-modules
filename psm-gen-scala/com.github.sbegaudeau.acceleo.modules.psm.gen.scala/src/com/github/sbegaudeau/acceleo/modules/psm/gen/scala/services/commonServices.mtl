@@ -23,11 +23,7 @@ Other contributors :
 	* Returns the current date. Use the 'gen.long.date' property to change the format of the data generated.
 /]
 [template public genDate()]
-[if ('true'.equalsIgnoreCase(getProperty('gen.long.date')))]
-[genLongDate()/]
-[else]
-[genShortDate()/]
-[/if]
+[if ('true'.equalsIgnoreCase(getProperty('gen.file.long.date')))][genLongDate()/][else][genShortDate()/][/if]
 [/template]
 
 [comment 

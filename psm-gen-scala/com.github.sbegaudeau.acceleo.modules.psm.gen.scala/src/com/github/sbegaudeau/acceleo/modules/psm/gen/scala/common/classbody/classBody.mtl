@@ -17,7 +17,9 @@ Other contributors :
 [aClass.genClassifierDocumentation()/]
 [aClass.genFinal()/][aClass.genAbstract()/][aClass.genSealed()/][aClass.genCase()/]class [aClass.genName()/] [aClass.genDefaultConstructor()/]{
     [aClass.genFields()/]
+
     [aClass.genConstructors()/]
+
     [aClass.genMethods()/]
 }
 [/template]
@@ -30,17 +32,30 @@ Other contributors :
 [aField.genName()/]: [aField.genType()/]
 [/template]
 
-[template public genFields (aClass : Class) ]
+[template public genFields (aClass : Class) post(trim())]
 [for (aField : Field | aClass.fields->select(aField : Field | not aField.isConstructorProperty))]
+/**
+ * The description of [aField.name/].
+ * [aField.ownedComment/]
+ */
 [aField.genOverride()/][if (aField.isFinal)]val [else]var [/if][aField.genName()/]: [aField.genType()/][if (not aClass.isAbstract)] = [aField.genDefaultValue()/][else] = [aField.genAbstractDefaultValue()/][/if]
+
 [/for]
 [/template]
 
-[template public genConstructors (aClass : Class) ]
+[template public genConstructors (aClass : Class) post(trim())]
 [for (aConstructor : Constructor | aClass.constructors)]
+/**
+ * The description of the constructor.
+ * [aConstructor.ownedComment/]
+[for (aParameter : Parameter | aConstructor.parameters)]
+ * @param [aParameter.name/] [aParameter.ownedComment/]
+[/for]
+ */
 def this([aConstructor.parameters.genParameter()->sep(', ')/]) = {
     this([aConstructor.genDefaultConstructorParameters()/]);
 }
+
 [/for]
 [/template]
 

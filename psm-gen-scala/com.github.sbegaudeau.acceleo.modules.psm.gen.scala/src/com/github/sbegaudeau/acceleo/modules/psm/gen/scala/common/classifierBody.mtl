@@ -14,7 +14,10 @@ Other contributors :
 [module classifierBody('http://github.com/sbegaudeau/acceleo/scalametamodel/2011/01')/]
 
 [template public genClassifierDocumentation(aClassifier : Classifier)]
-
+/**
+ * The description of [aClassifier.name/].
+ * [aClassifier.ownedComment/]
+ */
 [/template]
 
 [template public genClassifierBody(aClassifier : Classifier)]
@@ -53,7 +56,7 @@ Other contributors :
 [if (aMethod.isOverriding)]override [/if]
 [/template]
 
-[template public genMethods (aClassifier : Classifier) ]
+[template public genMethods (aClassifier : Classifier) post(trim())]
 [for (aMethod : Method | aClassifier.methods)]
 /**
  * The description of [aMethod.name/].
@@ -62,7 +65,7 @@ Other contributors :
  * @param [aParameter.name/] [aParameter.ownedComment/]
 [/for]
 [if (aMethod.signature.type <> null and not 'Null'.equalsIgnoreCase(aMethod.signature.type.name) and not 'Nothing'.equalsIgnoreCase(aMethod.signature.type.name))]
- * @return
+ * @return 
 [/if]
  */
 [aMethod.genOverride()/]def [aMethod.genName()/]([aMethod.signature.parameters.genParameter()->sep(', ')/]): [aMethod.signature.genType()/] = {
