@@ -16,7 +16,9 @@ Other contributors :
 [template public genClassifierDocumentation(aClassifier : Classifier)]
 /**
  * The description of [aClassifier.name/].
+[if (aClassifier.ownedComment <> null)]
  * [aClassifier.ownedComment/]
+[/if]
  */
 [/template]
 
@@ -56,11 +58,38 @@ Other contributors :
 [if (aMethod.isOverriding)]override [/if]
 [/template]
 
+[template public genVisibility(aField : Field)]
+[if (aField.visibility <> null and VisibilityKind::public <> aField.visibility.kind)][aField.visibility.genVisibility()/] [/if]
+[/template]
+
+[template public genVisibility(aMethod : Method)]
+[if (aMethod.visibility <> null and VisibilityKind::public <> aMethod.visibility.kind)][aMethod.visibility.genVisibility()/] [/if]
+[/template]
+
+[template public genVisibility(aVisibility : Visibility) post(trim())]
+[if (VisibilityKind::protected = aVisibility.kind)]
+[if (aVisibility.scope <> null and aVisibility.scope.oclIsKindOf(NamedElement))]
+protected['['/][aVisibility.scope.oclAsType(NamedElement).name/][']'/]
+[else]
+protected
+[/if]
+[elseif (VisibilityKind::private = aVisibility.kind)]
+[if (aVisibility.scope <> null and aVisibility.scope.oclIsKindOf(NamedElement))]
+private['['/][aVisibility.scope.oclAsType(NamedElement).name/][']'/]
+[else]
+private
+[/if]
+[/if]
+[/template]
+
 [template public genMethods (aClassifier : Classifier) post(trim())]
 [for (aMethod : Method | aClassifier.methods)]
 /**
  * The description of [aMethod.name/].
+ * 
+[if (aMethod.ownedComment <> null)]
  * [aMethod.ownedComment/]
+[/if]
 [for (aParameter : Parameter | aMethod.signature.parameters)]
  * @param [aParameter.name/] [aParameter.ownedComment/]
 [/for]
@@ -68,7 +97,7 @@ Other contributors :
  * @return 
 [/if]
  */
-[aMethod.genOverride()/]def [aMethod.genName()/]([aMethod.signature.parameters.genParameter()->sep(', ')/]): [aMethod.signature.genType()/] = {
+[aMethod.genVisibility()/][aMethod.genOverride()/]def [aMethod.genName()/]([aMethod.signature.parameters.genParameter()->sep(', ')/]): [aMethod.signature.genType()/] = {
     return null
 }
 
