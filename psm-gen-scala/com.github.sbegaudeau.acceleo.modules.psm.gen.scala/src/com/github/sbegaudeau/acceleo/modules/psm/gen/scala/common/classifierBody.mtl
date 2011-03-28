@@ -98,10 +98,22 @@ private
 [/if]
  */
 [aMethod.genVisibility()/][aMethod.genOverride()/]def [aMethod.genName()/]([aMethod.signature.parameters.genParameter()->sep(', ')/]): [aMethod.signature.genType()/] = {
-    return null
+    return [aMethod.genMethodDefaultReturnValue()/]
 }
 
 [/for]
+[/template]
+
+[template public genMethodDefaultReturnValue (aMethod : Method) post(trim())]
+[if ('true'.equalsIgnoreCase(getProperty('gen.field.defaultValue')))]
+[if (aMethod.signature.isOption)]
+Some([getProperty(aMethod.signature.type.name)/])[else][getProperty(aMethod.signature.type.name)/]
+[/if]
+[else]
+[if (aMethod.signature.isOption)]
+None[else]null
+[/if]
+[/if]
 [/template]
 
 [template public genParameter(aParameter : Parameter)]
