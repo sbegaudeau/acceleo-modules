@@ -16,7 +16,7 @@ Other contributors :
 [template public genClassifierDocumentation(aClassifier : Classifier)]
 /**
  * The description of [aClassifier.name/].
-[if (aClassifier.ownedComment <> null)]
+[if (aClassifier.ownedComment <> null and not ''.equalsIgnoreCase(aClassifier.ownedComment))]
  * [aClassifier.ownedComment/]
 [/if]
  */
@@ -80,6 +80,19 @@ private['['/][aVisibility.scope.oclAsType(NamedElement).name/][']'/]
 private
 [/if]
 [/if]
+[/template]
+
+[template public genFields (aClassifier : Classifier) post(trim())]
+[for (aField : Field | aClassifier.fields->select(aField : Field | not aField.isConstructorProperty))]
+/**
+ * The description of [aField.name/].
+[if (aField.ownedComment <> null)]
+ * [aField.ownedComment/]
+[/if]
+ */
+[aField.genVisibility()/][aField.genOverride()/][if (aField.isFinal)]val [else]var [/if][aField.genName()/]: [aField.genType()/] = [aField.genDefaultValue()/]
+
+[/for]
 [/template]
 
 [template public genMethods (aClassifier : Classifier) post(trim())]

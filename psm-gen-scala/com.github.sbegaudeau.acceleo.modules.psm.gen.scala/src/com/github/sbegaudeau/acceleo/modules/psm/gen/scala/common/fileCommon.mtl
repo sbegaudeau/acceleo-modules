@@ -23,12 +23,13 @@ Other contributors :
 [aFile.ancestors()->filter(Package).name->reverse()->sep('.')/]
 [/template]
 
-[template public genBody(aFile : File)]
+[template public genBody(aFile : File) post(trim())]
 [aFile.genFileHeader()/]
 [aFile.genPackageDeclaration()/]
 
 [for (aClassifier : Classifier | aFile.classifiers)]
 [aClassifier.genClassifierBody()/]
+
 [/for]
 [/template]
 

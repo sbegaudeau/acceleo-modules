@@ -32,19 +32,6 @@ Other contributors :
 [aField.genName()/]: [aField.genType()/]
 [/template]
 
-[template public genFields (aClass : Class) post(trim())]
-[for (aField : Field | aClass.fields->select(aField : Field | not aField.isConstructorProperty))]
-/**
- * The description of [aField.name/].
-[if (aField.ownedComment <> null)]
- * [aField.ownedComment/]
-[/if]
- */
-[aField.genVisibility()/][aField.genOverride()/][if (aField.isFinal)]val [else]var [/if][aField.genName()/]: [aField.genType()/][if (not aClass.isAbstract)] = [aField.genDefaultValue()/][else] = [aField.genAbstractDefaultValue()/][/if]
-
-[/for]
-[/template]
-
 [template public genConstructors (aClass : Class) post(trim())]
 [for (aConstructor : Constructor | aClass.constructors)]
 /**
