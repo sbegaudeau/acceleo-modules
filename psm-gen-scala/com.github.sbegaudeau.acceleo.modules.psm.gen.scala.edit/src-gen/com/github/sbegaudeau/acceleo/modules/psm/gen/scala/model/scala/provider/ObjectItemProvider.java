@@ -208,6 +208,7 @@ public class ObjectItemProvider extends ItemProviderAdapter implements
 			Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(ScalaPackage.Literals.CLASSIFIER__FIELDS);
 			childrenFeatures.add(ScalaPackage.Literals.CLASSIFIER__METHODS);
 		}
 		return childrenFeatures;
@@ -271,6 +272,7 @@ public class ObjectItemProvider extends ItemProviderAdapter implements
 			fireNotifyChanged(new ViewerNotification(notification,
 					notification.getNotifier(), false, true));
 			return;
+		case ScalaPackage.OBJECT__FIELDS:
 		case ScalaPackage.OBJECT__METHODS:
 			fireNotifyChanged(new ViewerNotification(notification,
 					notification.getNotifier(), true, false));
@@ -290,6 +292,10 @@ public class ObjectItemProvider extends ItemProviderAdapter implements
 	protected void collectNewChildDescriptors(
 			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add(createChildParameter(
+				ScalaPackage.Literals.CLASSIFIER__FIELDS,
+				ScalaFactory.eINSTANCE.createField()));
 
 		newChildDescriptors.add(createChildParameter(
 				ScalaPackage.Literals.CLASSIFIER__METHODS,

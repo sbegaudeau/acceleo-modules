@@ -334,7 +334,7 @@ public class ScalaPackageImpl extends EPackageImpl implements ScalaPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getClassifier_Methods() {
+	public EReference getClassifier_Fields() {
 		return (EReference) classifierEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -343,7 +343,7 @@ public class ScalaPackageImpl extends EPackageImpl implements ScalaPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getClassifier_SuperType() {
+	public EReference getClassifier_Methods() {
 		return (EReference) classifierEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -352,8 +352,17 @@ public class ScalaPackageImpl extends EPackageImpl implements ScalaPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getClassifier_Traits() {
+	public EReference getClassifier_SuperType() {
 		return (EReference) classifierEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getClassifier_Traits() {
+		return (EReference) classifierEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -408,7 +417,7 @@ public class ScalaPackageImpl extends EPackageImpl implements ScalaPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getClass_Fields() {
+	public EReference getClass_Constructors() {
 		return (EReference) classEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -417,7 +426,7 @@ public class ScalaPackageImpl extends EPackageImpl implements ScalaPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getClass_Constructors() {
+	public EReference getClass_CompanionObject() {
 		return (EReference) classEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -426,17 +435,8 @@ public class ScalaPackageImpl extends EPackageImpl implements ScalaPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getClass_CompanionObject() {
-		return (EReference) classEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getClass_IsFinal() {
-		return (EAttribute) classEClass.getEStructuralFeatures().get(3);
+		return (EAttribute) classEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -445,7 +445,7 @@ public class ScalaPackageImpl extends EPackageImpl implements ScalaPackage {
 	 * @generated
 	 */
 	public EAttribute getClass_IsAbstract() {
-		return (EAttribute) classEClass.getEStructuralFeatures().get(4);
+		return (EAttribute) classEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -786,6 +786,7 @@ public class ScalaPackageImpl extends EPackageImpl implements ScalaPackage {
 		createEAttribute(typedElementEClass, TYPED_ELEMENT__IS_OPTION);
 
 		classifierEClass = createEClass(CLASSIFIER);
+		createEReference(classifierEClass, CLASSIFIER__FIELDS);
 		createEReference(classifierEClass, CLASSIFIER__METHODS);
 		createEReference(classifierEClass, CLASSIFIER__SUPER_TYPE);
 		createEReference(classifierEClass, CLASSIFIER__TRAITS);
@@ -798,7 +799,6 @@ public class ScalaPackageImpl extends EPackageImpl implements ScalaPackage {
 				EXTENDABLE_CLASSIFIER__IS_SEALED);
 
 		classEClass = createEClass(CLASS);
-		createEReference(classEClass, CLASS__FIELDS);
 		createEReference(classEClass, CLASS__CONSTRUCTORS);
 		createEReference(classEClass, CLASS__COMPANION_OBJECT);
 		createEAttribute(classEClass, CLASS__IS_FINAL);
@@ -945,6 +945,11 @@ public class ScalaPackageImpl extends EPackageImpl implements ScalaPackage {
 				Classifier.class,
 				"Classifier", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEReference(
+				getClassifier_Fields(),
+				this.getField(),
+				null,
+				"fields", null, 0, -1, Classifier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+		initEReference(
 				getClassifier_Methods(),
 				this.getMethod(),
 				null,
@@ -982,11 +987,6 @@ public class ScalaPackageImpl extends EPackageImpl implements ScalaPackage {
 				classEClass,
 				com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Class.class,
 				"Class", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEReference(
-				getClass_Fields(),
-				this.getField(),
-				null,
-				"fields", null, 0, -1, com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Class.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
 		initEReference(
 				getClass_Constructors(),
 				this.getConstructor(),

@@ -20,7 +20,6 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Class#getFields <em>Fields</em>}</li>
  *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Class#getConstructors <em>Constructors</em>}</li>
  *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Class#getCompanionObject <em>Companion Object</em>}</li>
  *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Class#isIsFinal <em>Is Final</em>}</li>
@@ -33,22 +32,6 @@ import org.eclipse.emf.common.util.EList;
  * @generated
  */
 public interface Class extends CaseClassifier, ExtendableClassifier {
-	/**
-	 * Returns the value of the '<em><b>Fields</b></em>' containment reference list.
-	 * The list contents are of type {@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Field}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Fields</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Fields</em>' containment reference list.
-	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.ScalaPackage#getClass_Fields()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<Field> getFields();
-
 	/**
 	 * Returns the value of the '<em><b>Constructors</b></em>' containment reference list.
 	 * The list contents are of type {@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Constructor}.

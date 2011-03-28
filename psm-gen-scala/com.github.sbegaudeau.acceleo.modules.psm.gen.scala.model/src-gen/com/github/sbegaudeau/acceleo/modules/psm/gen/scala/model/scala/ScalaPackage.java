@@ -205,13 +205,22 @@ public interface ScalaPackage extends EPackage {
 	int CLASSIFIER__NAME = NAMED_ELEMENT__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Fields</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLASSIFIER__FIELDS = NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Methods</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLASSIFIER__METHODS = NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int CLASSIFIER__METHODS = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Super Type</b></em>' reference.
@@ -220,7 +229,7 @@ public interface ScalaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLASSIFIER__SUPER_TYPE = NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int CLASSIFIER__SUPER_TYPE = NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Traits</b></em>' reference list.
@@ -229,7 +238,7 @@ public interface ScalaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLASSIFIER__TRAITS = NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int CLASSIFIER__TRAITS = NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Classifier</em>' class.
@@ -238,7 +247,7 @@ public interface ScalaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLASSIFIER_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int CLASSIFIER_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.CaseClassifier <em>Case Classifier</em>}' class.
@@ -267,6 +276,15 @@ public interface ScalaPackage extends EPackage {
 	 * @ordered
 	 */
 	int CASE_CLASSIFIER__NAME = CLASSIFIER__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Fields</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CASE_CLASSIFIER__FIELDS = CLASSIFIER__FIELDS;
 
 	/**
 	 * The feature id for the '<em><b>Methods</b></em>' containment reference list.
@@ -370,6 +388,15 @@ public interface ScalaPackage extends EPackage {
 	int CLASS__NAME = CASE_CLASSIFIER__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Fields</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLASS__FIELDS = CASE_CLASSIFIER__FIELDS;
+
+	/**
 	 * The feature id for the '<em><b>Methods</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -415,22 +442,13 @@ public interface ScalaPackage extends EPackage {
 	int CLASS__IS_SEALED = CASE_CLASSIFIER_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Fields</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CLASS__FIELDS = CASE_CLASSIFIER_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Constructors</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLASS__CONSTRUCTORS = CASE_CLASSIFIER_FEATURE_COUNT + 2;
+	int CLASS__CONSTRUCTORS = CASE_CLASSIFIER_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Companion Object</b></em>' reference.
@@ -439,7 +457,7 @@ public interface ScalaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLASS__COMPANION_OBJECT = CASE_CLASSIFIER_FEATURE_COUNT + 3;
+	int CLASS__COMPANION_OBJECT = CASE_CLASSIFIER_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Is Final</b></em>' attribute.
@@ -448,7 +466,7 @@ public interface ScalaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLASS__IS_FINAL = CASE_CLASSIFIER_FEATURE_COUNT + 4;
+	int CLASS__IS_FINAL = CASE_CLASSIFIER_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
@@ -457,7 +475,7 @@ public interface ScalaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLASS__IS_ABSTRACT = CASE_CLASSIFIER_FEATURE_COUNT + 5;
+	int CLASS__IS_ABSTRACT = CASE_CLASSIFIER_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Class</em>' class.
@@ -466,7 +484,7 @@ public interface ScalaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLASS_FEATURE_COUNT = CASE_CLASSIFIER_FEATURE_COUNT + 6;
+	int CLASS_FEATURE_COUNT = CASE_CLASSIFIER_FEATURE_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ObjectImpl <em>Object</em>}' class.
@@ -495,6 +513,15 @@ public interface ScalaPackage extends EPackage {
 	 * @ordered
 	 */
 	int OBJECT__NAME = CASE_CLASSIFIER__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Fields</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT__FIELDS = CASE_CLASSIFIER__FIELDS;
 
 	/**
 	 * The feature id for the '<em><b>Methods</b></em>' containment reference list.
@@ -577,6 +604,15 @@ public interface ScalaPackage extends EPackage {
 	 * @ordered
 	 */
 	int TRAIT__NAME = CLASSIFIER__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Fields</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRAIT__FIELDS = CLASSIFIER__FIELDS;
 
 	/**
 	 * The feature id for the '<em><b>Methods</b></em>' containment reference list.
@@ -1296,6 +1332,17 @@ public interface ScalaPackage extends EPackage {
 	EClass getClassifier();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Classifier#getFields <em>Fields</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Fields</em>'.
+	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Classifier#getFields()
+	 * @see #getClassifier()
+	 * @generated
+	 */
+	EReference getClassifier_Fields();
+
+	/**
 	 * Returns the meta object for the containment reference list '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Classifier#getMethods <em>Methods</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1379,17 +1426,6 @@ public interface ScalaPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getClass_();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Class#getFields <em>Fields</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Fields</em>'.
-	 * @see com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Class#getFields()
-	 * @see #getClass_()
-	 * @generated
-	 */
-	EReference getClass_Fields();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Class#getConstructors <em>Constructors</em>}'.
@@ -1880,6 +1916,14 @@ public interface ScalaPackage extends EPackage {
 		EClass CLASSIFIER = eINSTANCE.getClassifier();
 
 		/**
+		 * The meta object literal for the '<em><b>Fields</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CLASSIFIER__FIELDS = eINSTANCE.getClassifier_Fields();
+
+		/**
 		 * The meta object literal for the '<em><b>Methods</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1950,14 +1994,6 @@ public interface ScalaPackage extends EPackage {
 		 * @generated
 		 */
 		EClass CLASS = eINSTANCE.getClass_();
-
-		/**
-		 * The meta object literal for the '<em><b>Fields</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CLASS__FIELDS = eINSTANCE.getClass_Fields();
 
 		/**
 		 * The meta object literal for the '<em><b>Constructors</b></em>' containment reference list feature.

@@ -19,6 +19,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Classifier" abstract="true" interface="true"
       eSuperTypes="#//NamedElement #//Type">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fields" upperBound="-1"
+        eType="#//Field" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="methods" upperBound="-1"
         eType="#//Method" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="superType" eType="#//ExtendableClassifier"/>
@@ -35,8 +37,6 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Class" eSuperTypes="#//CaseClassifier #//ExtendableClassifier">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="fields" upperBound="-1"
-        eType="#//Field" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="constructors" upperBound="-1"
         eType="#//Constructor" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="companionObject" eType="#//Object"

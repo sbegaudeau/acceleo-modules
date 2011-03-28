@@ -11,6 +11,7 @@
 package com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl;
 
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.ExtendableClassifier;
+import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Field;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Method;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.ScalaPackage;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.Trait;
@@ -42,6 +43,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.TraitImpl#getOwnedComment <em>Owned Comment</em>}</li>
  *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.TraitImpl#getName <em>Name</em>}</li>
+ *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.TraitImpl#getFields <em>Fields</em>}</li>
  *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.TraitImpl#getMethods <em>Methods</em>}</li>
  *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.TraitImpl#getSuperType <em>Super Type</em>}</li>
  *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.TraitImpl#getTraits <em>Traits</em>}</li>
@@ -91,6 +93,16 @@ public class TraitImpl extends EObjectImpl implements Trait {
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getFields() <em>Fields</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFields()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Field> fields;
 
 	/**
 	 * The cached value of the '{@link #getMethods() <em>Methods</em>}' containment reference list.
@@ -211,6 +223,19 @@ public class TraitImpl extends EObjectImpl implements Trait {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Field> getFields() {
+		if (fields == null) {
+			fields = new EObjectContainmentEList<Field>(Field.class, this,
+					ScalaPackage.TRAIT__FIELDS);
+		}
+		return fields;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EList<Method> getMethods() {
 		if (methods == null) {
 			methods = new EObjectContainmentEList<Method>(Method.class, this,
@@ -304,6 +329,8 @@ public class TraitImpl extends EObjectImpl implements Trait {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd,
 			int featureID, NotificationChain msgs) {
 		switch (featureID) {
+		case ScalaPackage.TRAIT__FIELDS:
+			return ((InternalEList<?>) getFields()).basicRemove(otherEnd, msgs);
 		case ScalaPackage.TRAIT__METHODS:
 			return ((InternalEList<?>) getMethods())
 					.basicRemove(otherEnd, msgs);
@@ -323,6 +350,8 @@ public class TraitImpl extends EObjectImpl implements Trait {
 			return getOwnedComment();
 		case ScalaPackage.TRAIT__NAME:
 			return getName();
+		case ScalaPackage.TRAIT__FIELDS:
+			return getFields();
 		case ScalaPackage.TRAIT__METHODS:
 			return getMethods();
 		case ScalaPackage.TRAIT__SUPER_TYPE:
@@ -351,6 +380,10 @@ public class TraitImpl extends EObjectImpl implements Trait {
 			return;
 		case ScalaPackage.TRAIT__NAME:
 			setName((String) newValue);
+			return;
+		case ScalaPackage.TRAIT__FIELDS:
+			getFields().clear();
+			getFields().addAll((Collection<? extends Field>) newValue);
 			return;
 		case ScalaPackage.TRAIT__METHODS:
 			getMethods().clear();
@@ -384,6 +417,9 @@ public class TraitImpl extends EObjectImpl implements Trait {
 		case ScalaPackage.TRAIT__NAME:
 			setName(NAME_EDEFAULT);
 			return;
+		case ScalaPackage.TRAIT__FIELDS:
+			getFields().clear();
+			return;
 		case ScalaPackage.TRAIT__METHODS:
 			getMethods().clear();
 			return;
@@ -414,6 +450,8 @@ public class TraitImpl extends EObjectImpl implements Trait {
 		case ScalaPackage.TRAIT__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT
 					.equals(name);
+		case ScalaPackage.TRAIT__FIELDS:
+			return fields != null && !fields.isEmpty();
 		case ScalaPackage.TRAIT__METHODS:
 			return methods != null && !methods.isEmpty();
 		case ScalaPackage.TRAIT__SUPER_TYPE:

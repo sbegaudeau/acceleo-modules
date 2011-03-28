@@ -271,8 +271,8 @@ public class ClassItemProvider extends ItemProviderAdapter implements
 			Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(ScalaPackage.Literals.CLASSIFIER__FIELDS);
 			childrenFeatures.add(ScalaPackage.Literals.CLASSIFIER__METHODS);
-			childrenFeatures.add(ScalaPackage.Literals.CLASS__FIELDS);
 			childrenFeatures.add(ScalaPackage.Literals.CLASS__CONSTRUCTORS);
 		}
 		return childrenFeatures;
@@ -339,8 +339,8 @@ public class ClassItemProvider extends ItemProviderAdapter implements
 			fireNotifyChanged(new ViewerNotification(notification,
 					notification.getNotifier(), false, true));
 			return;
-		case ScalaPackage.CLASS__METHODS:
 		case ScalaPackage.CLASS__FIELDS:
+		case ScalaPackage.CLASS__METHODS:
 		case ScalaPackage.CLASS__CONSTRUCTORS:
 			fireNotifyChanged(new ViewerNotification(notification,
 					notification.getNotifier(), true, false));
@@ -362,12 +362,12 @@ public class ClassItemProvider extends ItemProviderAdapter implements
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add(createChildParameter(
-				ScalaPackage.Literals.CLASSIFIER__METHODS,
-				ScalaFactory.eINSTANCE.createMethod()));
+				ScalaPackage.Literals.CLASSIFIER__FIELDS,
+				ScalaFactory.eINSTANCE.createField()));
 
 		newChildDescriptors.add(createChildParameter(
-				ScalaPackage.Literals.CLASS__FIELDS,
-				ScalaFactory.eINSTANCE.createField()));
+				ScalaPackage.Literals.CLASSIFIER__METHODS,
+				ScalaFactory.eINSTANCE.createMethod()));
 
 		newChildDescriptors.add(createChildParameter(
 				ScalaPackage.Literals.CLASS__CONSTRUCTORS,

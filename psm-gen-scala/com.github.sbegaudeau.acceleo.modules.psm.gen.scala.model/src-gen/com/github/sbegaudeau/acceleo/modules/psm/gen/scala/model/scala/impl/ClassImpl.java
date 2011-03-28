@@ -45,12 +45,12 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ClassImpl#getOwnedComment <em>Owned Comment</em>}</li>
  *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ClassImpl#getName <em>Name</em>}</li>
+ *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ClassImpl#getFields <em>Fields</em>}</li>
  *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ClassImpl#getMethods <em>Methods</em>}</li>
  *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ClassImpl#getSuperType <em>Super Type</em>}</li>
  *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ClassImpl#getTraits <em>Traits</em>}</li>
  *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ClassImpl#isIsCase <em>Is Case</em>}</li>
  *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ClassImpl#isIsSealed <em>Is Sealed</em>}</li>
- *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ClassImpl#getFields <em>Fields</em>}</li>
  *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ClassImpl#getConstructors <em>Constructors</em>}</li>
  *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ClassImpl#getCompanionObject <em>Companion Object</em>}</li>
  *   <li>{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ClassImpl#isIsFinal <em>Is Final</em>}</li>
@@ -101,6 +101,16 @@ public class ClassImpl extends EObjectImpl implements
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getFields() <em>Fields</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFields()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Field> fields;
 
 	/**
 	 * The cached value of the '{@link #getMethods() <em>Methods</em>}' containment reference list.
@@ -171,16 +181,6 @@ public class ClassImpl extends EObjectImpl implements
 	 * @ordered
 	 */
 	protected boolean isSealed = IS_SEALED_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getFields() <em>Fields</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFields()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Field> fields;
 
 	/**
 	 * The cached value of the '{@link #getConstructors() <em>Constructors</em>}' containment reference list.
@@ -602,11 +602,11 @@ public class ClassImpl extends EObjectImpl implements
 	public NotificationChain eInverseRemove(InternalEObject otherEnd,
 			int featureID, NotificationChain msgs) {
 		switch (featureID) {
+		case ScalaPackage.CLASS__FIELDS:
+			return ((InternalEList<?>) getFields()).basicRemove(otherEnd, msgs);
 		case ScalaPackage.CLASS__METHODS:
 			return ((InternalEList<?>) getMethods())
 					.basicRemove(otherEnd, msgs);
-		case ScalaPackage.CLASS__FIELDS:
-			return ((InternalEList<?>) getFields()).basicRemove(otherEnd, msgs);
 		case ScalaPackage.CLASS__CONSTRUCTORS:
 			return ((InternalEList<?>) getConstructors()).basicRemove(otherEnd,
 					msgs);
@@ -628,6 +628,8 @@ public class ClassImpl extends EObjectImpl implements
 			return getOwnedComment();
 		case ScalaPackage.CLASS__NAME:
 			return getName();
+		case ScalaPackage.CLASS__FIELDS:
+			return getFields();
 		case ScalaPackage.CLASS__METHODS:
 			return getMethods();
 		case ScalaPackage.CLASS__SUPER_TYPE:
@@ -640,8 +642,6 @@ public class ClassImpl extends EObjectImpl implements
 			return isIsCase();
 		case ScalaPackage.CLASS__IS_SEALED:
 			return isIsSealed();
-		case ScalaPackage.CLASS__FIELDS:
-			return getFields();
 		case ScalaPackage.CLASS__CONSTRUCTORS:
 			return getConstructors();
 		case ScalaPackage.CLASS__COMPANION_OBJECT:
@@ -671,6 +671,10 @@ public class ClassImpl extends EObjectImpl implements
 		case ScalaPackage.CLASS__NAME:
 			setName((String) newValue);
 			return;
+		case ScalaPackage.CLASS__FIELDS:
+			getFields().clear();
+			getFields().addAll((Collection<? extends Field>) newValue);
+			return;
 		case ScalaPackage.CLASS__METHODS:
 			getMethods().clear();
 			getMethods().addAll((Collection<? extends Method>) newValue);
@@ -687,10 +691,6 @@ public class ClassImpl extends EObjectImpl implements
 			return;
 		case ScalaPackage.CLASS__IS_SEALED:
 			setIsSealed((Boolean) newValue);
-			return;
-		case ScalaPackage.CLASS__FIELDS:
-			getFields().clear();
-			getFields().addAll((Collection<? extends Field>) newValue);
 			return;
 		case ScalaPackage.CLASS__CONSTRUCTORS:
 			getConstructors().clear();
@@ -724,6 +724,9 @@ public class ClassImpl extends EObjectImpl implements
 		case ScalaPackage.CLASS__NAME:
 			setName(NAME_EDEFAULT);
 			return;
+		case ScalaPackage.CLASS__FIELDS:
+			getFields().clear();
+			return;
 		case ScalaPackage.CLASS__METHODS:
 			getMethods().clear();
 			return;
@@ -738,9 +741,6 @@ public class ClassImpl extends EObjectImpl implements
 			return;
 		case ScalaPackage.CLASS__IS_SEALED:
 			setIsSealed(IS_SEALED_EDEFAULT);
-			return;
-		case ScalaPackage.CLASS__FIELDS:
-			getFields().clear();
 			return;
 		case ScalaPackage.CLASS__CONSTRUCTORS:
 			getConstructors().clear();
@@ -772,6 +772,8 @@ public class ClassImpl extends EObjectImpl implements
 		case ScalaPackage.CLASS__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT
 					.equals(name);
+		case ScalaPackage.CLASS__FIELDS:
+			return fields != null && !fields.isEmpty();
 		case ScalaPackage.CLASS__METHODS:
 			return methods != null && !methods.isEmpty();
 		case ScalaPackage.CLASS__SUPER_TYPE:
@@ -782,8 +784,6 @@ public class ClassImpl extends EObjectImpl implements
 			return isCase != IS_CASE_EDEFAULT;
 		case ScalaPackage.CLASS__IS_SEALED:
 			return isSealed != IS_SEALED_EDEFAULT;
-		case ScalaPackage.CLASS__FIELDS:
-			return fields != null && !fields.isEmpty();
 		case ScalaPackage.CLASS__CONSTRUCTORS:
 			return constructors != null && !constructors.isEmpty();
 		case ScalaPackage.CLASS__COMPANION_OBJECT:
