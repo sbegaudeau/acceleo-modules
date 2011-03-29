@@ -172,7 +172,7 @@ extends [aClassifier.superType.name/]
 [/template]
 
 [template public genInheritanceSupertypeWithTraits(aClassifier : Classifier) post(trim())]
-extends [aClassifier.superType.name/][for (mixedTrait : Trait | aClassifier.traits) separator(', ')] with [mixedTrait.genName()/][/for]
+extends [aClassifier.superType.name/][for (mixedTrait : Trait | aClassifier.traits)] with [mixedTrait.genName()/][/for]
 [/template]
 
 [template public genInheritanceTrait(aClassifier : Classifier) post(trim())]
@@ -180,5 +180,5 @@ extends [aClassifier.traits->first()/]
 [/template]
 
 [template public genInheritanceMultipleTraits(aClassifier : Classifier) post(trim())]
-extends [aClassifier.traits->first()/][for (mixedTrait : Trait | aClassifier.traits->excluding(aClassifier.traits->first())) separator(', ')] with [mixedTrait.genName()/][/for]
+extends [aClassifier.traits->first()/][for (mixedTrait : Trait | aClassifier.traits->excluding(aClassifier.traits->first()))] with [mixedTrait.genName()/][/for]
 [/template]
