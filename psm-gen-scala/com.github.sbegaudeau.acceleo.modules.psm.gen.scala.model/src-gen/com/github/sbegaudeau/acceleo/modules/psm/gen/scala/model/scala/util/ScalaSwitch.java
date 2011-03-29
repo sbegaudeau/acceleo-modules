@@ -164,6 +164,14 @@ public class ScalaSwitch<T> {
 			ExtendableClassifier extendableClassifier = (ExtendableClassifier) theEObject;
 			T result = caseExtendableClassifier(extendableClassifier);
 			if (result == null)
+				result = caseClassifier(extendableClassifier);
+			if (result == null)
+				result = caseType(extendableClassifier);
+			if (result == null)
+				result = caseNamedElement(extendableClassifier);
+			if (result == null)
+				result = caseElement(extendableClassifier);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
@@ -211,9 +219,9 @@ public class ScalaSwitch<T> {
 			Trait trait = (Trait) theEObject;
 			T result = caseTrait(trait);
 			if (result == null)
-				result = caseClassifier(trait);
-			if (result == null)
 				result = caseExtendableClassifier(trait);
+			if (result == null)
+				result = caseClassifier(trait);
 			if (result == null)
 				result = caseType(trait);
 			if (result == null)

@@ -13,6 +13,7 @@ package com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.provider
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.edit.ScalaEditPlugin;
 
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.ExtendableClassifier;
+import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.ScalaFactory;
 import com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.ScalaPackage;
 
 import java.util.Collection;
@@ -23,6 +24,7 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemColorProvider;
@@ -66,9 +68,91 @@ public class ExtendableClassifierItemProvider extends ItemProviderAdapter
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addOwnedCommentPropertyDescriptor(object);
+			addNamePropertyDescriptor(object);
+			addSuperTypePropertyDescriptor(object);
+			addTraitsPropertyDescriptor(object);
 			addIsSealedPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Owned Comment feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addOwnedCommentPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(
+						((ComposeableAdapterFactory) adapterFactory)
+								.getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_Element_ownedComment_feature"), //$NON-NLS-1$
+						getString(
+								"_UI_PropertyDescriptor_description", "_UI_Element_ownedComment_feature", "_UI_Element_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						ScalaPackage.Literals.ELEMENT__OWNED_COMMENT, true,
+						false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(
+						((ComposeableAdapterFactory) adapterFactory)
+								.getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_NamedElement_name_feature"), //$NON-NLS-1$
+						getString(
+								"_UI_PropertyDescriptor_description", "_UI_NamedElement_name_feature", "_UI_NamedElement_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						ScalaPackage.Literals.NAMED_ELEMENT__NAME, true, false,
+						false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+						null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Super Type feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSuperTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(
+						((ComposeableAdapterFactory) adapterFactory)
+								.getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_Classifier_superType_feature"), //$NON-NLS-1$
+						getString(
+								"_UI_PropertyDescriptor_description", "_UI_Classifier_superType_feature", "_UI_Classifier_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						ScalaPackage.Literals.CLASSIFIER__SUPER_TYPE, true,
+						false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Traits feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTraitsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(
+						((ComposeableAdapterFactory) adapterFactory)
+								.getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_Classifier_traits_feature"), //$NON-NLS-1$
+						getString(
+								"_UI_PropertyDescriptor_description", "_UI_Classifier_traits_feature", "_UI_Classifier_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						ScalaPackage.Literals.CLASSIFIER__TRAITS, true, false,
+						true, null, null, null));
 	}
 
 	/**
@@ -92,6 +176,38 @@ public class ExtendableClassifierItemProvider extends ItemProviderAdapter
 	}
 
 	/**
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(
+			Object object) {
+		if (childrenFeatures == null) {
+			super.getChildrenFeatures(object);
+			childrenFeatures.add(ScalaPackage.Literals.CLASSIFIER__FIELDS);
+			childrenFeatures.add(ScalaPackage.Literals.CLASSIFIER__METHODS);
+		}
+		return childrenFeatures;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
+
+		return super.getChildFeature(object, child);
+	}
+
+	/**
 	 * This returns ExtendableClassifier.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -112,8 +228,9 @@ public class ExtendableClassifierItemProvider extends ItemProviderAdapter
 	 */
 	@Override
 	public String getText(Object object) {
-		ExtendableClassifier extendableClassifier = (ExtendableClassifier) object;
-		return getString("_UI_ExtendableClassifier_type") + " " + extendableClassifier.isIsSealed(); //$NON-NLS-1$ //$NON-NLS-2$
+		String label = ((ExtendableClassifier) object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_ExtendableClassifier_type") : //$NON-NLS-1$
+				getString("_UI_ExtendableClassifier_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**
@@ -128,9 +245,16 @@ public class ExtendableClassifierItemProvider extends ItemProviderAdapter
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ExtendableClassifier.class)) {
+		case ScalaPackage.EXTENDABLE_CLASSIFIER__OWNED_COMMENT:
+		case ScalaPackage.EXTENDABLE_CLASSIFIER__NAME:
 		case ScalaPackage.EXTENDABLE_CLASSIFIER__IS_SEALED:
 			fireNotifyChanged(new ViewerNotification(notification,
 					notification.getNotifier(), false, true));
+			return;
+		case ScalaPackage.EXTENDABLE_CLASSIFIER__FIELDS:
+		case ScalaPackage.EXTENDABLE_CLASSIFIER__METHODS:
+			fireNotifyChanged(new ViewerNotification(notification,
+					notification.getNotifier(), true, false));
 			return;
 		}
 		super.notifyChanged(notification);
@@ -147,6 +271,14 @@ public class ExtendableClassifierItemProvider extends ItemProviderAdapter
 	protected void collectNewChildDescriptors(
 			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add(createChildParameter(
+				ScalaPackage.Literals.CLASSIFIER__FIELDS,
+				ScalaFactory.eINSTANCE.createField()));
+
+		newChildDescriptors.add(createChildParameter(
+				ScalaPackage.Literals.CLASSIFIER__METHODS,
+				ScalaFactory.eINSTANCE.createMethod()));
 	}
 
 	/**

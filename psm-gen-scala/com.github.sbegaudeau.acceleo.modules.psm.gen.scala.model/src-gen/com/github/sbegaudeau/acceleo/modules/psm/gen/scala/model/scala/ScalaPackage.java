@@ -342,13 +342,67 @@ public interface ScalaPackage extends EPackage {
 	int EXTENDABLE_CLASSIFIER = 5;
 
 	/**
+	 * The feature id for the '<em><b>Owned Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTENDABLE_CLASSIFIER__OWNED_COMMENT = CLASSIFIER__OWNED_COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTENDABLE_CLASSIFIER__NAME = CLASSIFIER__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Fields</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTENDABLE_CLASSIFIER__FIELDS = CLASSIFIER__FIELDS;
+
+	/**
+	 * The feature id for the '<em><b>Methods</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTENDABLE_CLASSIFIER__METHODS = CLASSIFIER__METHODS;
+
+	/**
+	 * The feature id for the '<em><b>Super Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTENDABLE_CLASSIFIER__SUPER_TYPE = CLASSIFIER__SUPER_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Traits</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXTENDABLE_CLASSIFIER__TRAITS = CLASSIFIER__TRAITS;
+
+	/**
 	 * The feature id for the '<em><b>Is Sealed</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXTENDABLE_CLASSIFIER__IS_SEALED = 0;
+	int EXTENDABLE_CLASSIFIER__IS_SEALED = CLASSIFIER_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Extendable Classifier</em>' class.
@@ -357,7 +411,7 @@ public interface ScalaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXTENDABLE_CLASSIFIER_FEATURE_COUNT = 1;
+	int EXTENDABLE_CLASSIFIER_FEATURE_COUNT = CLASSIFIER_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.ClassImpl <em>Class</em>}' class.
@@ -594,7 +648,7 @@ public interface ScalaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRAIT__OWNED_COMMENT = CLASSIFIER__OWNED_COMMENT;
+	int TRAIT__OWNED_COMMENT = EXTENDABLE_CLASSIFIER__OWNED_COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -603,7 +657,7 @@ public interface ScalaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRAIT__NAME = CLASSIFIER__NAME;
+	int TRAIT__NAME = EXTENDABLE_CLASSIFIER__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Fields</b></em>' containment reference list.
@@ -612,7 +666,7 @@ public interface ScalaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRAIT__FIELDS = CLASSIFIER__FIELDS;
+	int TRAIT__FIELDS = EXTENDABLE_CLASSIFIER__FIELDS;
 
 	/**
 	 * The feature id for the '<em><b>Methods</b></em>' containment reference list.
@@ -621,7 +675,7 @@ public interface ScalaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRAIT__METHODS = CLASSIFIER__METHODS;
+	int TRAIT__METHODS = EXTENDABLE_CLASSIFIER__METHODS;
 
 	/**
 	 * The feature id for the '<em><b>Super Type</b></em>' reference.
@@ -630,7 +684,7 @@ public interface ScalaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRAIT__SUPER_TYPE = CLASSIFIER__SUPER_TYPE;
+	int TRAIT__SUPER_TYPE = EXTENDABLE_CLASSIFIER__SUPER_TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Traits</b></em>' reference list.
@@ -639,7 +693,7 @@ public interface ScalaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRAIT__TRAITS = CLASSIFIER__TRAITS;
+	int TRAIT__TRAITS = EXTENDABLE_CLASSIFIER__TRAITS;
 
 	/**
 	 * The feature id for the '<em><b>Is Sealed</b></em>' attribute.
@@ -648,7 +702,7 @@ public interface ScalaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRAIT__IS_SEALED = CLASSIFIER_FEATURE_COUNT + 0;
+	int TRAIT__IS_SEALED = EXTENDABLE_CLASSIFIER__IS_SEALED;
 
 	/**
 	 * The number of structural features of the '<em>Trait</em>' class.
@@ -657,7 +711,7 @@ public interface ScalaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRAIT_FEATURE_COUNT = CLASSIFIER_FEATURE_COUNT + 1;
+	int TRAIT_FEATURE_COUNT = EXTENDABLE_CLASSIFIER_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.scala.impl.FieldImpl <em>Field</em>}' class.

@@ -888,10 +888,10 @@ public class ScalaPackageImpl extends EPackageImpl implements ScalaPackage {
 		classifierEClass.getESuperTypes().add(this.getType());
 		caseClassifierEClass.getESuperTypes().add(this.getClassifier());
 		caseClassifierEClass.getESuperTypes().add(this.getVisibilityScope());
+		extendableClassifierEClass.getESuperTypes().add(this.getClassifier());
 		classEClass.getESuperTypes().add(this.getCaseClassifier());
 		classEClass.getESuperTypes().add(this.getExtendableClassifier());
 		objectEClass.getESuperTypes().add(this.getCaseClassifier());
-		traitEClass.getESuperTypes().add(this.getClassifier());
 		traitEClass.getESuperTypes().add(this.getExtendableClassifier());
 		fieldEClass.getESuperTypes().add(this.getNamedElement());
 		fieldEClass.getESuperTypes().add(this.getTypedElement());

@@ -32,7 +32,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isCase" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ExtendableClassifier">
+  <eClassifiers xsi:type="ecore:EClass" name="ExtendableClassifier" eSuperTypes="#//Classifier">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isSealed" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
   </eClassifiers>
@@ -50,7 +50,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="companionClass" eType="#//Class"
         eOpposite="#//Class/companionObject"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Trait" eSuperTypes="#//Classifier #//ExtendableClassifier"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Trait" eSuperTypes="#//ExtendableClassifier"/>
   <eClassifiers xsi:type="ecore:EClass" name="Field" eSuperTypes="#//NamedElement #//TypedElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isConstructorProperty"
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"

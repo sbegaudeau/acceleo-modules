@@ -210,6 +210,10 @@ public class FileItemProvider extends ItemProviderAdapter implements
 
 		newChildDescriptors.add(createChildParameter(
 				ScalaPackage.Literals.FILE__CLASSIFIERS,
+				ScalaFactory.eINSTANCE.createExtendableClassifier()));
+
+		newChildDescriptors.add(createChildParameter(
+				ScalaPackage.Literals.FILE__CLASSIFIERS,
 				ScalaFactory.eINSTANCE.createClass()));
 
 		newChildDescriptors.add(createChildParameter(

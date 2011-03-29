@@ -23,15 +23,7 @@ import junit.textui.TestRunner;
  * <!-- end-user-doc -->
  * @generated
  */
-public class TraitTest extends TestCase {
-
-	/**
-	 * The fixture for this Trait test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected Trait fixture = null;
+public class TraitTest extends ExtendableClassifierTest {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -53,23 +45,14 @@ public class TraitTest extends TestCase {
 	}
 
 	/**
-	 * Sets the fixture for this Trait test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void setFixture(Trait fixture) {
-		this.fixture = fixture;
-	}
-
-	/**
 	 * Returns the fixture for this Trait test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected Trait getFixture() {
-		return fixture;
+		return (Trait) fixture;
 	}
 
 	/**

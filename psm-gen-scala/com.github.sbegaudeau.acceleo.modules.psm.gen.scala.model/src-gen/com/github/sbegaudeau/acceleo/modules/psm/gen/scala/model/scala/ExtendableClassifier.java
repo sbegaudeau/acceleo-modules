@@ -28,7 +28,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface ExtendableClassifier extends EObject {
+public interface ExtendableClassifier extends Classifier {
 	/**
 	 * Returns the value of the '<em><b>Is Sealed</b></em>' attribute.
 	 * The default value is <code>"false"</code>.
