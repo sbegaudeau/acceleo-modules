@@ -15,7 +15,7 @@ Other contributors :
 
 [template public genClassifierBody(aTrait : Trait) overrides genClassifierBody]
 [aTrait.genClassifierDocumentation()/]
-[aTrait.genSealed()/]trait [aTrait.genName()/] {
+[aTrait.genSealed()/]trait [aTrait.genName()/][aTrait.genInheritanceSpace()/] {
     [aTrait.genFields()/]
 
     [aTrait.genMethods()/]

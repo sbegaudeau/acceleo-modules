@@ -15,7 +15,7 @@ Other contributors :
 
 [template public genClassifierBody(aClass : Class) overrides genClassifierBody]
 [aClass.genClassifierDocumentation()/]
-[aClass.genFinal()/][aClass.genAbstract()/][aClass.genSealed()/][aClass.genCase()/]class [aClass.genName()/] [aClass.genDefaultConstructor()/]{
+[aClass.genFinal()/][aClass.genAbstract()/][aClass.genSealed()/][aClass.genCase()/]class [aClass.genName()/] [aClass.genDefaultConstructor()/][aClass.genInheritanceSpace()/] {
     [aClass.genFields()/]
 
     [aClass.genConstructors()/]
