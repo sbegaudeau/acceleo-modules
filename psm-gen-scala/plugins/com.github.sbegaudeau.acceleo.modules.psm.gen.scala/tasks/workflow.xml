@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project default="workflow" name="com.github.sbegaudeau.acceleo.modules.psm.gen.scala">
-    <property name="ECLIPSE_HOME" value="../../../../../../../Eclipse/Windows/3.6 Developpement Scala"/>
-    <property name="ECLIPSE_WORKSPACE" value="../../../../../../../Workspaces/Acceleo Utilisation Github Modules Scala"/>
+    <property name="ECLIPSE_HOME" value="../../../../../../../../Eclipse/Windows/3.6 Developpement Scala"/>
+    <property name="ECLIPSE_WORKSPACE" value="../../../../../../../../Workspaces/Acceleo Utilisation Github Modules Scala"/>
 
     <!-- The classpath with only the dependencies used by the project -->
     <path id="com.github.sbegaudeau.acceleo.modules.psm.gen.scala.libraryclasspath">

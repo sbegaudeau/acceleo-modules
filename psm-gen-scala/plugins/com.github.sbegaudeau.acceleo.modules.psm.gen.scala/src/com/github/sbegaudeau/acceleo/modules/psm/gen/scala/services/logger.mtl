@@ -17,17 +17,23 @@ Other contributors :
 	* Logs an error message in the console.
 	* @param aString The error message.
 /]
-[template public logError(aString : String)][invoke('com.github.sbegaudeau.acceleo.modules.psm.gen.scala.services.Logger', 'logError(java.lang.String)', Sequence{aString})/][/template]
+[template public logError(aString : String) post(trim())]
+[invoke('com.github.sbegaudeau.acceleo.modules.psm.gen.scala.services.Logger', 'logError(java.lang.String)', Sequence{aString})/]
+[/template]
 
 [comment 
 	* Logs a warning message in the console.
 	* @param aString The warning message.
 /]
-[template public logWarning(aString : String)][invoke('com.github.sbegaudeau.acceleo.modules.psm.gen.scala.services.Logger', 'logWarning(java.lang.String)', Sequence{aString})/][/template]
+[template public logWarning(aString : String) post(trim())]
+[invoke('com.github.sbegaudeau.acceleo.modules.psm.gen.scala.services.Logger', 'logWarning(java.lang.String)', Sequence{aString})/]
+[/template]
 
 [comment 
 	* Logs an information message in the console.
 	* @param aString The information message.
 /]
-[template public logInformation(aString : String)][invoke('com.github.sbegaudeau.acceleo.modules.psm.gen.scala.services.Logger', 'logInformation(java.lang.String)', Sequence{aString})/][/template]
+[template public logInformation(aString : String) post(trim())]
+[invoke('com.github.sbegaudeau.acceleo.modules.psm.gen.scala.services.Logger', 'logInformation(java.lang.String)', Sequence{aString})/]
+[/template]
 
