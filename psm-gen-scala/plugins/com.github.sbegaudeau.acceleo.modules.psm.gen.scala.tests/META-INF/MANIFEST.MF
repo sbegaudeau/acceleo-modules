@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Tests
+Bundle-SymbolicName: com.github.sbegaudeau.acceleo.modules.psm.gen.scala.tests
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: GITHUB
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Require-Bundle: com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model;bundle-version="1.0.0",
+ org.junit,
+ org.eclipse.emf.ecore.xmi

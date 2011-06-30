@@ -1,0 +1,23 @@
+[comment encoding = UTF-8 
+
+Copyright (c) 2011 Stephane Begaudeau
+All rights reserved.  This program and the accompanying materials
+are made available under the terms of the Eclipse Public License 1.0
+
+You can apply any license to the files generated with this module and Acceleo.
+
+Original contributor :
+	* Stephane Begaudeau
+Other contributors : 
+ 	*
+/]
+[module objectBody('http://github.com/sbegaudeau/acceleo/scalametamodel/2011/01') extends com::github::sbegaudeau::acceleo::modules::psm::gen::scala::common::classifierBody/]
+
+[template public genClassifierBody(anObject : Object) overrides genClassifierBody]
+[anObject.genClassifierDocumentation()/]
+[anObject.genCase()/]object [anObject.genName()/] {
+    [anObject.genFields()/]
+
+    [anObject.genMethods()/]
+}
+[/template]

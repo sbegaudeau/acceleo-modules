@@ -1,0 +1,33 @@
+[comment encoding = UTF-8 
+
+Copyright (c) 2011 Stephane Begaudeau
+All rights reserved.  This program and the accompanying materials
+are made available under the terms of the Eclipse Public License 1.0
+
+You can apply any license to the files generated with this module and Acceleo.
+
+Original contributor :
+	* Stephane Begaudeau
+Other contributors : 
+ 	*
+/]
+[module logger('http://github.com/sbegaudeau/acceleo/scalametamodel/2011/01')/]
+
+[comment 
+	* Logs an error message in the console.
+	* @param aString The error message.
+/]
+[template public logError(aString : String)][invoke('com.github.sbegaudeau.acceleo.modules.psm.gen.scala.services.Logger', 'logError(java.lang.String)', Sequence{aString})/][/template]
+
+[comment 
+	* Logs a warning message in the console.
+	* @param aString The warning message.
+/]
+[template public logWarning(aString : String)][invoke('com.github.sbegaudeau.acceleo.modules.psm.gen.scala.services.Logger', 'logWarning(java.lang.String)', Sequence{aString})/][/template]
+
+[comment 
+	* Logs an information message in the console.
+	* @param aString The information message.
+/]
+[template public logInformation(aString : String)][invoke('com.github.sbegaudeau.acceleo.modules.psm.gen.scala.services.Logger', 'logInformation(java.lang.String)', Sequence{aString})/][/template]
+

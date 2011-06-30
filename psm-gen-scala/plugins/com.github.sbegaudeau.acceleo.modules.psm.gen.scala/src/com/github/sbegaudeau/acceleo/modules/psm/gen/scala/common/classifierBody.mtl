@@ -1,0 +1,184 @@
+[comment encoding = UTF-8 
+
+Copyright (c) 2011 Stephane Begaudeau
+All rights reserved.  This program and the accompanying materials
+are made available under the terms of the Eclipse Public License 1.0
+
+You can apply any license to the files generated with this module and Acceleo.
+
+Original contributor :
+	* Stephane Begaudeau
+Other contributors : 
+ 	*
+/]
+[module classifierBody('http://github.com/sbegaudeau/acceleo/scalametamodel/2011/01')/]
+
+[template public genClassifierDocumentation(aClassifier : Classifier)]
+/**
+ * The description of [aClassifier.name/].
+[if (aClassifier.ownedComment <> null and not ''.equalsIgnoreCase(aClassifier.ownedComment))]
+ * [aClassifier.ownedComment/]
+[/if]
+ */
+[/template]
+
+[template public genClassifierBody(aClassifier : Classifier)]
+// TODO: Should handle the generation for [aClassifier.eClass().name/].
+[/template]
+
+[template public genName(aNamedElement : NamedElement)]
+[aNamedElement.name/]
+[/template]
+
+[template public genType(aTypedElement : TypedElement)]
+[if (aTypedElement.isOption)]Option['['/][aTypedElement.type.name/][']'/][else][aTypedElement.type.name/][/if]
+[/template]
+
+[template public genCase(aCaseClassifier : CaseClassifier)]
+[if (aCaseClassifier.isCase)]case [/if]
+[/template]
+
+[template public genSealed(anExtendableClassifier : ExtendableClassifier)]
+[if (anExtendableClassifier.isSealed)]sealed [/if]
+[/template]
+
+[template public genAbstract(aClass : Class)]
+[if (aClass.isAbstract)]abstract [/if]
+[/template]
+
+[template public genFinal(aClass : Class)]
+[if (aClass.isFinal)]final [/if]
+[/template]
+
+[template public genOverride(aField : Field)]
+[if (aField.isOverriding)]override [/if]
+[/template]
+
+[template public genOverride(aMethod : Method)]
+[if (aMethod.isOverriding)]override [/if]
+[/template]
+
+[template public genVisibility(aField : Field)]
+[if (aField.visibility <> null and VisibilityKind::public <> aField.visibility.kind)][aField.visibility.genVisibility()/] [/if]
+[/template]
+
+[template public genVisibility(aMethod : Method)]
+[if (aMethod.visibility <> null and VisibilityKind::public <> aMethod.visibility.kind)][aMethod.visibility.genVisibility()/] [/if]
+[/template]
+
+[template public genVisibility(aVisibility : Visibility) post(trim())]
+[if (VisibilityKind::protected = aVisibility.kind)]
+[if (aVisibility.scope <> null and aVisibility.scope.oclIsKindOf(NamedElement))]
+protected['['/][aVisibility.scope.oclAsType(NamedElement).name/][']'/]
+[else]
+protected
+[/if]
+[elseif (VisibilityKind::private = aVisibility.kind)]
+[if (aVisibility.scope <> null and aVisibility.scope.oclIsKindOf(NamedElement))]
+private['['/][aVisibility.scope.oclAsType(NamedElement).name/][']'/]
+[else]
+private
+[/if]
+[/if]
+[/template]
+
+[template public genFields (aClassifier : Classifier) post(trim())]
+[for (aField : Field | aClassifier.fields->select(aField : Field | not aField.isConstructorProperty))]
+/**
+ * The description of [aField.name/].
+[if (aField.ownedComment <> null)]
+ * [aField.ownedComment/]
+[/if]
+ */
+[aField.genVisibility()/][aField.genOverride()/][if (aField.isFinal)]val [else]var [/if][aField.genName()/]: [aField.genType()/] = [aField.genDefaultValue()/]
+
+[/for]
+[/template]
+
+[template public genMethods (aClassifier : Classifier) post(trim())]
+[for (aMethod : Method | aClassifier.methods)]
+/**
+ * The description of [aMethod.name/].
+ * 
+[if (aMethod.ownedComment <> null)]
+ * [aMethod.ownedComment/]
+[/if]
+[for (aParameter : Parameter | aMethod.signature.parameters)]
+ * @param [aParameter.name/] [aParameter.ownedComment/]
+[/for]
+[if (aMethod.signature.type <> null and not 'Null'.equalsIgnoreCase(aMethod.signature.type.name) and not 'Nothing'.equalsIgnoreCase(aMethod.signature.type.name))]
+ * @return 
+[/if]
+ */
+[aMethod.genVisibility()/][aMethod.genOverride()/]def [aMethod.genName()/]([aMethod.signature.parameters.genParameter()->sep(', ')/]): [aMethod.signature.genType()/] = {
+    return [aMethod.genMethodDefaultReturnValue()/]
+}
+
+[/for]
+[/template]
+
+[template public genMethodDefaultReturnValue (aMethod : Method) post(trim())]
+[if ('true'.equalsIgnoreCase(getProperty('gen.field.defaultValue')))]
+[if (aMethod.signature.isOption)]
+Some([getProperty(aMethod.signature.type.name)/])[else][getProperty(aMethod.signature.type.name)/]
+[/if]
+[else]
+[if (aMethod.signature.isOption)]
+None[else]null
+[/if]
+[/if]
+[/template]
+
+[template public genParameter(aParameter : Parameter)]
+[aParameter.genName()/]: [aParameter.genType()/]
+[/template]
+
+[template public genDefaultValue(aField : Field)]
+[if ('true'.equalsIgnoreCase(getProperty('gen.field.defaultValue')))][aField.genDefaultPropertyValue()/][else][aField.genDefaultNullValue()/][/if]
+[/template]
+
+[template public genDefaultPropertyValue(aField : Field)]
+[if (aField.isOption)]Some([getProperty(aField.type.name)/])[else][getProperty(aField.type.name)/][/if]
+[/template]
+
+[template public genDefaultNullValue(aField : Field)]
+[if (aField.isOption)]None[else]null[/if]
+[/template]
+
+[template public genInheritanceSpace(aClassifier : Classifier)]
+ [aClassifier.genInheritance()/]
+[/template]
+
+[template public genInheritance(aClassifier : Classifier) post(trim())]
+[if (aClassifier.superType <> null)]
+[if (aClassifier.traits->size() > 0)]
+ [aClassifier.genInheritanceSupertypeWithTraits()/]
+[else]
+ [aClassifier.genInheritanceSupertype()/]
+[/if]
+[else]
+[if (aClassifier.traits->size() > 0)]
+[if (aClassifier.traits->size() >= 1)]
+ [aClassifier.genInheritanceMultipleTraits()/]
+[else]
+ [aClassifier.genInheritanceTrait()/]
+[/if]
+[/if]
+[/if]
+[/template]
+
+[template public genInheritanceSupertype(aClassifier : Classifier) post(trim())]
+extends [aClassifier.superType.name/]
+[/template]
+
+[template public genInheritanceSupertypeWithTraits(aClassifier : Classifier) post(trim())]
+extends [aClassifier.superType.name/][for (mixedTrait : Trait | aClassifier.traits)] with [mixedTrait.genName()/][/for]
+[/template]
+
+[template public genInheritanceTrait(aClassifier : Classifier) post(trim())]
+extends [aClassifier.traits->first()/]
+[/template]
+
+[template public genInheritanceMultipleTraits(aClassifier : Classifier) post(trim())]
+extends [aClassifier.traits->first()/][for (mixedTrait : Trait | aClassifier.traits->excluding(aClassifier.traits->first()))] with [mixedTrait.genName()/][/for]
+[/template]

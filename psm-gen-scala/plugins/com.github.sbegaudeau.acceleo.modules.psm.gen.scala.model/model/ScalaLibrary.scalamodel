@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ASCII"?>
+<scala:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:scala="http://github.com/sbegaudeau/acceleo/scalametamodel/2011/01" name="Scala Standard Library">
+  <packages name="scala">
+    <files name="Byte">
+      <classifiers xsi:type="scala:Class" name="Byte"/>
+    </files>
+    <files name="Short">
+      <classifiers xsi:type="scala:Class" name="Short"/>
+    </files>
+    <files name="Int">
+      <classifiers xsi:type="scala:Class" name="Int"/>
+    </files>
+    <files name="Long">
+      <classifiers xsi:type="scala:Class" name="Long"/>
+    </files>
+    <files name="Char">
+      <classifiers xsi:type="scala:Class" name="Char"/>
+    </files>
+    <files name="Float">
+      <classifiers xsi:type="scala:Class" name="Float"/>
+    </files>
+    <files name="Double">
+      <classifiers xsi:type="scala:Class" name="Double"/>
+    </files>
+    <files name="Boolean">
+      <classifiers xsi:type="scala:Class" name="Boolean"/>
+    </files>
+  </packages>
+  <packages name="java">
+    <subPackages name="lang">
+      <files name="String">
+        <classifiers xsi:type="scala:Class" name="String"/>
+      </files>
+    </subPackages>
+  </packages>
+</scala:Model>
