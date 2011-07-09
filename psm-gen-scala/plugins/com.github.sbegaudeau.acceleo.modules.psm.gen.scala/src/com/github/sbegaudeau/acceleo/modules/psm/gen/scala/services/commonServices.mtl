@@ -15,28 +15,47 @@ Other contributors :
 
 [comment 
 	* Adds quotes to the given string.
+	* @param traceabilityContext The model element used during the generation.
 	* @param aString The given string.
 /]
-[template public addQuotes(aString : String)][invoke('com.github.sbegaudeau.acceleo.modules.psm.gen.scala.services.CommonServices', 'addQuotes(java.lang.String)', Sequence{aString})/][/template]
+[query public addQuotes(traceabilityContext : OclAny, aString : String) : String = 
+	invoke('com.github.sbegaudeau.acceleo.modules.psm.gen.scala.services.CommonServices', 'addQuotes(java.lang.String)', Sequence{aString})
+/]
+
 
 [comment 
+	* @param traceabilityContext The model element used during the generation.
 	* Returns the current date. Use the 'gen.long.date' property to change the format of the data generated.
 /]
-[template public genDate()]
-[if ('true'.equalsIgnoreCase(getProperty('gen.file.long.date')))][genLongDate()/][else][genShortDate()/][/if]
+[template public genDate(traceabilityContext : OclAny) post(trim())]
+[if ('true'.equalsIgnoreCase(getProperty('gen.file.long.date')))]
+[traceabilityContext.genLongDate()/]
+[else]
+[traceabilityContext.genShortDate()/]
+[/if]
 [/template]
 
 [comment 
+	* @param traceabilityContext The model element used during the generation.
 	* Returns the current date with a long formatting.
 /]
-[template protected genLongDate()][invoke('com.github.sbegaudeau.acceleo.modules.psm.gen.scala.services.CommonServices', 'genLongDate()', Sequence{})/][/template]
+[query private genLongDate(traceabilityContext : OclAny) : String = 
+	invoke('com.github.sbegaudeau.acceleo.modules.psm.gen.scala.services.CommonServices', 'genLongDate()', Sequence{})
+/]
 
 [comment 
+	* @param traceabilityContext The model element used during the generation.
 	* Returns the current date with a short formatting.
 /]
-[template protected genShortDate()][invoke('com.github.sbegaudeau.acceleo.modules.psm.gen.scala.services.CommonServices', 'genShortDate()', Sequence{})/][/template]
+[query private genShortDate(traceabilityContext : OclAny) : String = 
+	invoke('com.github.sbegaudeau.acceleo.modules.psm.gen.scala.services.CommonServices', 'genShortDate()', Sequence{})
+/]
 
 [comment 
+	* @param traceabilityContext The model element used during the generation.
 	* Returns the current time.
 /]
-[template public genTime()][invoke('com.github.sbegaudeau.acceleo.modules.psm.gen.scala.services.CommonServices', 'genTime()', Sequence{})/][/template]
+[query public genTime(traceabilityContext : OclAny) : String = 
+	invoke('com.github.sbegaudeau.acceleo.modules.psm.gen.scala.services.CommonServices', 'genTime()', Sequence{})
+/]
+
