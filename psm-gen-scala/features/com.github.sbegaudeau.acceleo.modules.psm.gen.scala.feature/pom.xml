@@ -23,6 +23,6 @@
   <artifactId>com.github.sbegaudeau.acceleo.modules.psm.gen.scala.feature</artifactId>
   <packaging>eclipse-feature</packaging>
 
-  <name>Scala Generator Feature</name>
+  <name>Acceleo PSM to Scala Generator Feature</name>
 
 </project>

@@ -218,7 +218,7 @@ litigation.
    </license>
 
    <includes
-         id="com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.features"
+         id="com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.feature"
          version="0.0.0"/>
 
    <plugin

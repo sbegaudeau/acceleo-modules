@@ -25,7 +25,7 @@
   <version>1.0.0.qualifier</version>
   <packaging>eclipse-plugin</packaging>
 
-  <name>Acceleo UML2 to Java Generator UI</name>
+  <name>Acceleo PSM to Scala Generator UI</name>
 
   <!-- workaround for https://issues.sonatype.org/browse/TYCHO-168 -->
   <build>

@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: com.github.sbegaudeau.acceleo.modules.psm.gen.scala.edit;singleton:=true
-Bundle-Version: 1.0.0
+Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Activator: com.github.sbegaudeau.acceleo.modules.psm.gen.scala.edit.ScalaEditPlugin$Implementation
 Bundle-Vendor: %providerName

@@ -28,23 +28,23 @@
   </licenses>
   
   <modules>
-    <module>plugins/com.github.sbegaudeau.acceleo.modules.psm.gen.scala</module>
-	<module>plugins/com.github.sbegaudeau.acceleo.modules.psm.gen.scala.edit</module>
+    <module>plugins/com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model</module>
+    <module>plugins/com.github.sbegaudeau.acceleo.modules.psm.gen.scala.edit</module>
 	<module>plugins/com.github.sbegaudeau.acceleo.modules.psm.gen.scala.editor</module>
-	<module>plugins/com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model</module>
 	<module>plugins/com.github.sbegaudeau.acceleo.modules.psm.gen.scala.tests</module>
+	<module>plugins/com.github.sbegaudeau.acceleo.modules.psm.gen.scala</module>
 	<module>plugins/com.github.sbegaudeau.acceleo.modules.psm.gen.scala.ui</module>
-	<module>features/com.github.sbegaudeau.acceleo.modules.psm.gen.scala.features</module>
-	<module>features/com.github.sbegaudeau.acceleo.modules.psm.gen.scala.editor.features</module>
-	<module>features/com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.features</module>
-	<module>features/com.github.sbegaudeau.acceleo.modules.psm.gen.scala.ui.features</module>
+	<module>features/com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.feature</module>
+	<module>features/com.github.sbegaudeau.acceleo.modules.psm.gen.scala.editor.feature</module>
+	<module>features/com.github.sbegaudeau.acceleo.modules.psm.gen.scala.feature</module>
+	<module>features/com.github.sbegaudeau.acceleo.modules.psm.gen.scala.ui.feature</module>
 	<module>updatesite/com.github.sbegaudeau.acceleo.modules.psm.gen.scala.updatesite</module>
   </modules>
 
   <properties>
     <acceleo-version>3.1.0-SNAPSHOT</acceleo-version>
     <tycho-version>0.12.0</tycho-version>
-    <acceleo-site>http://download.eclipse.org/modeling/m2t/acceleo/updates/release/3.1</acceleo-site>
+    <acceleo-site>http://download.eclipse.org/modeling/m2t/acceleo/updates/releases/3.1</acceleo-site>
   </properties>
 
   <profiles>

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/com.github.sbegaudeau.acceleo.modules.psm.gen.scala.editor.features_1.0.0.qualifier.jar" id="com.github.sbegaudeau.acceleo.modules.psm.gen.scala.editor.features" version="1.0.0.qualifier">
+   <feature url="features/com.github.sbegaudeau.acceleo.modules.psm.gen.scala.editor.feature_1.0.0.qualifier.jar" id="com.github.sbegaudeau.acceleo.modules.psm.gen.scala.editor.feature" version="1.0.0.qualifier">
       <category name="com.github.sbegaudeau.acceleo"/>
    </feature>
-   <feature url="features/com.github.sbegaudeau.acceleo.modules.psm.gen.scala.features_1.0.0.qualifier.jar" id="com.github.sbegaudeau.acceleo.modules.psm.gen.scala.features" version="1.0.0.qualifier">
+   <feature url="features/com.github.sbegaudeau.acceleo.modules.psm.gen.scala.feature_1.0.0.qualifier.jar" id="com.github.sbegaudeau.acceleo.modules.psm.gen.scala.feature" version="1.0.0.qualifier">
       <category name="com.github.sbegaudeau.acceleo"/>
    </feature>
-   <feature url="features/com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.features_1.0.0.qualifier.jar" id="com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.features" version="1.0.0.qualifier">
+   <feature url="features/com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.feature_1.0.0.qualifier.jar" id="com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.feature" version="1.0.0.qualifier">
       <category name="com.github.sbegaudeau.acceleo"/>
    </feature>
-   <feature url="features/com.github.sbegaudeau.acceleo.modules.psm.gen.scala.ui.features_1.0.0.qualifier.jar" id="com.github.sbegaudeau.acceleo.modules.psm.gen.scala.ui.features" version="1.0.0.qualifier">
+   <feature url="features/com.github.sbegaudeau.acceleo.modules.psm.gen.scala.ui.feature_1.0.0.qualifier.jar" id="com.github.sbegaudeau.acceleo.modules.psm.gen.scala.ui.feature" version="1.0.0.qualifier">
       <category name="com.github.sbegaudeau.acceleo"/>
    </feature>
    <category-def name="com.github.sbegaudeau.acceleo" label="Acceleo">
