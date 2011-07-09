@@ -1,0 +1,12 @@
+[comment encoding = UTF-8 /]
+[module genPackage('http://www.eclipse.org/emf/2002/GenModel')]
+
+
+[query public getGenModel(genPackage : GenPackage) : GenModel
+	= invoke('org.eclipse.emf.codegen.ecore.genmodel.GenPackage', 'getGenModel()', Sequence{genPackage}) /]
+
+[query public getInterfacePackageName(genPackage : GenPackage) : String
+	= invoke('org.eclipse.emf.codegen.ecore.genmodel.GenPackage', 'getInterfacePackageName()', Sequence{genPackage}) /]
+
+[query public getQualifiedPackageInterfaceName(genPackage : GenPackage) : String
+	= invoke('org.eclipse.emf.codegen.ecore.genmodel.GenPackage', 'getQualifiedPackageInterfaceName()', Sequence{genPackage}) /]

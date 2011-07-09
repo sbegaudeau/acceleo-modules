@@ -1,0 +1,7 @@
+[comment encoding = UTF-8 /]
+[module genEnumLiteral('http://www.eclipse.org/emf/2002/GenModel')]
+
+
+[template public generateElement(aGenEnumLiteral : GenEnumLiteral)]
+
+[/template]

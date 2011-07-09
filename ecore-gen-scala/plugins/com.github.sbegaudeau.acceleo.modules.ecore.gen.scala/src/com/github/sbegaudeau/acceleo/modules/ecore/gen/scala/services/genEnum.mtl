@@ -1,0 +1,30 @@
+[comment encoding = UTF-8 /]
+[module genEnum('http://www.eclipse.org/emf/2002/GenModel')]
+
+
+
+
+[query public getDocumentation(genEnum : GenEnum, indentation : String) : String
+	= invoke('org.eclipse.emf.codegen.ecore.genmodel.GenEnum', 'getDocumentation(java.lang.String)', Sequence{genEnum, indentation}) /]
+
+[query public getFormattedName(genEnum : GenEnum) : String
+	= invoke('org.eclipse.emf.codegen.ecore.genmodel.GenEnum', 'getFormattedName()', Sequence{genEnum}) /]
+
+[query public getGenPackage(genEnum : GenEnum) : GenPackage
+	= invoke('org.eclipse.emf.codegen.ecore.genmodel.GenEnum', 'getGenPackage()', Sequence{genEnum}) /]
+
+[query public getGenModel(genEnum : GenEnum) : GenModel
+	= invoke('org.eclipse.emf.codegen.ecore.genmodel.GenEnum', 'getGenModel()', Sequence{genEnum}) /]
+
+[query public getModelInfo(genEnum : GenEnum) : String
+	= invoke('org.eclipse.emf.codegen.ecore.genmodel.GenEnum', 'getModelInfo()', Sequence{genEnum}) /]
+
+[query public hasDocumentation(genEnum : GenEnum) : Boolean
+	= invoke('org.eclipse.emf.codegen.ecore.genmodel.GenEnum', 'hasDocumentation()', Sequence{genEnum}) /]
+
+[query public getName(genEnum : GenEnum) : String
+	= invoke('org.eclipse.emf.codegen.ecore.genmodel.GenEnum', 'getName()', Sequence{genEnum}) /]
+
+[query public getQualifiedName(genEnum : GenEnum) : String
+	= invoke('org.eclipse.emf.codegen.ecore.genmodel.GenEnum', 'getQualifiedName()', Sequence{genEnum}) /]
+

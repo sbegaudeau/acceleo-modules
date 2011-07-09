@@ -1,0 +1,16 @@
+[comment encoding = UTF-8 /]
+[**
+ * The documentation of the module ecoreGenScala.
+ */]
+[module ecoreGenScala('http://www.eclipse.org/emf/2002/Ecore', 'http://www.eclipse.org/emf/2002/GenModel')]
+
+[import com::github::sbegaudeau::acceleo::modules::ecore::gen::scala::files::buildProperties /]
+
+[**
+ * The documentation of the template generateElement.
+ * @param aGenModel
+ */]
+[template public generateElement(aGenModel : GenModel)]
+[comment @main/]
+[aGenModel.buildProperties()/]
+[/template]

@@ -1,0 +1,33 @@
+[comment encoding = UTF-8 /]
+[module buildProperties('http://www.eclipse.org/emf/2002/GenModel')]
+
+[import com::github::sbegaudeau::acceleo::modules::ecore::gen::scala::common::header /]
+[import com::github::sbegaudeau::acceleo::modules::ecore::gen::scala::services::genModel /]
+
+[template public buildProperties(genModel : GenModel)]
+[let pluginClassesLocation : String = if genModel.isRuntimeJar() then genModel.getModelPluginID().concat('.jar') else '.' endif]
+[let sourceFolders : Sequence(String) = genModel.getModelSourceFolders()]
+[file (genModel.buildPropertiesFileName(), false, 'UTF-8')]
+[genModel.includeHeaderProperties()/]
+
+bin.includes = [pluginClassesLocation/],\
+               model/,\
+[if (genModel.sameModelEditProject() or genModel.sameModelEditorProject()) ]
+               icons/,\
+[/if]
+[if (genModel.isBundleManifest()) ]
+               META-INF/,\
+[/if]
+[if (genModel.getRuntimePlatform() <> GenRuntimePlatform::GWT) ]
+               plugin.xml,\
+[/if]
+               plugin.properties
+jars.compile.order = [pluginClassesLocation/]
+source.[pluginClassesLocation/] = [sourceFolders->sep(',\\\n')/]
+output.[pluginClassesLocation/] = bin/
+[/file]
+[/let]
+[/let]
+[/template]
+
+[query public buildPropertiesFileName(genModel : GenModel) : String = 'build.properties' /]

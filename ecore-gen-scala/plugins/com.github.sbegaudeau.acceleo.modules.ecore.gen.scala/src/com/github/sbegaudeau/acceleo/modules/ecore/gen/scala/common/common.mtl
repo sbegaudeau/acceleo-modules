@@ -1,0 +1,7 @@
+[comment encoding = UTF-8 /]
+[module common('http://www.eclipse.org/emf/2002/GenModel')]
+
+[import com::github::sbegaudeau::acceleo::modules::ecore::gen::scala::services::stringUtil /]
+[import com::github::sbegaudeau::acceleo::modules::ecore::gen::scala::services::genModel /]
+
+[query public modelPath(genModel : GenModel, packageName : String, className : String) : String = (extractSourceDirectory(genModel.getModelDirectory()).concat('.').concat(packageName).concat('.').concat(className)).toPath().concat('.java') /]
