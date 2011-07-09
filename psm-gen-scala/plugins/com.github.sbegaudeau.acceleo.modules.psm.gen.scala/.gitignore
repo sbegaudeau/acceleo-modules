@@ -12,3 +12,4 @@
 # Ignore the bin folder.
 bin/
 tasks/
+target/

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.github.sbegaudeau</groupId>
+    <artifactId>com.github.sbegaudeau.acceleo.modules.psm.gen.scala.parent</artifactId>
+    <version>1.0.0.qualifier</version>
+    <relativePath>../..</relativePath>
+  </parent>
+
+  <groupId>com.github.sbegaudeau</groupId>
+  <artifactId>com.github.sbegaudeau.acceleo.modules.psm.gen.scala</artifactId>
+  <version>1.0.0.qualifier</version>
+  <packaging>eclipse-plugin</packaging>
+
+  <name>Acceleo PSM to Scala Generator</name>
+
+  <build>
+      <plugins>
+        <plugin>  
+          <groupId>org.codehaus.mojo</groupId>  
+          <artifactId>exec-maven-plugin</artifactId>  
+          <version>1.1.1</version>  
+          <executions>  
+            <execution>  
+              <phase>compile</phase>  
+              <goals>  
+                <goal>java</goal>  
+              </goals>
+              <configuration>
+                <!--
+                   Calls the AcceleoCompiler to launch the compilation.
+                -->
+                <mainClass>com.github.sbegaudeau.acceleo.modules.psm.gen.scala.AcceleoCompiler</mainClass>  
+                <arguments>  
+                  <argument>${basedir}/src/</argument>  <!-- The source folder -->  
+                  <argument>${basedir}/target/classes</argument>  <!-- The output folder -->
+                  <argument>true</argument>  <!-- Indicates if we should use binary resources serializations -->
+                  <argument></argument>  <!-- The project dependencies in the workspace -->
+                </arguments>  
+              </configuration>  
+            </execution>  
+          </executions>  
+        </plugin>
+      </plugins>
+  </build>
+</project>

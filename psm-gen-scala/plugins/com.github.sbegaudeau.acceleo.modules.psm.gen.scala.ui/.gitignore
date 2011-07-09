@@ -11,3 +11,4 @@
 
 # Ignore the bin folder.
 bin/
+target/

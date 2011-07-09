@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.features"
+      id="com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model.feature"
       label="Scala Model"
       version="1.0.0.qualifier"
       provider-name="Stephane Begaudeau">
@@ -19,7 +19,7 @@ http://www.eclipse.org/legal/epl-v10.html
    </copyright>
 
    <license url="http://www.eclipse.org/legal/epl-v10.html">
-       Eclipse Public License - v 1.0
+      Eclipse Public License - v 1.0
 THE ACCOMPANYING PROGRAM IS PROVIDED UNDER THE TERMS OF THIS
 ECLIPSE PUBLIC LICENSE (&amp;quot;AGREEMENT&amp;quot;). ANY USE, REPRODUCTION OR
 DISTRIBUTION OF THE PROGRAM CONSTITUTES RECIPIENT&amp;apos;S ACCEPTANCE
