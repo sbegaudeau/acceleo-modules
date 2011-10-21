@@ -1,0 +1,124 @@
+[comment encoding = UTF-8 /]
+[**
+ * The documentation of the module classFile.
+ */]
+[module classFile('http://www.eclipse.org/emf/2002/Ecore', 'http://www.eclipse.org/emf/2002/GenModel') extends com::github::sbegaudeau::acceleo::modules::ecore::gen::scala::files::commonFile]
+
+
+[template public genFile(aGenClass : GenClass) ? (not aGenClass.ecoreClass.name.oclIsUndefined())]
+[file (aGenClass.genPackage.basePackage.substituteAll('.', '/') + '/' + aGenClass.genName() + '.scala', false, 'UTF-8')]
+[aGenClass.genFileHeader()/]
+[aGenClass.genPackageDeclaration()/]
+[aGenClass.genImportDeclaration()/]
+[aGenClass.genFileBody()/]
+[/file]
+[/template]
+
+[template public genPackageDeclaration(aGenClass : GenClass)]
+package [aGenClass.genPackage.basePackage/];
+[/template]
+
+[template public genImportDeclaration(aGenClass : GenClass)]
+
+//imports
+
+[/template]
+
+[**
+ * The documentation of the template generateElement.
+ * @param aEClass
+ */]
+[template public genFileBody(aGenClass : GenClass) overrides genFileBody]
+[aGenClass.genClassifierDocumentation()/]
+[aGenClass.genAbstract()/]class [aGenClass.genName()/][aGenClass.genDefaultConstructor()/][aGenClass.genClassInheritance()/] {
+    [aGenClass.genFields()/]
+    [aGenClass.genConstructors()/]
+    [aGenClass.genMethods()/]
+}
+[/template]
+
+[template public genAbstract(aGenClass : GenClass)]
+[if (aGenClass.ecoreClass.abstract)]abstract [/if]
+[/template]
+
+[template public genDefaultConstructor(aGenClass : GenClass) post(trim())]
+[if (aGenClass.ecoreClass.eStructuralFeatures->size() > 0)]
+([aGenClass.ecoreClass.eStructuralFeatures.genParameter()->sep(', ')/])
+[/if]
+[/template]
+
+[template public genClassInheritance(aGenClass : GenClass)]
+[if (aGenClass.genInheritance().size() > 0)] [aGenClass.genInheritance()/][/if]
+[/template]
+
+[template public genInheritance(aGenClass : GenClass) post(trim())]
+[if (aGenClass.ecoreClass.eSuperTypes->size() > 0)]
+[if (aGenClass.extendedClasses()->size() > 0)]
+[comment]extends at least a class (abstract or not)[/comment]
+ extends [aGenClass.extendedClasses()->first().genName()/][for (anExtendedTrait : EClass | aGenClass.extendedTraits())] with [anExtendedTrait.genName()/][/for]
+[elseif (aGenClass.extendedTraits()->size() > 0)]
+[comment]extends no class (abstract or not) but at least a trait[/comment]
+[for (anExtendedTrait : EClass | aGenClass.extendedTraits())][if (i = 1)]extends [anExtendedTrait.genName()/][else] with [anExtendedTrait.genName()/][/if][/for]
+[/if]
+[/if]
+[/template]
+
+[query public extendedClasses(aGenClass : GenClass) : OrderedSet(EClass) =
+	aGenClass.ecoreClass.nonAbstractNonInterfaceSupertypes()->union(aGenClass.ecoreClass.abstractNonInterfaceSupertypes())->asOrderedSet()
+/]
+
+[query public extendedTraits(aGenClass : GenClass) : OrderedSet(EClass) =
+	aGenClass.ecoreClass.interfaceNonAbstractSupertypes()->union(aGenClass.ecoreClass.interfaceAbstractSupertypes())->asOrderedSet()
+/]
+
+[query public nonAbstractNonInterfaceSupertypes(anEClass : EClass) : OrderedSet(EClass) = 
+	anEClass.eSuperTypes->select(aClass : EClass | not aClass.abstract and (not aClass.interface))
+/]
+
+[query public abstractNonInterfaceSupertypes(anEClass : EClass) : OrderedSet(EClass) = 
+	anEClass.eSuperTypes->select(aClass : EClass | aClass.abstract and (not aClass.interface))
+/]
+
+[query public interfaceNonAbstractSupertypes(anEClass : EClass) : OrderedSet(EClass) = 
+	anEClass.eSuperTypes->select(aClass : EClass | aClass.interface and (not aClass.abstract))
+/]
+
+[query public interfaceAbstractSupertypes(anEClass : EClass) : OrderedSet(EClass) = 
+	anEClass.eSuperTypes->select(aClass : EClass | aClass.interface and aClass.abstract)
+/]
+
+[template public genFields(aGenClass : GenClass) post(trim())]
+[for (anEStructuralFeature : EStructuralFeature | aGenClass.ecoreClass.eStructuralFeatures)]
+/**
+ * The description of [anEStructuralFeature.genName()/]
+ */
+[anEStructuralFeature.genVisibility()/][if(aGenClass.isOverridingFeature(anEStructuralFeature))]override [/if][anEStructuralFeature.genFinal()/][anEStructuralFeature.genName()/]: [anEStructuralFeature.eType.name/] = [anEStructuralFeature.genDefaultValue()/]
+
+[/for]
+[/template]
+
+[template public genVisibility(anEStructuralFeature : EStructuralFeature)]
+private 
+[/template]
+
+[query public isOverridingFeature(aGenClass : GenClass, anEStructuralFeature : EStructuralFeature) : Boolean =
+	aGenClass.ecoreClass.eSuperTypes.eStructuralFeatures->includes(anEStructuralFeature)
+/]
+
+[template public genDefaultValue(anEStructuralFeature : EStructuralFeature) post(trim())]
+[if (anEStructuralFeature.defaultValueLiteral.oclIsUndefined())]
+null
+[else]
+[anEStructuralFeature.defaultValueLiteral/]
+[/if]
+[/template]
+
+[template public genFinal(anEStructuralFeature : EStructuralFeature)]
+[if (anEStructuralFeature.changeable)]var [else]val [/if]
+[/template]
+
+[template public genConstructors(aGenClass : GenClass)]
+[/template]
+
+[template public genMethods(aGenClass : GenClass)]
+[/template]

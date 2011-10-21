@@ -4,7 +4,7 @@
  */]
 [module ecoreGenScala('http://www.eclipse.org/emf/2002/Ecore', 'http://www.eclipse.org/emf/2002/GenModel')]
 
-[import com::github::sbegaudeau::acceleo::modules::ecore::gen::scala::files::buildProperties /]
+[import com::github::sbegaudeau::acceleo::modules::ecore::gen::scala::files::classFile /]
 
 [**
  * The documentation of the template generateElement.
@@ -12,5 +12,12 @@
  */]
 [template public generateElement(aGenModel : GenModel)]
 [comment @main/]
-[aGenModel.buildProperties()/]
+[for (aGenPackage : GenPackage | aGenModel.genPackages)]
+[for (aGenClass : GenClass | aGenPackage.genClasses)]
+[aGenClass.genFile()/]
+[/for]
+[for (aGenEnum : GenEnum | aGenPackage.genEnums)]
+
+[/for]
+[/for]
 [/template]

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Copyright (c) 2011 Stephane Begaudeau.&#xA; All rights reserved. This program and the accompanying materials&#xA; are made available under the terms of the Eclipse Public License v1.0&#xA; which accompanies this distribution, and is available at&#xA; http://www.eclipse.org/legal/epl-v10.html&#xA; &#xA; Contributors:&#xA;    Stephane Begaudeau - initial API and implementation"
+    modelDirectory="/com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model/src-gen"
+    editDirectory="/com.github.sbegaudeau.acceleo.modules.psm.gen.scala.edit/src-gen"
+    editorDirectory="/com.github.sbegaudeau.acceleo.modules.psm.gen.scala.editor/src-gen"
+    modelPluginID="com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model" modelName="Scala"
+    editPluginClass="com.github.sbegaudeau.acceleo.modules.psm.gen.scala.edit.ScalaEditPlugin"
+    editorPluginClass="com.github.sbegaudeau.acceleo.modules.psm.gen.scala.editor.ScalaEditorPlugin"
+    nonNLSMarkers="true" codeFormatting="true" testsDirectory="/com.github.sbegaudeau.acceleo.modules.psm.gen.scala.tests/src-gen"
+    testSuiteClass="com.github.sbegaudeau.acceleo.modules.psm.gen.scala.tests.ScalaAllTests"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
+    providerRootExtendsClass="" editPluginID="com.github.sbegaudeau.acceleo.modules.psm.gen.scala.edit"
+    editorPluginID="com.github.sbegaudeau.acceleo.modules.psm.gen.scala.editor" testsPluginID="com.github.sbegaudeau.acceleo.modules.psm.gen.scala.tests"
+    colorProviders="true" runtimeVersion="2.4" language="">
+  <foreignModel>Scala.ecore</foreignModel>
+  <genPackages prefix="Scala" basePackage="com.github.sbegaudeau.acceleo.modules.psm.gen.scala.model"
+      disposableProviderFactory="true" dataTypeConverters="true" contentTypeIdentifier=""
+      fileExtensions="scalamodel" ecorePackage="Scala.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Scala.ecore#//VisibilityKind">
+      <genEnumLiterals ecoreEnumLiteral="Scala.ecore#//VisibilityKind/public"/>
+      <genEnumLiterals ecoreEnumLiteral="Scala.ecore#//VisibilityKind/private"/>
+      <genEnumLiterals ecoreEnumLiteral="Scala.ecore#//VisibilityKind/protected"/>
+    </genEnums>
+    <genClasses image="false" ecoreClass="Scala.ecore#//Element">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Scala.ecore#//Element/comment"/>
+    </genClasses>
+    <genClasses ecoreClass="Scala.ecore#//Comment">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Scala.ecore#//Comment/body"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Scala.ecore#//Comment/commentedElement"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="Scala.ecore#//NamedElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Scala.ecore#//NamedElement/name"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="Scala.ecore#//TypedElement">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Scala.ecore#//TypedElement/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Scala.ecore#//TypedElement/isOption"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="Scala.ecore#//Classifier">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Scala.ecore#//Classifier/methods"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Scala.ecore#//Classifier/superType"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Scala.ecore#//Classifier/traits"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="Scala.ecore#//CaseClassifier">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Scala.ecore#//CaseClassifier/isCase"/>
+    </genClasses>
+    <genClasses ecoreClass="Scala.ecore#//ExtendableClassifier">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Scala.ecore#//ExtendableClassifier/isSealed"/>
+    </genClasses>
+    <genClasses ecoreClass="Scala.ecore#//Class">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Scala.ecore#//Class/fields"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Scala.ecore#//Class/constructors"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Scala.ecore#//Class/companionObject"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Scala.ecore#//Class/isFinal"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Scala.ecore#//Class/isAbstract"/>
+    </genClasses>
+    <genClasses ecoreClass="Scala.ecore#//Object">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Scala.ecore#//Object/companionClass"/>
+    </genClasses>
+    <genClasses ecoreClass="Scala.ecore#//Trait"/>
+    <genClasses ecoreClass="Scala.ecore#//Field">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Scala.ecore#//Field/isConstructorProperty"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Scala.ecore#//Field/isFinal"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Scala.ecore#//Field/isOverriding"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Scala.ecore#//Field/visibility"/>
+    </genClasses>
+    <genClasses ecoreClass="Scala.ecore#//Constructor">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Scala.ecore#//Constructor/parameters"/>
+    </genClasses>
+    <genClasses ecoreClass="Scala.ecore#//Method">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Scala.ecore#//Method/signature"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Scala.ecore#//Method/isAbstract"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Scala.ecore#//Method/isFinal"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Scala.ecore#//Method/isOverriding"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Scala.ecore#//Method/visibility"/>
+    </genClasses>
+    <genClasses ecoreClass="Scala.ecore#//MethodSignature">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Scala.ecore#//MethodSignature/parameters"/>
+    </genClasses>
+    <genClasses ecoreClass="Scala.ecore#//Model">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Scala.ecore#//Model/packages"/>
+    </genClasses>
+    <genClasses ecoreClass="Scala.ecore#//Parameter"/>
+    <genClasses ecoreClass="Scala.ecore#//Package">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Scala.ecore#//Package/files"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Scala.ecore#//Package/subPackages"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Scala.ecore#//Package/superPackage"/>
+    </genClasses>
+    <genClasses ecoreClass="Scala.ecore#//File">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Scala.ecore#//File/classifiers"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="Scala.ecore#//Type"/>
+    <genClasses ecoreClass="Scala.ecore#//Visibility">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Scala.ecore#//Visibility/kind"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Scala.ecore#//Visibility/scope"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="Scala.ecore#//VisibilityScope"/>
+  </genPackages>
+</genmodel:GenModel>

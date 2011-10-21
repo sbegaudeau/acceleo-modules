@@ -15,52 +15,54 @@ import org.osgi.framework.BundleContext;
 
 /**
  * The activator class controls the plug-in life cycle.
+ * 
+ * @author <a href="mailto:stephane.begaudeau@obeo.fr">Stephane Begaudeau</a>
  */
 public class EcoreGenScala extends Plugin {
 
-    /**
-     * The plug-in ID.
-     */
-    public static final String PLUGIN_ID = "com.github.sbegaudeau.acceleo.modules.ecore.gen.scala";
+	/**
+	 * The plug-in ID.
+	 */
+	public static final String PLUGIN_ID = "com.github.sbegaudeau.acceleo.modules.ecore.gen.scala";
 
-    /**
-     * The shared instance.
-     */
-    private static EcoreGenScala plugin;
-    
-    /**
-     * The constructor.
-     */
-    public EcoreGenScala() {
-    }
+	/**
+	 * The shared instance.
+	 */
+	private static EcoreGenScala plugin;
 
-    /**
-     * {@inheritDoc}
-     *
-     * @see org.eclipse.core.runtime.Plugin#start(org.osgi.framework.BundleContext)
-     */
-    public void start(BundleContext context) throws Exception {
-        super.start(context);
-        plugin = this;
-    }
+	/**
+	 * The constructor.
+	 */
+	public EcoreGenScala() {
+	}
 
-    /**
-     * {@inheritDoc}
-     *
-     * @see org.eclipse.core.runtime.Plugin#stop(org.osgi.framework.BundleContext)
-     */
-    public void stop(BundleContext context) throws Exception {
-        plugin = null;
-        super.stop(context);
-    }
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see org.eclipse.core.runtime.Plugin#start(org.osgi.framework.BundleContext)
+	 */
+	public void start(BundleContext context) throws Exception {
+		super.start(context);
+		plugin = this;
+	}
 
-    /**
-     * Returns the shared instance.
-     *
-     * @return the shared instance
-     */
-    public static EcoreGenScala getDefault() {
-        return plugin;
-    }
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see org.eclipse.core.runtime.Plugin#stop(org.osgi.framework.BundleContext)
+	 */
+	public void stop(BundleContext context) throws Exception {
+		plugin = null;
+		super.stop(context);
+	}
+
+	/**
+	 * Returns the shared instance.
+	 * 
+	 * @return the shared instance
+	 */
+	public static EcoreGenScala getDefault() {
+		return plugin;
+	}
 
 }

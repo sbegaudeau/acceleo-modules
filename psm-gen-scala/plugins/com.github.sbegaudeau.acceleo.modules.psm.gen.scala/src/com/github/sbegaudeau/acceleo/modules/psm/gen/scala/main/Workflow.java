@@ -139,14 +139,12 @@ public class Workflow extends AbstractAcceleoGenerator {
                 
                 /*
                  * Add the properties from the launch arguments.
-                 * If you want to programmatically add new arguments, add them in "propertiesFiles"
+                 * If you want to programmatically add new properties, add them in "propertiesFiles"
                  * You can add the absolute path of a properties files, or even a project relative path.
                  * If you want to add another "protocol" for your properties files, please override 
                  * "getPropertiesLoaderService(AcceleoService)" in order to return a new property loader.
-                 * The basic properties loader will look for properties in the current project if the path
-                 * of the properties file is like this "packagea.packageb.packagec.default" for a properties
-                 * file named default.properties, or if the path is an absolute path. With a new property
-                 * loader you could for example, look for properties files in a bundle.
+                 * The behavior of the properties loader service is explained in the Acceleo documentation
+                 * (Help -> Help Contents).
                  */
                  
                 for (int i = 2; i < args.length; i++) {
@@ -232,7 +230,8 @@ public class Workflow extends AbstractAcceleoGenerator {
 	 * @return The generation strategy that is to be used for generations launched through this launcher.
 	 * @generated
 	 */
-	public IAcceleoGenerationStrategy getGenerationStrategy() {
+	@Override
+  public IAcceleoGenerationStrategy getGenerationStrategy() {
         return super.getGenerationStrategy();
     }
 
@@ -338,7 +337,7 @@ public class Workflow extends AbstractAcceleoGenerator {
          * of this class will revert your modifications. 
          */ 
         
-        resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("scalamodel", new ScalaFactoryImpl());
+        //resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("scalamodel", new ScalaFactoryImpl());
     }
 
 }

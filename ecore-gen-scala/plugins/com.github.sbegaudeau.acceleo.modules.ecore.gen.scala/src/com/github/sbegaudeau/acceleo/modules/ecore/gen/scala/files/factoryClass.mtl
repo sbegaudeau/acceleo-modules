@@ -1,7 +1,0 @@
-[comment encoding = UTF-8 /]
-[module factoryClass('http://www.eclipse.org/emf/2002/GenModel')]
-
-
-[template public generateElement(aGenModel : GenModel)]
-
-[/template]
