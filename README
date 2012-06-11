@@ -3,3 +3,7 @@ Stéphane Bégaudeau 2011
 This repository will be dedicated to open source generators created with Acceleo.
 
 All the Acceleo generators available in this repository are licenced under the Eclipse Public Licence v1.0
+
+
+This repository will not be updated anymore since one repository for multiples generators is not a good architecture.
+The two generators contained in this repository will be transfered in dedicated repositories on github named Ecore to Scala and PSM to Scala.
